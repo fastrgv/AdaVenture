@@ -1,8 +1,16 @@
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/introAV.jpg)
 
-# AdaVenture -- v 1.0.0
+# AdaVenture -- v 1.0.1
 
 ## Whats new:
+
+**ver 1.0.1 -- 16sep16**
+
+* improved final sound sequence;  added original roar to dragon encounters.
+* improved dragon trajectory.
+* significant improvements to scene transitions and views through doorways.
+* larger, actual size castle within skybox exterior scene.
+
 
 **ver 1.0.0 -- 9sep16**
 
