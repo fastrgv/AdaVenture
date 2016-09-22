@@ -2,9 +2,15 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux)
 
-# AdaVenture -- v 1.0.1
+# AdaVenture -- v 1.0.2
 
 ## Whats new:
+
+**ver 1.0.2 -- 22sep16**
+
+* Maze has many improvements.  It is now redesigned to match the "blue" maze from the original Atari Adventure game.  This involves weird and puzzling interconnections.
+* Added a pesky bat, a lethal red-dragon, and an avoidable green-mamba to maze.  Beware!
+
 
 **ver 1.0.1 -- 16sep16**
 
