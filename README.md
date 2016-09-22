@@ -1,5 +1,7 @@
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/introAV.jpg)
 
+Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux)
+
 # AdaVenture -- v 1.0.1
 
 ## Whats new:
