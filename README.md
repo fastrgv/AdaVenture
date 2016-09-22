@@ -1,6 +1,6 @@
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/introAV.jpg)
 
-Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this:
+Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
 <https://github/com/fastrgv/AdaVenture/releases/download/v1.0.2/av22sep16.tar.gz>
 
