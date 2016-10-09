@@ -2,12 +2,21 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-<https://github/com/fastrgv/AdaVenture/releases/download/v1.0.2/av23sep16.tar.gz>
+<https://github/com/fastrgv/AdaVenture/releases/download/v1.0.3/av10oct16.tar.gz>
 
 
-# AdaVenture -- v 1.0.2
+# AdaVenture -- v 1.0.3
 
 ## Whats new:
+
+**ver 1.0.3 -- 10oct16**
+
+* Improved sword & chalice icons.
+* Fixed bad dragon behaviors.
+* Added water feature with moorish pillars to castle.
+* other minor improvements including a brighter world upon success.
+
+
 
 **ver 1.0.2 -- 22sep16**
 
