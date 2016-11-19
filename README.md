@@ -118,6 +118,7 @@ If the need arises, copy the file "default_settings.txt" to "settings.txt".  The
 ## Rebuild Requirements:
 * systems:  OS-X or GNU/Linux
 * a recent gnat compiler
+* Xcode g++ compiler, if using OS-X
 
 Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada_hpp.ads by this method.
 
@@ -162,6 +163,16 @@ If the delivered linux binary does not run...
 
 * Manually install GNAT GPL from libre.adacore.com/download/.
 * Rerun the compile script lcmp.sh.
+
+
+### Link Problems during linux build:
+
+On a linux build machine, you might have minor link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+
+sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
+
+whence the linker should now be able to find what it wants.
+
 
 
 
