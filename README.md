@@ -2,12 +2,21 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-<https://github.com/fastrgv/AdaVenture/releases/download/v1.0.4/av4nov16.tar.gz>
+https://github.com/fastrgv/AdaVenture/releases/download/v1.0.5/av30nov16.tar.gz
 
 
-# AdaVenture -- v 1.0.4
+# AdaVenture -- v 1.0.5
 
 ## Whats new:
+
+
+**ver 1.0.5 -- 30nov16**
+
+* Improved linux build scripts, with varying degrees of static linking.  See build instructions.
+* Now uses an improved interface binding Ada to SFML audio.
+* Now using SFML 2.4.1.
+* Repaired OS-X bundling.
+* Succeeding at current level automatically advances the next game to the other level.
 
 
 **ver 1.0.4 -- 3nov16**
@@ -147,15 +156,19 @@ Two [pre-compiled] binary executables are delivered, one for gnu/linux and one f
 
 Build scripts for GNAT2015 or newer are provided.  Suggestions or help improving the build process is welcome.  And if anyone succeeds in building for the Windows platform, please let me know so I can try to include that too.
 
--------------------------------------------------------
-**MacOSX** => ocmp.sh:
+Three scripts for each OS have the form Xd.sh, Xs.sh, Xss.sh, where the "d" represents "dynamic", and produces the smallest executable.  The "ss" represents the "most static" choice, using more static libraries making its executable larger.  I believe that all of them should work.
 
-build script for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OS-X should be able to rebuild using this script, assuming you have GNAT GPL installed.
+Note that due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT is required.
+
+-------------------------------------------------------
+**MacOSX** => ocmps.sh, ocmpss.sh:
+
+build scripts for generating a portable executable that will run on most OS-X platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OS-X should be able to rebuild using these scripts, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
-**GNU/Linux** => lcmp.sh
+**GNU/Linux** => lcmpd.sh, lcmps.sh, lcmpss.sh:
 
-utilizes static linking for the non-standard libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  This is used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
+utilize increasingly static linking, especially for the non-standard libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
 The current build is compiled on OpenSUSE v13.2, and uses GLIBC 2.14 [dating from june 2011].  This generally means that if your linux distro uses glibc v2.14 or newer, then the prebuilt binary should probably run on your system (and be rebuildable).
 
@@ -164,7 +177,6 @@ If the delivered linux binary does not run...
 * Manually install GNAT GPL from libre.adacore.com/download/.
 * Rerun the compile script lcmp.sh.
 
-
 ### Link Problems during linux build:
 
 On a linux build machine, you might have minor link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
@@ -172,6 +184,7 @@ On a linux build machine, you might have minor link errors, depending on its con
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
 whence the linker should now be able to find what it wants.
+
 
 
 
@@ -252,3 +265,4 @@ https://github.com/fastrgv?tab=repositories
 http://www.indiedb.com/members/fastrgv/games
 
 https://fastrgv.itch.io/
+
