@@ -2,21 +2,23 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v1.0.5/av30nov16.tar.gz
+https://github.com/fastrgv/AdaVenture/releases/download/v1.0.6/av2dec16.tar.gz
 
 
-# AdaVenture -- v 1.0.5
+# AdaVenture -- v 1.0.6
 
 ## Whats new:
 
 
-**ver 1.0.5 -- 30nov16**
+**ver 1.0.6 -- 2dec16**
 
 * Improved linux build scripts, with varying degrees of static linking.  See build instructions.
 * Now uses an improved interface binding Ada to SFML audio.
 * Now using SFML 2.4.1.
 * Repaired OS-X bundling.
-* Succeeding at current level automatically advances the next game to the other level.
+* Revised labyrinth.
+* New prolog screen allows user to select game (1 or 2).
+
 
 
 **ver 1.0.4 -- 3nov16**
