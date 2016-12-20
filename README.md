@@ -1,3 +1,5 @@
+![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/tux0.jpg)
+
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/introAV.jpg)
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
