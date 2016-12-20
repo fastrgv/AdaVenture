@@ -5,9 +5,15 @@ Click on the large tar.gz file under releases to download all source & binaries 
 https://github.com/fastrgv/AdaVenture/releases/download/v1.0.6/av2dec16.tar.gz
 
 
-# AdaVenture -- v 1.0.6
+# AdaVenture -- v 1.0.7
 
 ## Whats new:
+
+
+**ver 1.0.7 -- 20dec16**
+
+* Added a Tux-the-penguin avatar.  Use the (F1)-key or (m)-key to toggle between mouse view (first person) and a third person avatar view.  This enhancement required the implementation of a preliminary camera handling strategy, which in general can be quite complex.
+* Fixed the handlers for game controllers:  joysticks or gamepads.
 
 
 **ver 1.0.6 -- 2dec16**
@@ -18,7 +24,6 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.0.6/av2dec16.tar.gz
 * Repaired OS-X bundling.
 * Revised labyrinth.
 * New prolog screen allows user to select game (1 or 2).
-
 
 
 **ver 1.0.4 -- 3nov16**
@@ -59,7 +64,7 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.0.6/av2dec16.tar.gz
 
 
 ## AdaVenture Game Description
-AdaVenture is a kid-friendly retro point&click game, intended to be a minimal extension to 3D of the original 2D Atari game named "Adventure", but with a few artistic liberties taken.
+AdaVenture is a kid-friendly retro point & click game, essentially intended to be a minimal extension to 3D of the original 2D Atari game named "Adventure".
 
 Set in ancient Persia, it begins outside the castle of the young King Xerxes, who inherited a golden chalice from his father, Darius the Great.  Coveted by Greek foes King Leonidas of Sparta and King Minos of Crete, the chalice has been stolen.
 
@@ -71,10 +76,31 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 * When looking closely at a pickable object, a hand will appear indicating that a click will pick up the object.  When holding an object, another click will drop it at the current location.  Only one object at a time may be carried.
 * Works on PCs or laptops running OS-X or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered binaries.
 * Both GNU/Linux and OS-X binaries provided, as well as full source. 
-* Laptop friendly controls;  supports Mac Retina displays.
+* Laptop friendly controls;  supports Mac Retina displays in high DPI mode.
 * Serves as an example of modern OpenGL programming in Ada or C++ using GLSL 330 and shaders.
 * The Ada bindings to OpenGL & SDL2 in this app are usable as a standalone library for most any modern Ada graphics project.
-* Currenly, the game has two easy levels.  So there is not yet any reset capability...you must replay from the beginning if you die.  You specify the desired level at the beginning of the game.
+* Currenly, the game has two easy campains:  Greece or Crete.  So there is not yet any reset capability...you must replay from the beginning if you die.  You select the desired campain at the beginning of the game.
+
+## Portable Avatar Using Shaders
+
+* A new shader-based avatar (Tux) encapsulates most of the details of avatar shape, color, and movement within vertex and fragment shaders.  A related texture object, avatarobj.adb, defines a crude initial geometry and a mapping of a texture image onto the texture object.
+
+* This example implementation is minimal, yet instructive.  Hardcoded data defining shape and color, and the uniforms and functions defining behavior can ultimately be as detailed and refined as desired.
+
+* The inputs include uniforms for time, position, and attitude.  The shaders then offload the computational burden of the avatar representation onto the graphics processor.
+
+* Avatar-specific hardcoded data resides mostly in the shaders and partly in the texture object:  avatarobj.adb.  The hardcoded data defines geometry and the mapping of the texture object to various parts of the avatar.  In this case, the texture object is a cube with radius one that is defined in 3 parts.  The upper half maps to the avatar's main body.  The lower half is divided into left and right rectangles that are mapped to feet.  The image used for the texture also has 3 parts that map to the appropriate piece of the texture object.
+
+* The result is a portable avatar.  One needs only:
+	* texture object body, avatarobj.adb
+	* texture object spec, avatarobj.ads
+	* vertex shader, avatarobj.vs
+	* fragment shader, avatarobj.fs
+	* texture image, blkpng.png
+
+* Interfacing code with the above elements is very simple.  Essentially you need only pass the required uniform values prior to drawing.
+
+* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate the avatar.  But that is beyond the scope of this description.
 
 
 ## mouse/touchpad/keyboard controls
@@ -87,20 +113,25 @@ Movement is controlled by the arrow keys:
 
 		(Up)
 	(Lt)	(Dn)	(Rt)
+---------------------------
+
+*   (esc)-key 			=> exit;
+*   (space)-key			=> pick or drop
+*   mouse-click			=> pick or drop
+* (m)-key or (F1)-key	=> toggle 1st-person or avatar(3rd-person)
 
 
-(esc)-key => exit;  
-
-
-### joystick
-* joystick : attitude
-* thumb btn: forward
-* trigger btn: backward
+### joystick (optional)
+* joystick:  attitude
+* thumb btn:  forward
+* trigger btn:  backward
+* other btns:  pick or drop items
 
 ------------------------------------------------------------
-### gamecontroller
-* Lpaddle : attitude
-* Rpaddle : movement
+### gamecontroller (optional)
+* Lpaddle/hat:  attitude
+* Rpaddle :  movement
+* btns:  pick or drop items
 
 ------------------------------------------------------------
 ### controller settings
@@ -181,7 +212,7 @@ If the delivered linux binary does not run...
 
 ### Link Problems during linux build:
 
-On a linux build machine, you might have minor link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
+On a linux build machine, you might have repairable link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
 
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
@@ -267,4 +298,8 @@ https://github.com/fastrgv?tab=repositories
 http://www.indiedb.com/members/fastrgv/games
 
 https://fastrgv.itch.io/
+
+## Tags
+kids,retro,adventure,dragon,castle,maze,labyrinth
+
 
