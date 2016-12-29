@@ -1,4 +1,4 @@
-![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/tux0.jpg)
+![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/mcraftAV.jpg)
 
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/introAV.jpg)
 
