@@ -7,10 +7,17 @@ Click on the large tar.gz file under releases to download all source & binaries 
 https://github.com/fastrgv/AdaVenture/releases/download/v1.0.7/av20dec16.tar.gz
 
 
-# AdaVenture -- v 1.0.7
+# AdaVenture -- v 1.0.8
 
 ## Whats new:
 
+
+**ver 1.0.8 -- 29dec16**
+
+* Revised the avatar programming to allow the use of any Minecraft Skin.  You can simply rename your favorite png file to use it in the game.  See instructions in "game features".
+* Added WASD keys for movement.
+* Improved build system to be compatible with more linux distros.
+* Improved OpenGL coding to run on less capable graphics hardware.
 
 **ver 1.0.7 -- 20dec16**
 
@@ -82,27 +89,33 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 * Serves as an example of modern OpenGL programming in Ada or C++ using GLSL 330 and shaders.
 * The Ada bindings to OpenGL & SDL2 in this app are usable as a standalone library for most any modern Ada graphics project.
 * Currenly, the game has two easy campains:  Greece or Crete.  So there is not yet any reset capability...you must replay from the beginning if you die.  You select the desired campain at the beginning of the game.
+* To change the appearance of the avatar, simply download your favorite MineCraft Skin, rename it to "skin.png" and put it into the ./data/ directory.  You should probably backup the current skin before you do this, in case of trouble.  See http://www.minecraftskins.net/.
+
 
 ## Portable Avatar Using Shaders
 
-* A new shader-based avatar (Tux) encapsulates most of the details of avatar shape, color, and movement within vertex and fragment shaders.  A related texture object, avatarobj.adb, defines a crude initial geometry and a mapping of a texture image onto the texture object.
+* This approach encapsulates the details of avatar shape, color, and movement within GLSL shaders and a related code object that defines vertices and texture maps.  The object may be an Ada package or C++ class.
 
-* This example implementation is minimal, yet instructive.  Hardcoded data defining shape and color, and the uniforms and functions defining behavior can ultimately be as detailed and refined as desired.
+* Programmatic inputs include uniforms for time, position, and attitude.  The shaders then offload the realtime computational burdens onto the graphics processor.
 
-* The inputs include uniforms for time, position, and attitude.  The shaders then offload the computational burden of the avatar representation onto the graphics processor.
+* Data that defines shape and color, as well as the uniforms and functions that define behavior, reside completely within the object and shaders.  This data can ultimately be as detailed and refined as your imagination permits.  And any refinements made are not obfuscated in some esoteric or proprietary format with a limited audience, but remain fully portable and easily enhanced by most any developer using mainstream programming languages.
 
-* Avatar-specific hardcoded data resides mostly in the shaders and partly in the texture object:  avatarobj.adb.  The hardcoded data defines geometry and the mapping of the texture object to various parts of the avatar.  In this case, the texture object is a cube with radius one that is defined in 3 parts.  The upper half maps to the avatar's main body.  The lower half is divided into left and right rectangles that are mapped to feet.  The image used for the texture also has 3 parts that map to the appropriate piece of the texture object.
+* One approach would be to completely define the avatar within the shaders alone, possibly without using any texture files.  Just look at the creatures in (glslsandbox.com).  This would require advanced GLSL skills.
 
-* The result is a portable avatar.  One needs only:
+* But a huge selection of available MineCraft skins lead to this avatar object design.
+
+* In this example, the texture object is a cube with radius one that is defined in 6 disjoint cubelets.  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs.  The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
+
+* The result is an utterly portable avatar defined by an image and 4 text files:
 	* texture object body, avatarobj.adb
 	* texture object spec, avatarobj.ads
 	* vertex shader, avatarobj.vs
 	* fragment shader, avatarobj.fs
-	* texture image, blkpng.png
+	* any MineCraft Skin png file
 
-* Interfacing code with the above elements is very simple.  Essentially you need only pass the required uniform values prior to drawing.
+* Interfacing game code with such an avatar is simple.  Essentially you need only pass the required uniform values prior to drawing.
 
-* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate the avatar.  But that is beyond the scope of this description.
+* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar.
 
 
 ## mouse/touchpad/keyboard controls
@@ -111,7 +124,7 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 
 Look direction is controlled by touch pad or mouse;
 
-Movement is controlled by the arrow keys:
+Movement is controlled by the WASD keys or the arrow keys:
 
 		(Up)
 	(Lt)	(Dn)	(Rt)
@@ -218,7 +231,10 @@ On a linux build machine, you might have repairable link errors, depending on it
 
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
-whence the linker should now be able to find what it wants.
+whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that uses your accelerated-graphic-driver.
+
+
+
 
 
 
@@ -269,7 +285,7 @@ Many sounds are from freesound.org and are covered by the Creative Commons Attri
 
 Some original Atari sounds were also used.
 
-Credit and thanks to the Godfather of Exotica, Korla Pandit, for the excellent renditions of Turkish Dance and Miserlou...a song so old that its origins are vague, yet was known to have been popular in ancient Persia and the middle-east.
+Credit and thanks to the Godfather of Exotica, Korla Pandit, for the excellent renditions of Turkish Dance and Miserlou...a song so old that its origins are vague, yet was known to have been popular in ancient Persia and the middle-east, as well as to all us fans of Dick Dale!
 
 
 ### ImageFiles 
