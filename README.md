@@ -4,12 +4,17 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v1.0.8/av29dec16.tar.gz
+https://github.com/fastrgv/AdaVenture/releases/download/v1.0.9/av5jan17.tar.gz
 
 
-# AdaVenture -- v 1.0.8
+# AdaVenture -- v 1.0.9
 
 ## Whats new:
+
+**ver 1.0.9 -- 5jan17**
+
+* Corrected a duplicate window glitch.
+* Refined compiler scripts.
 
 
 **ver 1.0.8 -- 29dec16**
