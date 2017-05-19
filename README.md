@@ -4,9 +4,7 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-
-https://github.com/fastrgv/AdaVenture/releases/download/v1.1.1/avent30apr17.tar.gz
-
+https://github.com/fastrgv/AdaVenture/releases/download/v1.1.1/av19may17.tar.gz
 
 
 
@@ -16,10 +14,10 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.1.1/avent30apr17.tar.
 
 
 **ver 1.1.1 -- 2mar17**
-
+* Include statically linked linux exe for enhanced portability.
 * Repaired a rendering error that failed to draw items dropped on the labyrinth floor.
 * Removed deprecated OpenGL commands and enums that may have caused aborts.
-* Added fantasy tree in labyrinth.
+* Added fantasy tree in labyrinth;  Zoroastrian embellishment on castle.
 * Improved OpenGL error checking.
 * Added an avatars directory loaded with a few alternates.
 
