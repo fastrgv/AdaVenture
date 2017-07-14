@@ -4,16 +4,27 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v1.1.1/av19may17.tar.gz
 
 
 
-# AdaVenture -- v 1.1.1
+
+# AdaVenture -- v 1.1.2
 
 ## Whats new:
 
 
+**ver 1.1.2 -- 14jul17**
+
+* Updated linux scripts to use a) rebuilt SFML v2.4.2;  b) AdaCore 2017.
+* Introduction now mentions that m-key toggles the Avatar.
+* Updated OSX to use SFML v2.4.2;
+* Added startup messages giving OGL version/profile.
+* Added scary hiss sound warning when snake is near;
+* Added locked door to labyrinth requiring black key.
+
+
 **ver 1.1.1 -- 2mar17**
+
 * Include statically linked linux exe for enhanced portability.
 * Repaired a rendering error that failed to draw items dropped on the labyrinth floor.
 * Removed deprecated OpenGL commands and enums that may have caused aborts.
