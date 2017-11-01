@@ -12,6 +12,9 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.1.2/av14jul17.tar.gz
 
 ## Whats new:
 
+See new video of level 1 at:
+https://youtu.be/Pr0IhvHXvFQ
+
 
 **ver 1.1.2 -- 14jul17**
 
