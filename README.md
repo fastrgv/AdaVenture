@@ -4,7 +4,7 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v1.1.2/av14jul17.tar.gz
+https://github.com/fastrgv/AdaVenture/releases/download/v1.2.0/av11nov17.tar.gz
 
 
 # AdaVenture -- v 1.2.0
