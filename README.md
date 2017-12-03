@@ -7,9 +7,19 @@ Click on the large tar.gz file under releases to download all source & binaries 
 https://github.com/fastrgv/AdaVenture/releases/download/v1.2.0/av11nov17.tar.gz
 
 
-# AdaVenture -- v 1.2.0
+# AdaVenture -- v 1.2.1
 
 ## Whats new:
+
+
+**ver 1.2.1 -- 4dec17**
+
+* Updated to SDL v2.0.7 on Linux, Windows.
+* Updated to SDL v2.0.7x on OSX.
+* Restored the reading of controller settings file using Ada-intrinsic Exists() ftn.
+* The green mamba is now even more ominous with a head raised to spit in your eyes.  However, you might survive if you are holding a sword.
+
+
 
 **ver 1.2.0 -- 11nov17**
 
@@ -44,31 +54,6 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 * Currenly, the game has two easy campaigns:  Greece or Crete.  So there is not yet any reset capability...you must replay from the beginning if you die.  You select the desired campaign at the beginning of the game.
 * To change the appearance of the avatar, simply download your favorite MineCraft Skin, rename it to "skin.png" and put it into the ./data/ directory.  You should probably backup the current skin before you do this, in case of trouble.  See http://www.minecraftskins.net/.  See also ./data/avatars/ for a small [untested] selection.
 
-
-## Portable Avatar Using Shaders
-
-* This approach encapsulates the details of avatar shape, color, and movement within GLSL shaders and a related code object that defines vertices and texture maps.  The object may be an Ada package or C++ class.
-
-* Programmatic inputs include uniforms for time, position, and attitude.  The shaders then offload the realtime computational burdens onto the graphics processor.
-
-* Data that defines shape and color, as well as the uniforms and functions that define behavior, reside completely within the object and shaders.  This data can ultimately be as detailed and refined as your imagination permits.  And any refinements made are not obfuscated in some esoteric or proprietary format with a limited audience, but remain fully portable and easily enhanced by most any developer using mainstream programming languages.
-
-* One approach would be to completely define the avatar within the shaders alone, possibly without using any texture files.  Just look at the creatures in (glslsandbox.com).  This would require advanced GLSL skills.
-
-* But a huge selection of available MineCraft skins lead to this avatar object design.
-
-* In this example, the texture object is a cube with radius one that is defined in 6 disjoint cubelets.  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs.  The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
-
-* The result is an utterly portable avatar defined by an image and 4 text files:
-	* texture object body, avatarobj.adb
-	* texture object spec, avatarobj.ads
-	* vertex shader, avatarobj.vs
-	* fragment shader, avatarobj.fs
-	* any MineCraft Skin png file
-
-* Interfacing game code with such an avatar is simple.  Essentially you need only pass the required uniform values prior to drawing.
-
-* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar.
 
 
 ## mouse/touchpad/keyboard controls
@@ -197,14 +182,6 @@ On a linux build machine, you might have repairable link errors, depending on it
 sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 
 whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that uses your accelerated-graphic-driver.
-
-
-### Final Note on Portability
-
-I am always interested in easy ways to make the distributed linux executables more portable, so I would appreciate hearing any suggestions.
-
-
-
 
 
 
