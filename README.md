@@ -7,28 +7,25 @@ Click on the large tar.gz file under releases to download all source & binaries 
 https://github.com/fastrgv/AdaVenture/releases/download/v1.2.1/av4dec17.tar.gz
 
 
-# AdaVenture -- v 1.2.1
+# AdaVenture
 
 ## Whats new:
+
+
+**ver 1.2.2 -- 17dec17**
+
+* Significant improvement in maze FOG realism;
+* Nice looking low-hanging FOG added to exterior, including skybox.
+* Added music, more sounds.
+* Logic corrections.
 
 
 **ver 1.2.1 -- 4dec17**
 
 * Updated to SDL v2.0.7 on Linux, Windows.
 * Updated to SDL v2.0.7x on OSX.
-* Restored the reading of controller settings file using Ada-intrinsic Exists() ftn.
+* Restore reading controller settings file using intrinsic Exists() ftn.
 * The green mamba is now even more ominous with a head raised to spit in your eyes.  However, you might survive if you are holding a sword.
-
-
-
-**ver 1.2.0 -- 11nov17**
-
-* added prebuilt executables for msWindows;
-* added working build scripts for msWindows;
-
-* Corrected dragon roar logic on reentry;
-* Improved dead dragon visibility;
-* Removed unused libraries;
 
 
 ## More change-history at end of file
@@ -51,7 +48,7 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 * Laptop friendly controls;  supports Mac Retina displays in high DPI mode.
 * Serves as an example of modern OpenGL programming in Ada or C++ using GLSL 330 and shaders.
 * The Ada bindings to OpenGL & SDL2 in this app are usable as a standalone library for most any modern Ada graphics project.
-* Currenly, the game has two easy campaigns:  Greece or Crete.  So there is not yet any reset capability...you must replay from the beginning if you die.  You select the desired campaign at the beginning of the game.
+* Currenly, the game has two easy campaigns:  Sparta or Crete.  So there is not yet any reset capability...you must replay from the beginning if you die.  You select the desired campaign at the beginning of the game.
 * To change the appearance of the avatar, simply download your favorite MineCraft Skin, rename it to "skin.png" and put it into the ./data/ directory.  You should probably backup the current skin before you do this, in case of trouble.  See http://www.minecraftskins.net/.  See also ./data/avatars/ for a small [untested] selection.
 
 
@@ -76,21 +73,21 @@ Movement is controlled by the WASD keys or the arrow keys:
 In case of [unforseen] problems with the game, please switch to 1st-person mode with the (m)-key.
 
 
-### joystick (untested on Windows)
+### joystick
 * joystick:  attitude
 * thumb btn:  forward
 * trigger btn:  backward
 * other btns:  pick or drop items
 
 ------------------------------------------------------------
-### gamecontroller (untested on Windows)
+### gamecontroller
 * Lpaddle/hat:  attitude
 * Rpaddle :  movement
 * btns:  pick or drop items
 
 ------------------------------------------------------------
 ### controller settings
-If the need arises, copy the file "default_settings.txt" to "settings.txt".  Then you can manually edit the integers that define the controller-button-bindings or the floats that define the sensitivities.
+If the need arises, copy the file "default_settings.txt" to "settings.txt".  Then you can manually edit the integers that define the controller-button-assignments or the floats that define the sensitivities.
 
 
 ------------------------------------------------------------
@@ -105,7 +102,7 @@ If the need arises, copy the file "default_settings.txt" to "settings.txt".  The
 * OSX:  must have OpenAL.framework, which comes on v10.4 and newer
 
 
-## Open Source libraries included for rebuilding:
+## Open Source libraries included that allow rebuilding:
 * SFML, SDL2, FLAC, ogg, vorbis, openal
 * glext.lib for Windows
 * the included "bindings" directory contains Ada interfaces:
@@ -143,15 +140,15 @@ fastrgv@gmail.com
 
 ## Build instructions for AdaVenture:
 
-Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I don't know how portable the Windows executable is, but it was built on Windows 10 in 32-bit mode.  The Mac binary, adaventure_osx, should run on most any standard Mac with a recent version of OSX.  The linux binary, adaventure_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, freetype, jpeg, openal.
+Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I don't know how portable the Windows executable is, but it was built on Windows 10 in 32-bit mode.  The Mac binary, adaventure_osx, should run on most any standard Mac with a recent version of OSX.  The linux binary, adaventure_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, openal, crypto.
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it probably will not run, and you will need to recompile.
 
-Build scripts for GNAT2015 or newer are provided.  Suggestions or help improving the build process is welcome.  And if anyone succeeds in building for the Windows platform, please let me know so I can try to include that too.
+Build scripts for GNAT2015 or newer are provided.  Suggestions or help improving the build process is welcome. 
 
 Three scripts for each OS have the form Xd.sh, Xs.sh, Xss.sh, where the "d" represents "dynamic", and produces the smallest executable.  The "ss" represents the "most static" choice, using more static libraries making its executable larger.  I believe that all of them should work.
 
-Note that due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT is required.
+Note that due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT from AdaCore is required.
 
 -------------------------------------------------------
 **msWin32** => wcmp.bat
@@ -160,12 +157,12 @@ build script that requires libraries included in ./libs/win/.
 
 
 -------------------------------------------------------
-**MacOSX** => ocmps.sh, ocmpss.sh:
+**MacOSX** => ocmpss.sh:
 
 build scripts for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
-**GNU/Linux** => lcmpd.sh, lcmps.sh, lcmpss.sh:
+**GNU/Linux** => lcmpd.sh:
 
 utilize increasingly static linking, especially for the non-standard libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
@@ -173,7 +170,7 @@ utilize increasingly static linking, especially for the non-standard libraries S
 If the delivered linux binary does not run...
 
 * Manually install GNAT GPL from libre.adacore.com/download/.
-* Rerun the compile script lcmp.sh.
+* Rerun the compile script lcmpd.sh.
 
 ### Link Problems during linux build:
 
@@ -185,11 +182,39 @@ whence the linker should now be able to find what it wants.  But if there is mor
 
 
 
+----------------------------------------------------------------------
+## For Developers Only:  Portable Avatar Using Shaders
+
+* This approach encapsulates the details of avatar shape, color, and movement within GLSL shaders and a related code object that defines vertices and texture maps.  The object may be an Ada package or C++ class.
+
+* Programmatic inputs include uniforms for time, position, and attitude.  The shaders then offload the realtime computational burdens onto the graphics processor.
+
+* Data that defines shape and color, as well as the uniforms and functions that define behavior, reside completely within the object and shaders.  This data can ultimately be as detailed and refined as your imagination permits.  And any refinements made are not obfuscated in some esoteric or proprietary format with a limited audience, but remain fully portable and easily enhanced by most any developer using Free Open Source tools and compilers.
+
+* One approach would be to completely define the avatar within the shaders alone, possibly without using any texture files.  Just look at the creatures in (glslsandbox.com).  This would require advanced GLSL skills.
+
+* But a huge selection of available MineCraft skins lead to the present avatar object design.
+
+* In this example, the texture object is a cube with radius one that is defined in 6 disjoint cubelets.  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs.  The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
+
+* The result is an utterly portable avatar defined by an image and 4 text files:
+	* texture object body, avatarobj.adb
+	* texture object spec, avatarobj.ads
+	* vertex shader, avatarobj.vs
+	* fragment shader, avatarobj.fs
+	* any MineCraft Skin png file
+
+* Interfacing game code with such an avatar is simple.  Essentially you need only pass the current uniform values prior to drawing.
+
+* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar.
+
+
+
 
 ## what is special about this project?
 Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
+Focusing on portability, transparency, and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
 
 The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for any OpenGL Ada project.
 
@@ -228,6 +253,8 @@ The particular choices of sound, image, and fragment shader files [x.fs] deliver
 
 ### SoundFiles
 Many sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file ccnc3_license.txt.  see also:  (http://creativecommons.org/licenses/by-nc/3.0/legalcode/)
+
+One track from incompetech.com (also CC-by-3 license) thanks to Kevin MacLeod.
 
 Some original Atari sounds were also used.
 
@@ -273,6 +300,16 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 -------------------------------------------------------------------------
 
 ## Update History
+
+
+**ver 1.2.0 -- 11nov17**
+
+* added prebuilt executables for msWindows;
+* added working build scripts for msWindows;
+* Corrected dragon roar logic on reentry;
+* Improved dead dragon visibility;
+* Removed unused libraries;
+
 
 **ver 1.1.2 -- 14jul17**
 
