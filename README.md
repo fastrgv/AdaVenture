@@ -118,8 +118,10 @@ If the need arises, copy the file "default_settings.txt" to "settings.txt".  The
 Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada_hpp.ads by this method.
 
 
-## Running adaventure:
-Unzip the archive, open a commandline terminal, and cd to the install directory.
+## Setup & Running Adaventure:
+Unzip the archive.
+Windows users may see some error messages pertaining to directory links.  These can be ignored.
+Open a commandline terminal, and cd to the install directory.
 
 Linux users should type "adaventure_gnu" to start the game.  You may also double click its icon in file manager.
 
