@@ -11,6 +11,12 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.2.2/av18dec17.tar.gz
 
 ## Whats new:
 
+**ver 1.2.3 -- 27dec17**
+
+* Updated storyline so chapter 2 is more challenging.
+* Repaired mamba;  improved shader coding.
+* Replaced hidden maze passages with the classic moveable bridge;
+
 
 **ver 1.2.2 -- 17dec17**
 
