@@ -11,6 +11,12 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.2.3/av27dec17.tar.gz
 
 ## Whats new:
 
+**ver 1.2.4 -- 5jan18**
+
+* Added new "darkmaze" to chapter 2 adventure on the far side of the labyrinth of the Minotaur that now hides the chalice (modeled after the classic "orange" maze #2);
+* Added a mapRoom directory to help lost souls;
+* Improved shaders to include full Phong light modeling, with ambient, diffuse, and specular attenuated lighting effects.  Added glowing chalice;
+
 **ver 1.2.3 -- 27dec17**
 
 * Updated storyline so chapter 2 is more challenging.
