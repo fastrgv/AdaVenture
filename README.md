@@ -11,6 +11,13 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.2.4/av5jan18.tar.gz
 
 ## Whats new:
 
+**ver 1.2.5 -- 10jan18**
+
+* Found & fixed the numerics:argument-error causing occasional aborts;
+* Newest Blinn-Phong light shaders include gamma correction;
+* Adjusted sizes of avatar & chalice;
+
+
 **ver 1.2.4 -- 5jan18**
 
 * Added new "darkmaze" to chapter 2 adventure on the far side of the labyrinth of the Minotaur that now hides the chalice (modeled after the classic "orange" maze #2);
