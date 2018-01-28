@@ -11,6 +11,15 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.2.5/av10jan18.tar.gz
 
 ## Whats new:
 
+**ver 1.2.6 -- 29jan18**
+
+* Higher perspective in maze rooms;
+* Improved camera handling logic with two options toggled with the L-key:
+	* new lazy camera default for better theatrics, or
+	* classic tight camera for almost first-person control;
+	* first-person mode is still toggled with M-key.
+* Darker [as intended] maze9;
+
 **ver 1.2.5 -- 10jan18**
 
 * Found & fixed the numerics:argument-error causing occasional aborts;
@@ -88,8 +97,9 @@ Movement is controlled by the WASD keys or the arrow keys:
 *   (space)-key			=> pick or drop
 *   mouse-click			=> pick or drop
 * (m)-key or (F1)-key	=> toggle mouse-view (1st-person) or avatar(3rd-person)
+* (l)-key => toggle camera type:  1) Lazy,  2) Tight
 
-In case of [unforseen] problems with the game, please switch to 1st-person mode with the (m)-key.
+In case of [unforseen] problems with the game, temporarily switch to 1st-person mode with the (m)-key.
 
 
 ### joystick
