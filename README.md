@@ -13,11 +13,12 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.2.6/av29jan18.tar.gz
 
 **ver 1.2.6 -- 29jan18**
 
+* Generally upgraded Virtual Camera System;
 * Higher perspective in maze rooms;
 * Improved camera handling logic with two options toggled with the L-key:
-	* new lazy camera default for better theatrics, or
+	* new Lazy camera default for better theatrics, or
 	* classic tight camera for almost first-person control;
-	* first-person mode is still toggled with M-key.
+	* as before, first-person mode is still toggled with M-key.
 * Darker [as intended] maze9;
 
 **ver 1.2.5 -- 10jan18**
