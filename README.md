@@ -11,7 +11,7 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.2.6/av29jan18.tar.gz
 
 ## Whats new:
 
-Video:  Omar escapes thru moveable bridge:
+Video:  Omar escapes mamba thru moveable bridge:
 https://youtu.be/8qbAJ-JvvXs
 
 
