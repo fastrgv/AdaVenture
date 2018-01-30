@@ -11,6 +11,10 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.2.6/av29jan18.tar.gz
 
 ## Whats new:
 
+Video:  Omar escapes thru moveable bridge:
+https://youtu.be/8qbAJ-JvvXs
+
+
 **ver 1.2.6 -- 29jan18**
 
 * Generally upgraded Virtual Camera System;
