@@ -15,6 +15,15 @@ Video:  Omar escapes mamba thru moveable bridge:
 https://youtu.be/8qbAJ-JvvXs
 
 
+**ver 1.2.7 -- 24feb18**
+
+* Now using old english font;
+* Added nicer hiRes skyboxes;  removed fog that obscures them;
+* Improved avatar code to display hats, etc.
+* Fixed error in tree shader darkness;
+* Added spinning Jupiter in the night sky @ end of chapter 2.
+
+
 **ver 1.2.6 -- 29jan18**
 
 * Generally upgraded Virtual Camera System;
