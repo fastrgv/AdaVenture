@@ -1,6 +1,6 @@
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/mcraftAV.jpg)
 
-![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/introAV.jpg)
+![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/nuAV.jpg)
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
