@@ -15,6 +15,16 @@ Video:  Omar escapes mamba thru moveable bridge:
 https://youtu.be/8qbAJ-JvvXs
 
 
+**ver 1.2.8 -- 04mar18**
+
+* Now supports TTF fonts through Freetype library;
+* Using Felix Krause's FreeTypeAda [MIT];
+* Using Dmitry Kazakov's Strings-Edit [gnuGPL2];
+* Still using thin bindings to OpenGL, SDL2, SFML;
+* Still using fully modern graphics methods.
+* Corrections made to spider & dragon movements.
+
+
 **ver 1.2.7 -- 24feb18**
 
 * Now using old english font;
@@ -110,8 +120,8 @@ Movement is controlled by the WASD keys or the arrow keys:
 *   (esc)-key 			=> exit;
 *   (space)-key			=> pick or drop
 *   mouse-click			=> pick or drop
-* (m)-key or (F1)-key	=> toggle mouse-view (1st-person) or avatar(3rd-person)
-* (l)-key => toggle camera type:  1) Lazy,  2) Tight
+* (m)-key or (F1)-key		=> toggle mouse-view (1st-person) or avatar(3rd-person)
+* (l)-key 			=> toggle camera type:  1) Lazy,  2) Tight
 
 In case of [unforseen] problems with the game, temporarily switch to 1st-person mode with the (m)-key.
 
@@ -152,6 +162,9 @@ If the need arises, copy the file "default_settings.txt" to "settings.txt".  The
 	* AdaPngLib
 	* gl
 	* sdlada
+	* FreeTypeAda
+	* Kazakov strings
+	* SFML
 
 ## Rebuild Requirements:
 * systems:  Windows, OSX or GNU/Linux
@@ -259,7 +272,7 @@ whence the linker should now be able to find what it wants.  But if there is mor
 ## what is special about this project?
 Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, and SFML-Audio (because of its elegant audio interface).
+Focusing on portability, transparency, and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, and string utils by Dmitry Kazakov.
 
 The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for any OpenGL Ada project.
 
@@ -325,6 +338,9 @@ In order to make these usable, I had to modernize them to glsl version 330 speci
 * www.OpenGameArt.org
 * Some beautiful hi-res skyboxes used [from OpenGameArt.org] are the work of Heiko Irrgang <hi@93-interactive.com> and licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.  To view a copy of this license, visit (http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.  See also the accompanying file ccsa3_license.txt.
 
+### Bindings & Utilities
+
+Thanks to Dmitry Kazakov and Felix Krause.
 
 
 ## Best Download Sites for my games:
