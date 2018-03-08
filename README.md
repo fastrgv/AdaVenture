@@ -7,76 +7,21 @@ Click on the large tar.gz file under releases to download all source & binaries 
 https://github.com/fastrgv/AdaVenture/releases/download/v1.2.8/av4mar18.tar.gz
 
 
-# AdaVenture
 
-## Whats new:
 
 Video:  Omar escapes mamba thru moveable bridge:
 https://youtu.be/8qbAJ-JvvXs
 
 
-**ver 1.2.8 -- 04mar18**
+# AdaVenture
 
-* Now supports TTF fonts through Freetype library;
-* Using Felix Krause's FreeTypeAda [MIT];
-* Using Dmitry Kazakov's Strings-Edit [gnuGPL2];
-* Still using thin bindings to OpenGL, SDL2, SFML;
-* Still using fully modern graphics methods.
-* Corrections made to spider & dragon movements.
+## Whats new:
 
 
-**ver 1.2.7 -- 24feb18**
+**ver 1.2.9 -- 9mar18**
 
-* Added nicer hiRes skyboxes;  removed fog that obscures them;
-* Improved avatar code to display hats, etc.
-* Fixed error in tree shader darkness;
-* Added spinning Jupiter in the night sky @ end of chapter 2.
-
-
-**ver 1.2.6 -- 29jan18**
-
-* Generally upgraded Virtual Camera System;
-* Higher perspective in maze rooms;
-* Improved camera handling logic with two options toggled with the L-key:
-	* new Lazy camera default for better theatrics, or
-	* classic tight camera for almost first-person control;
-	* as before, first-person mode is still toggled with M-key.
-* Darker [as intended] maze9;
-
-**ver 1.2.5 -- 10jan18**
-
-* Found & fixed the numerics:argument-error causing occasional aborts;
-* Newest Blinn-Phong light shaders include gamma correction;
-* Adjusted sizes of avatar & chalice;
-
-
-**ver 1.2.4 -- 5jan18**
-
-* Added new "darkmaze" to chapter 2 adventure on the far side of the labyrinth of the Minotaur that now hides the chalice (modeled after the classic "orange" maze #2);
-* Added a mapRoom directory to help lost souls;
-* Improved shaders to include full Phong light modeling, with ambient, diffuse, and specular attenuated lighting effects.  Added glowing chalice;
-
-**ver 1.2.3 -- 27dec17**
-
-* Updated storyline so chapter 2 is more challenging.
-* Repaired mamba;  improved shader coding.
-* Replaced hidden maze passages with the classic moveable bridge;
-
-
-**ver 1.2.2 -- 17dec17**
-
-* Significant improvement in maze FOG realism;
-* Nice looking low-hanging FOG added to exterior, including skybox.
-* Added music, more sounds.
-* Logic corrections.
-
-
-**ver 1.2.1 -- 4dec17**
-
-* Updated to SDL v2.0.7 on Linux, Windows.
-* Updated to SDL v2.0.7x on OSX.
-* Restore reading controller settings file using intrinsic Exists() ftn.
-* The green mamba is now even more ominous with a head raised to spit in your eyes.  However, you might survive if you are holding a sword.
+* Improved code for texture handling;  clarified and exposed the inconsistent semantics of OpenGL textures versus cubemaps.  Now, all texture png images are un-inverted.
+* Added new fireball obstacle [cued by ominous music] in the Labyrinth that precludes a simple escape.
 
 
 ## More change-history at end of file
@@ -86,9 +31,9 @@ https://youtu.be/8qbAJ-JvvXs
 ## AdaVenture Game Description
 AdaVenture is a kid-friendly retro point & click game, essentially intended to be a minimal extension to 3D of the original 2D Atari game named "Adventure".  Now runs on Windows, OSX, and GNU/Linux.
 
-Set in ancient Persia, it begins outside the castle of the young King Xerxes, who inherited a golden chalice from his father, Darius the Great.  Coveted by Greek foes King Leonidas of Sparta and King Minos of Crete, the chalice has been stolen.
+Set in ancient Persia, it begins outside the castle of the young King Xerxes, who inherited a magical golden chalice from his father, Darius the Great.  Coveted by Greek foes King Leonidas of Sparta and King Minos of Crete, the chalice has been stolen.
 
-Your quest is to seek and return the royal chalice to its pedestal within the castle of Xerxes...a stealth mission to avoid open hostilities.  But, there will be obstacles to overcome.  You must find the keys to various realms, defend yourself against dragons and the Minotaur, avoid snakes and pesky bats who steal things only to drop them in random locations, and survive the maze of the green mamba.
+Your quest is to seek and return the royal chalice to its pedestal within the castle of Xerxes...a stealth mission to preclude open hostilities.  But, there will be obstacles to overcome.  You must find the keys to various realms, defend yourself against dragons and the Minotaur, avoid snakes and pesky bats who steal things only to drop them in random locations, and survive the maze of the green mamba.
 
 
 
@@ -97,10 +42,10 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 * Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered binaries.
 * Windows, GNU/Linux and OSX binaries provided, as well as full source. 
 * Laptop friendly controls;  supports Mac Retina displays in high DPI mode.
-* Serves as an example of modern OpenGL programming in Ada or C++ using GLSL 330 and shaders.
+* Serves as an example of modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and Freetype fonts.
 * The Ada bindings to OpenGL & SDL2 in this app are usable as a standalone library for most any modern Ada graphics project.
-* Currenly, the game has two easy campaigns:  Sparta or Crete.  So there is not yet any reset capability...you must replay from the beginning if you die.  You select the desired campaign at the beginning of the game.
-* To change the appearance of the avatar, simply download your favorite MineCraft Skin, rename it to "skin.png" and put it into the ./data/ directory.  You should probably backup the current skin before you do this, in case of trouble.  See http://www.minecraftskins.net/.  See also ./data/avatars/ for a small [untested] selection.
+* Currenly, the game has one fairly easy campaign in Sparta, and a more difficult one in Crete.  There is no reset capability...you must replay from the beginning if you die.  You select the desired campaign at the beginning of the game.
+* To change the appearance of the avatar, simply download your favorite MineCraft Skin, rename it to "skin.png" and put it into the ./data/ directory.  You should probably backup the current skin before you do this, in case of trouble.  See http://www.minecraftskins.net/.  See also ./data/avatars/ for a small selection.
 
 
 
@@ -116,13 +61,13 @@ Movement is controlled by the WASD keys or the arrow keys:
 	(Lt)	(Dn)	(Rt)
 ---------------------------
 
-*   (esc)-key 			=> exit;
+*   (esc)-key 				=> exit;
 *   (space)-key			=> pick or drop
 *   mouse-click			=> pick or drop
-* (m)-key or (F1)-key		=> toggle mouse-view (1st-person) or avatar(3rd-person)
-* (l)-key 			=> toggle camera type:  1) Lazy,  2) Tight
+*		(m)-key			 	=> toggle Mouse-view (1st-person) or avatar(3rd-person)
+*		(l)-key				=> toggle camera type:  1)Lazy, 2)Tight
 
-In case of [unforseen] problems with the game, temporarily switch to 1st-person mode with the (m)-key.
+In case of unexpected control problems with the game, or if you want to easily inspect some curious feature (like Jupiter in the night sky), temporarily switch to 1st-person mode with the (m)-key.
 
 
 ### joystick
@@ -155,7 +100,7 @@ If the need arises, copy the file "default_settings.txt" to "settings.txt".  The
 
 
 ## Open Source libraries included that allow rebuilding:
-* SFML, SDL2, FLAC, ogg, vorbis, openal
+* SFML, SDL2, FLAC, ogg, vorbis, openal, freetype
 * glext.lib for Windows
 * the included "bindings" directory contains Ada interfaces:
 	* AdaPngLib
@@ -174,22 +119,26 @@ Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.a
 
 
 ## Setup & Running Adaventure:
+
 Unzip the archive.
-Windows users may see some error messages pertaining to directory links.  These can be ignored.
+
+Windows users will see some error messages pertaining to symbolic directory links.  These links are needed only on OSX, and can be ignored.
+
 Open a commandline terminal, and cd to the install directory.
 
 Linux users should type "adaventure_gnu" to start the game.  You may also double click its icon in file manager.
 
-Similarly Windows users type "adaventure.exe".  Note the DLLs must be collocated.
+Similarly Windows users type "adaventure.exe".  Note the delivered DLLs must be present.
 
-Mac users may initiate the game by opening a terminal, navigating to the install_directory and typing "adaventure_osx",  or by navigating to the installation directory in Finder and clicking the "adaventure.app" icon named "AdaVenture".
+Mac users type "adaventure_osx",  or navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".
 
-The install_directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data, as well as the puzzle definitions.
+The install_directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data.
 
 --------------------------------------------------------------------------
 Open source Ada developers are welcome to help improve or extend this game.
 
-Developer or not, send improvements, comments, suggestions or questions to:
+Please send improvements, comments, suggestions or questions to:
+
 fastrgv@gmail.com
 
 
@@ -197,15 +146,15 @@ fastrgv@gmail.com
 
 ## Build instructions for AdaVenture:
 
-Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I don't know how portable the Windows executable is, but it was built on Windows 10 in 32-bit mode.  The Mac binary, adaventure_osx, should run on most any standard Mac with a recent version of OSX.  The linux binary, adaventure_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, openal, crypto.
+Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I believe the Windows executable is fairly portable.  It was built on Windows 10 in 32-bit mode.  The Mac binary, adaventure_osx, should run on most any standard Mac with a recent version of OSX.  The linux binary, adaventure_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, openal, crypto, freetype.
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it probably will not run, and you will need to recompile.
 
-Build scripts for GNAT2015 or newer are provided.  Suggestions or help improving the build process is welcome. 
+Build scripts for GNAT2015 or newer are provided.
 
-Three scripts for each OS have the form Xd.sh, Xs.sh, Xss.sh, where the "d" represents "dynamic", and produces the smallest executable.  The "ss" represents the "most static" choice, using more static libraries making its executable larger.  I believe that all of them should work.
+You may find as many as three scripts for each OS with the form Xd.sh, Xs.sh, Xss.sh, where the "d" represents "dynamic", and produces the smallest executable.  The "ss" represents the "most static" choice, using more static libraries making its executable larger.  I believe that all of them should work.
 
-Note that due to a recent script change, a linux build machine need not have a C++ compiler installed.  Only GNAT from AdaCore is required.
+Note that a linux build machine need not have a C++ compiler installed.  Only GNAT from AdaCore is required.
 
 -------------------------------------------------------
 **msWin32** => wcmp.bat
@@ -229,6 +178,7 @@ If the delivered linux binary does not run...
 * Manually install GNAT GPL from libre.adacore.com/download/.
 * Rerun the compile script lcmpd.sh.
 
+
 ### Link Problems during linux build:
 
 On a linux build machine, you might have repairable link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
@@ -244,7 +194,7 @@ whence the linker should now be able to find what it wants.  But if there is mor
 
 * This approach encapsulates the details of avatar shape, color, and movement within GLSL shaders and a related code object that defines vertices and texture maps.  The object may be an Ada package or C++ class.
 
-* Programmatic inputs include uniforms for time, position, and attitude.  The shaders then offload the realtime computational burdens onto the graphics processor.
+* Programmatic inputs include uniforms for time, position, attitude, & type of motion.  The shaders then offload the realtime computational burdens onto the graphics processor.
 
 * Data that defines shape and color, as well as the uniforms and functions that define behavior, reside completely within the object and shaders.  This data can ultimately be as detailed and refined as your imagination permits.  And any refinements made are not obfuscated in some esoteric or proprietary format with a limited audience, but remain fully portable and easily enhanced by most any developer using Free Open Source tools and compilers.
 
@@ -252,7 +202,7 @@ whence the linker should now be able to find what it wants.  But if there is mor
 
 * But a huge selection of available MineCraft skins lead to the present avatar object design.
 
-* In this example, the texture object is a cube with radius one that is defined in 6 disjoint cubelets.  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs.  The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
+* In this example, the texture object is a cube with radius one that is defined as 6 disjoint cubelets.  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs.  The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
 
 * The result is an utterly portable avatar defined by an image and 4 text files:
 	* texture object body, avatarobj.adb
@@ -269,13 +219,20 @@ whence the linker should now be able to find what it wants.  But if there is mor
 
 
 ## what is special about this project?
-Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Achieves version 3.3 core profile contexts.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies on a thin SDL2 binding from Dan Vazquez, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, and string utils by Dmitry Kazakov.
+For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
+
+Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding from Dan Vazquez (modified), a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, and string utilities by Dmitry Kazakov.
 
 The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for any OpenGL Ada project.
 
-For the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many potential improvements to be made.  Suggestions are welcomed, as are coding or design improvements.  If you make improvements, please send then to fastrgv@gmail.com
+For the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many obvious improvements to be made.  
+
+This game is a work in progress, so please excuse any scaffolding and debugging code has not been removed.
+
+If you make improvements, please send then to <fastrgv@gmail.com>
 
 
 
@@ -334,8 +291,9 @@ In order to make these usable, I had to modernize them to glsl version 330 speci
 ### SkyBoxes 
 
 * www.custommapmakers.org/skyboxes.php
-* www.OpenGameArt.org
+* www.OpenGameArt.org;  thanks to Pieter Spiney Verhoeven (cloudy)
 * Some beautiful hi-res skyboxes used [from OpenGameArt.org] are the work of Heiko Irrgang <hi@93-interactive.com> and licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.  To view a copy of this license, visit (http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.  See also the accompanying file ccsa3_license.txt.
+
 
 ### Bindings & Utilities
 
@@ -359,7 +317,73 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 -------------------------------------------------------------------------
 -------------------------------------------------------------------------
 
-## Update History
+## Update History:
+
+
+**ver 1.2.8 -- 04mar18**
+
+* Now supports TTF fonts through Freetype library;
+* Using Felix Krause's FreeTypeAda [MIT];
+* Using Dmitry Kazakov's Strings-Edit [gnuGPL2];
+* Still using thin bindings to OpenGL, SDL2, SFML;
+* Still using fully modern graphics methods.
+* Corrections made to spider & dragon movements.
+
+
+**ver 1.2.7 -- 24feb18**
+
+* Added nicer hiRes skyboxes;  removed fog that obscures them;
+* Improved avatar code to display hats, etc.
+* Fixed error in tree shader darkness;
+* Added spinning Jupiter in the night sky @ end of chapter 2.
+* Added OSX link from ~/Resources/ to /data/.
+
+
+**ver 1.2.6 -- 29jan18**
+
+* Higher perspective in maze rooms;
+* Improved camera handling logic with two options toggled with the L-key:
+	* new lazy camera default for better theatrics, or
+	* classic tight camera for almost first-person control;
+	* first-person mode is still toggled with M-key.
+* Darker [as intended] maze9;
+
+
+**ver 1.2.5 -- 10jan18**
+
+* Found & fixed the numerics:argument-error causing occasional aborts;
+* Newest Blinn-Phong light shaders include gamma correction;
+* Adjusted sizes of avatar & chalice;
+
+
+**ver 1.2.4 -- 5jan18**
+
+* Added new "darkmaze" to chapter 2 adventure on the far side of the labyrinth of the Minotaur that now hides the chalice (modeled after the classic "orange" maze #2);
+* Added a mapRoom directory to help lost souls;
+* Improved shaders to include full Phong light modeling, with ambient, diffuse, and specular attenuated lighting effects.  Added glowing chalice;
+
+
+**ver 1.2.3 -- 27dec17**
+
+* Updated storyline so chapter 2 is more challenging.
+* Repaired mamba;  improved shader coding.
+* Replaced hidden maze passages with the classic moveable bridge;
+
+
+**ver 1.2.2 -- 17dec17**
+
+* Significant improvement in maze FOG realism;
+* Nice looking low-hanging FOG added to exterior scene, including skybox.
+* Added music, more sounds.
+* Logic corrections.
+
+
+**ver 1.2.1 -- 4dec17**
+
+* Updated to SDL v2.0.7 on Linux, Windows.
+* Updated to SDL v2.0.7x on OSX.
+* Restore reading controller settings file using intrinsic Exists() ftn.
+* The green mamba is now even more ominous with a head raised to spit in your eyes.  However, you might survive if you are holding a sword.
 
 
 **ver 1.2.0 -- 11nov17**
@@ -462,6 +486,7 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 * Initial version with only 1 level.  Enhancements and more levels coming.
 * Foggy maze; dragon, keys to various realms, bat, golden chalice.
+
 
 
 
