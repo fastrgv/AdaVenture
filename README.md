@@ -17,6 +17,15 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 1.3.0 -- 14mar18**
+
+* Scene transitions code significantly improved & simplified,  elliminating unintended transitions by accounting for velocity vector.  The multiply interconnected mazes are now better organized and documented using Dmitry Kazakov's Tables library.
+* Jupiter now appears at end of both levels.
+* Improved source code directory layout;  clarified utility names.
+* Simplified ftex interface.
+* Replaced a missing maze wall.
+
+
 
 **ver 1.2.9 -- 9mar18**
 
