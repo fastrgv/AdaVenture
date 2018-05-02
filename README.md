@@ -17,28 +17,12 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
-**ver 1.3.1 -- 16apr18**
+**ver 1.3.2 -- 03may18**
 
-* Improved & simplified OSX builds using static non-standard libs;
-* Added GPR scripts for those who prefer using gprbuild;
-* Corrected fog errors;  improved skybox & exterior fog;
-* Better clarified use of perlin noise to benefit developers;
+* Great new trees:  new 3-plane w3tree package [Class] has improved drawing algorithm to render each of 6 wings from back to front.  Nicer looking trees are the result.  Easy to use for indie developers.
+* Added tree branch end flutter using only fragment shader.
+* Restructured & improved code robustness and comprehensibility;
 
-
-**ver 1.3.0 -- 14mar18**
-
-* Scene transitions code significantly improved & simplified,  elliminating unintended transitions by accounting for velocity vector.  The multiply interconnected mazes are now better organized and documented using Dmitry Kazakov's Tables library.
-* Jupiter now appears at end of both levels.
-* Improved source code directory layout;  clarified utility names.
-* Simplified ftex interface.
-* Replaced a missing maze wall.
-
-
-
-**ver 1.2.9 -- 9mar18**
-
-* Improved code for texture handling;  clarified and exposed the inconsistent semantics of OpenGL textures versus cubemaps.  Now, all texture png images are un-inverted.
-* Added new fireball obstacle [cued by ominous music] in the Labyrinth that precludes a simple escape.
 
 
 ## More change-history at end of file
@@ -336,6 +320,28 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 ## Update History:
 
+**ver 1.3.1 -- 16apr18**
+
+* Improved & simplified OSX builds using static non-standard libs;
+* Added GPR scripts for those who prefer using gprbuild;
+* Corrected fog errors;  improved skybox & exterior fog;
+* Better clarified use of perlin noise to benefit developers;
+
+
+**ver 1.3.0 -- 14mar18**
+
+* Scene transitions code significantly improved & simplified,  elliminating unintended transitions by accounting for velocity vector.  The multiply interconnected mazes are now better organized and documented using Dmitry Kazakov's Tables library.
+* Jupiter now appears at end of both levels.
+* Improved source code directory layout;  clarified utility names.
+* Simplified ftex interface.
+* Replaced a missing maze wall.
+
+
+
+**ver 1.2.9 -- 9mar18**
+
+* Improved code for texture handling;  clarified and exposed the inconsistent semantics of OpenGL textures versus cubemaps.  Now, all texture png images are un-inverted.
+* Added new fireball obstacle [cued by ominous music] in the Labyrinth that precludes a simple escape.
 
 **ver 1.2.8 -- 04mar18**
 
