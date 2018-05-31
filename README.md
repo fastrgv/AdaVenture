@@ -4,8 +4,7 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-
-
+https://github.com/fastrgv/AdaVenture/releases/download/v1.3.3/av1jun18.tar.gz
 
 
 
