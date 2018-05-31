@@ -17,12 +17,11 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
-**ver 1.3.2 -- 03may18**
 
-* Great new trees:  new 3-plane w3tree package [Class] has improved drawing algorithm to render each of 6 wings from back to front.  Nicer looking trees are the result.  Easy to use for indie developers.
-* Added tree branch end flutter using only fragment shader.
-* Restructured & improved code robustness and comprehensibility;
+**ver 1.3.3 -- 1jun18**
 
+* Improved tree branch flutter;
+* Upgraded to a galloping Minotaur beast that uses a Minecraft skin;
 
 
 ## More change-history at end of file
@@ -108,7 +107,7 @@ If the need arises, copy the file "default_settings.txt" to "settings.txt".  The
 	* gl
 	* sdlada
 	* FreeTypeAda
-	* Kazakov strings
+	* Kazakov strings, tables
 	* SFML
 
 ## Rebuild Requirements:
@@ -120,6 +119,10 @@ Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.a
 
 
 ## Setup & Running Adaventure:
+
+Please note that the application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows, 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
+
+(Windows users see also:  windows-setup.txt)
 
 Unzip the archive.
 
@@ -189,6 +192,12 @@ sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
 whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that uses your accelerated-graphic-driver.
 
 
+---------------------------------------------------------
+**GPR note:**
+There is an alternative build system included for those who prefer, and know how to use GPR:  under ./buildScriptsGpr/ .  There are 3 high level shell scripts to drive each:  gnugpr.sh, osxgpr.sh, wingpr.bat.  (They must all be moved up 1 directory to work.)
+
+
+
 
 ----------------------------------------------------------------------
 ## For Developers Only:  Portable Avatar Using Shaders
@@ -225,7 +234,7 @@ For developers, this project can serve as a testbed for learning modern OpenGL a
 
 Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding from Dan Vazquez (modified), a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, and string utilities by Dmitry Kazakov.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding from Dan Vazquez (modified), a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, and string and table utilities by Dmitry Kazakov.
 
 The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for any OpenGL Ada project.
 
@@ -269,7 +278,7 @@ The particular choices of sound, image, and fragment shader files [x.fs] deliver
 ### SoundFiles
 Many sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file ccnc3_license.txt.  see also:  (http://creativecommons.org/licenses/by-nc/3.0/legalcode/)
 
-One track from incompetech.com (also CC-by-3 license) thanks to Kevin MacLeod.
+One track (for the labyrinth) from incompetech.com (also CC-by-3 license) thanks to Kevin MacLeod (Cephalopod).
 
 Some original Atari sounds were also used.
 
@@ -320,6 +329,13 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 ## Update History:
 
+**ver 1.3.2 -- 03may18**
+
+* Great new trees:  new 3-plane w3tree package [Class] has improved drawing algorithm to render each of 6 wings from back to front.  Nicer looking trees are the result.  Easy to use for indie developers.
+* Added tree branch end flutter using only fragment shader.
+* Restructured & improved code robustness and comprehensibility;
+
+
 **ver 1.3.1 -- 16apr18**
 
 * Improved & simplified OSX builds using static non-standard libs;
@@ -337,11 +353,11 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 * Replaced a missing maze wall.
 
 
-
 **ver 1.2.9 -- 9mar18**
 
 * Improved code for texture handling;  clarified and exposed the inconsistent semantics of OpenGL textures versus cubemaps.  Now, all texture png images are un-inverted.
 * Added new fireball obstacle [cued by ominous music] in the Labyrinth that precludes a simple escape.
+
 
 **ver 1.2.8 -- 04mar18**
 
@@ -509,7 +525,5 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 * Initial version with only 1 level.  Enhancements and more levels coming.
 * Foggy maze; dragon, keys to various realms, bat, golden chalice.
-
-
 
 
