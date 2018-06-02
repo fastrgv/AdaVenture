@@ -1,3 +1,5 @@
+![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/minos.gif)
+
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/mcraftAV.jpg)
 
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/nuAV.jpg)
