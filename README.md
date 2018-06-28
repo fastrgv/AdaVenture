@@ -21,7 +21,16 @@ https://youtu.be/8qbAJ-JvvXs
 ## Whats new:
 
 
-**ver 1.3.3 -- 1jun18**
+**ver 1.3.4 -- 29jun18**
+
+* Added steaming nostrils to the Minotaur;
+* Changed default linux build scripts to AdaCore 2018 or gnuAda v7.3.0;
+* Changed default linux SDL libs to shared;
+* Updated AdaPngLib, AdaZLib;
+* Added 64bit Windows executable & build files.  Still supports 32bit Windows, OSX and Linux.
+
+
+**ver 1.3.3 -- 02jun18**
 
 * Improved tree branch flutter;
 * Upgraded to a galloping Minotaur beast that uses a Minecraft skin;
@@ -129,15 +138,15 @@ Please note that the application's root directory [./avent/] contains files for 
 
 Unzip the archive.
 
-Windows users will see some error messages pertaining to symbolic directory links.  These links are needed only on OSX, and can be ignored.
+Windows users might see some error messages pertaining to symbolic directory links.  These links are needed only on OSX, and can be ignored.
 
 Open a commandline terminal, and cd to the install directory.
 
 Linux users should type "adaventure_gnu" to start the game.  You may also double click its icon in file manager.
 
-Similarly Windows users type "adaventure.exe".  Note the delivered DLLs must be present.
+Similarly Mac users type "adaventure_osx",  or navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".
 
-Mac users type "adaventure_osx",  or navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".
+Windows users type either a) binW32\adaventure32.exe or b) binW64\adaventure64.exe
 
 The install_directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data.
 
@@ -161,12 +170,13 @@ Build scripts for GNAT2015 or newer are provided.
 
 You may find as many as three scripts for each OS with the form Xd.sh, Xs.sh, Xss.sh, where the "d" represents "dynamic", and produces the smallest executable.  The "ss" represents the "most static" choice, using more static libraries making its executable larger.  I believe that all of them should work.
 
-Note that a linux build machine need not have a C++ compiler installed.  Only GNAT from AdaCore is required.
+Note that a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT from AdaCore is required.
 
 -------------------------------------------------------
-**msWin32** => wcmp.bat
+**msWin32** => prep32path.bat, wcmp32a.bat, wcmp32b.bat
+**msWin64** => prep64path.bat, wcmp64a.bat, wcmp64b.bat
 
-build script that requires libraries included in ./libs/win/.
+Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for 32bit AdaCore 2017 or 64bit AdaCore 2018 compilers.
 
 
 -------------------------------------------------------
@@ -528,5 +538,7 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 * Initial version with only 1 level.  Enhancements and more levels coming.
 * Foggy maze; dragon, keys to various realms, bat, golden chalice.
+
+
 
 
