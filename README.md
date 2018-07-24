@@ -20,6 +20,12 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 1.3.6 -- 24jul18**
+
+* Corrected input handling in case of DOS-formatted configuration file.
+* Changed freetype library to assure linux portability.
+* Added music credits in closing scenes.
+* Added alternate build scripts for OSX.
 
 **ver 1.3.4 -- 29jun18**
 
