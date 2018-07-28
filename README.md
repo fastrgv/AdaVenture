@@ -20,12 +20,15 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
-**ver 1.3.6 -- 24jul18**
+**ver 1.3.6 -- 28jul18**
 
 * Corrected input handling in case of DOS-formatted configuration file.
 * Changed freetype library to assure linux portability.
 * Added music credits in closing scenes.
 * Added alternate build scripts for OSX.
+* Update to sfml 2.5.0.
+* Update to AdaCore2018 for linux, osx.
+* Simplified bindings.
 
 **ver 1.3.4 -- 29jun18**
 
