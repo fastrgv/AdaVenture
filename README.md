@@ -1,4 +1,5 @@
-![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/minos.gif)
+![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/trim_smallMinotaur.gif)
+
 
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/mcraftAV.jpg)
 
