@@ -7,7 +7,7 @@
 
 Click on the large tar.gz file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v1.3.6/av28jul18.tar.gz
+https://github.com/fastrgv/AdaVenture/releases/download/v1.3.7/av23aug18.tar.gz
 
 
 
@@ -431,132 +431,6 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 * Added new "darkmaze" to chapter 2 adventure on the far side of the labyrinth of the Minotaur that now hides the chalice (modeled after the classic "orange" maze #2);
 * Added a mapRoom directory to help lost souls;
 * Improved shaders to include full Phong light modeling, with ambient, diffuse, and specular attenuated lighting effects.  Added glowing chalice;
-
-
-**ver 1.2.3 -- 27dec17**
-
-* Updated storyline so chapter 2 is more challenging.
-* Repaired mamba;  improved shader coding.
-* Replaced hidden maze passages with the classic moveable bridge;
-
-
-**ver 1.2.2 -- 17dec17**
-
-* Significant improvement in maze FOG realism;
-* Nice looking low-hanging FOG added to exterior scene, including skybox.
-* Added music, more sounds.
-* Logic corrections.
-
-
-**ver 1.2.1 -- 4dec17**
-
-* Updated to SDL v2.0.7 on Linux, Windows.
-* Updated to SDL v2.0.7x on OSX.
-* Restore reading controller settings file using intrinsic Exists() ftn.
-* The green mamba is now even more ominous with a head raised to spit in your eyes.  However, you might survive if you are holding a sword.
-
-
-**ver 1.2.0 -- 11nov17**
-
-* added prebuilt executables for msWindows;
-* added working build scripts for msWindows;
-* Corrected dragon roar logic on reentry;
-* Improved dead dragon visibility;
-* Removed unused libraries;
-
-
-**ver 1.1.2 -- 14jul17**
-
-* Updated linux scripts to use a) rebuilt SFML v2.4.2;  b) AdaCore 2017.
-* Introduction now mentions that m-key toggles the Avatar.
-* Updated OSX scripts to use SFML v2.4.2;
-* Added startup messages giving OGL version/profile.
-* Added scary hiss sound warning when snake is near;
-* Added locked door to labyrinth requiring black key.
-
-
-
-**ver 1.1.1 -- 2mar17-19may17**
-
-* Include statically linked linux exe for enhanced portability.
-* Repaired a rendering error that failed to draw items dropped on the labyrinth floor.
-* Removed deprecated OpenGL commands and enums that may have caused aborts.
-* Added fantasy tree in labyrinth;  Zoroastrian embellishment on castle.
-* Improved OpenGL error checking.
-* Added an avatars directory loaded with a few alternates.
-
-
-
-**ver 1.1.0 -- 5feb17**
-
-* Repaired pick logic, particularly while in 3rd person (avatar) mode.  Now, whenever a hand appears an object is pickable, and the avatar becomes translucent.
-* Added illumination effect within castle when golden chalice is restored.
-
-
-**ver 1.0.9 -- 5jan17**
-
-* Corrected a duplicate window glitch.
-* Refined compiler scripts.
-
-
-**ver 1.0.8 -- 29dec16**
-
-* Revised the avatar programming to allow the use of any Minecraft Skin.  You can simply rename your favorite png file to use it in the game.  See instructions in "game features".
-* Added WASD keys for movement.
-* Improved build system to be compatible with more linux distros.
-* Improved OpenGL coding to run on less capable graphics hardware.
-
-**ver 1.0.7 -- 20dec16**
-
-* Added a Tux-the-penguin avatar.  Use the (F1)-key or (m)-key to toggle between mouse view (first person) and a third person avatar view.  This enhancement required the implementation of a preliminary camera handling strategy, which in general can be quite complex.
-* Fixed the handlers for game controllers:  joysticks or gamepads.
-
-
-**ver 1.0.6 -- 2dec16**
-
-* Improved linux build scripts, with varying degrees of static linking.  See build instructions.
-* Now uses an improved interface binding Ada to SFML audio.
-* Now using SFML 2.4.1.
-* Repaired OSX bundling.
-* Revised labyrinth.
-* New prolog screen allows user to select game (1 or 2).
-
-
-**ver 1.0.4 -- 3nov16**
-
-* Enhanced castle.
-* Added second level.  The Greeks are at it again!  This time the Minoans steal the coveted chalice.  The "orange" Atari maze leads to the labyrinth of the Minotaur;  the Red Dragon and the Bat are increasingly problematic.
-* Added an endgame tribute to Korla Pandit, an extraordinary musician, and one of my favorites.
-
-
-**ver 1.0.3 -- 10oct16**
-
-* Improved sword & chalice icons.
-* Fixed bad dragon behaviors.
-* Added water feature with moorish pillars to castle.
-* other minor improvements including a brighter world upon success.
-* improved drawing methods for moorish arches using distance-sort.
-
-
-**ver 1.0.2 -- 22sep16**
-
-* Maze has many improvements.  It is now redesigned to match the "blue" maze from the original Atari Adventure game.  This involves weird and puzzling interconnections.
-* Added a pesky bat, a lethal red-dragon, and an avoidable green-mamba to maze.  Beware!
-
-
-**ver 1.0.1 -- 16sep16**
-
-* improved final sound sequence;  added original roar to dragon encounters.
-* significant improvements to scene transitions and views through doorways.
-* larger, actual size castle within skybox exterior scene.
-* improved dragon trajectory.
-
-
-**ver 1.0.0 -- 9sep16**
-
-* Initial version with only 1 level.  Enhancements and more levels coming.
-* Foggy maze; dragon, keys to various realms, bat, golden chalice.
-
 
 
 
