@@ -265,7 +265,7 @@ For developers, this project can serve as a testbed for learning modern OpenGL a
 
 Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding from Dan Vazquez (modified), a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, and string and table utilities by Dmitry Kazakov.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, and string and table utilities by Dmitry Kazakov.
 
 The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for any OpenGL Ada project.
 
