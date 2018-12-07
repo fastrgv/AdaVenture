@@ -21,6 +21,12 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 1.3.8 -- 7dec18**
+
+* Added exterior wind sound;
+* Improved portability of linux build;
+
+
 **ver 1.3.7 -- 23aug18**
 
 * Completed update to SFML v2.5.0 for all platforms;
