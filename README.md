@@ -118,7 +118,7 @@ The application's root directory [./avent/] contains files for deployment on 3 p
 
 (Windows users see also:  windows-setup.txt)
 
-Unzip the archive.
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 Windows users might see some error messages pertaining to symbolic directory links.  These links are needed only on OSX, and can be ignored.
 
