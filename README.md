@@ -118,13 +118,15 @@ If the need arises, copy the file "default_settings.txt" to "settings.txt".  The
 
 ## Setup & Running Adaventure:
 
-The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows, 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
+The application's main directory [./avent/] contains files for deployment on 3 platforms:  1)windows, 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
 
 (Windows users see also:  windows-setup.txt)
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
-Windows users might see some error messages pertaining to symbolic directory links.  These links are needed only on OSX, and can be ignored.
+Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this;  but so does the intrinsic command "tar -xf [filename].tar.gz", which extracts everything into the current directory.
+
+Windows users may see some error messages (that may be ignored) pertaining to directory links.  Directory links are needed only on OSX & Linux.
+
 
 Open a commandline terminal, and cd to the install directory.
 
