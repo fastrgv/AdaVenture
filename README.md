@@ -25,11 +25,15 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 1.4.0 -- 28dec18**
+
+* Zoom key z (return to default) is now incremental, like n & f;
+* Revised game Controller settings;
+* Now deliver 7z archives for better compression and simplicity of extraction on all platforms.
 
 **ver 1.3.9 -- 13dec18**
 
 * Added zoom keys z,n,f [default,Nearer,Further] to supplement mouse wheel.
-
 
 
 **ver 1.3.8 -- 7dec18**
@@ -96,9 +100,9 @@ In case of unexpected control problems with the game, or if you want to easily i
 
 ------------------------------------------------------------
 ### gamecontroller
-* Lpaddle/hat:  attitude
-* Rpaddle :  movement
-* btns:  pick or drop items
+* Lpaddle/hat:  movement
+* Rpaddle :  attitude
+* Shoulder btns:  pick or drop items
 
 ------------------------------------------------------------
 ### controller settings
