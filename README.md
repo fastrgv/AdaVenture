@@ -57,6 +57,7 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 * When looking closely at a pickable object, a hand will appear indicating that a click will pick up the object.  When holding an object, another click will drop it at the current location.  Only one object at a time may be carried.
 * Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered binaries.
 * Windows, GNU/Linux and OSX binaries provided, as well as full source. 
+* Note that both 32 and 64 bit builds for Windows are delivered.
 * Laptop friendly controls;  supports Mac Retina displays in high DPI mode.
 * For developers, serves as a great example of modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and Freetype fonts.
 * The Ada bindings to OpenGL & SDL2 in this app are usable as a standalone library for most any modern Ada graphics project.
