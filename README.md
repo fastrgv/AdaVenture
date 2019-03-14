@@ -178,8 +178,10 @@ You may find as many as three scripts for each OS with the form Xd.sh, Xs.sh, Xs
 Note that a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT from AdaCore is required.
 
 -------------------------------------------------------
-**msWin32** => prep32path.bat, wcmp32a.bat, wcmp32b.bat
-**msWin64** => prep64path.bat, wcmp64a.bat, wcmp64b.bat
+
+**msWin32** =>  wcmp32a.bat, wcmp32b.bat
+
+**msWin64** =>  wcmp64a.bat, wcmp64b.bat
 
 Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for 32bit AdaCore 2017 or 64bit AdaCore 2018 compilers.
 
