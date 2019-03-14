@@ -84,8 +84,8 @@ Movement is controlled by the WASD keys or the arrow keys:
 *   (esc)-key 				=> exit;
 *   (space)-key			=> pick or drop
 *   mouse-click			=> pick or drop
-*		(m)-key			 	=> toggle Mouse-view (1st-person) or avatar(3rd-person)
-*		(l)-key				=> toggle camera type:  1)Lazy, 2)Tight
+*  (m)-key		 	=> toggle Mouse-view (1st-person) or avatar(3rd-person)
+*  (l)-key			=> toggle camera type:  1)Lazy, 2)Tight
 
 In case of unexpected control problems with the game, or if you want to easily inspect some curious feature (like Jupiter in the night sky), temporarily switch to 1st-person mode with the (m)-key.
 
