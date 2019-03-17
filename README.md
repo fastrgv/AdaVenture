@@ -14,6 +14,9 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.4.0/av28dec18.7z
 
 
 
+Video:  Charge of the Minotaur:
+https://youtu.be/iRj_SnqXbZc
+
 Video:  Omar escapes mamba thru moveable bridge:
 https://youtu.be/8qbAJ-JvvXs
 
