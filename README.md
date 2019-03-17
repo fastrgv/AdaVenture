@@ -13,11 +13,13 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.4.0/av28dec18.7z
 
 
 
+Long Video:  Walkthru level 2:  Minoan Labyrinth
+https://youtu.be/oVW205APsS0
 
-Video:  Charge of the Minotaur:
+Short Video:  Charge of the Minotaur:
 https://youtu.be/iRj_SnqXbZc
 
-Video:  Omar escapes mamba thru moveable bridge:
+Short Video:  Omar escapes mamba thru moveable bridge:
 https://youtu.be/8qbAJ-JvvXs
 
 
