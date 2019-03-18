@@ -13,6 +13,9 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.4.0/av28dec18.7z
 
 
 
+Video:  Walkthru level 1:  Spartan Temple
+https://youtu.be/FNE20lw1AZo
+
 Long Video:  Walkthru level 2:  Minoan Labyrinth
 https://youtu.be/oVW205APsS0
 
