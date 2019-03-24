@@ -30,6 +30,13 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 1.5.0 -- 25mar19**
+
+* Improved fog;
+* Maze doors are now see-through, whenever possible;
+* Various corrections;
+
+
 **ver 1.4.0 -- 28dec18**
 
 * Zoom key z (return to default) is now incremental, like n & f;
