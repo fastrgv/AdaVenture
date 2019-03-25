@@ -12,6 +12,9 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.5.0/av25mar19.7z
 
 
 
+==============================================================
+Video:  New Open Doorways + Mamba:
+https://youtu.be/lXkuM0z0JqA
 
 Video:  Walkthru level 1:  Spartan Temple
 https://youtu.be/FNE20lw1AZo
