@@ -45,26 +45,14 @@ https://youtu.be/8qbAJ-JvvXs
 
 * Zoom key z (return to default) is now incremental, like n & f;
 * Revised game Controller settings;
-* Now deliver 7z archives for better compression and simplicity of extraction on all platforms.
-
-**ver 1.3.9 -- 13dec18**
-
-* Added zoom keys z,n,f [default,Nearer,Further] to supplement mouse wheel.
-
-
-**ver 1.3.8 -- 7dec18**
-
-* Added exterior wind sound;
-* Improved portability of linux build;
-
-
+* Now deliver 7z archives for better compression and simplicity of extraction on all 3 platforms.
 
 ## More change-history at end of file
 
 
 
 ## AdaVenture Game Description
-AdaVenture is a kid-friendly retro point & click game, essentially intended to be a minimal extension to 3D of the original 2D Atari game named "Adventure".  Now runs on Windows, OSX, and GNU/Linux.
+AdaVenture is a kid-friendly retro point & click game, intended to be a minimal extension to 3D of the original 2D Atari game named "Adventure".  Now runs on Windows, OSX, and GNU/Linux.
 
 Set in ancient Persia, it begins outside the castle of the young King Xerxes, who inherited a magical golden chalice from his father, Darius the Great.  Coveted by Greek foes King Leonidas of Sparta and King Minos of Crete, the chalice has been stolen.
 
@@ -139,9 +127,12 @@ If the need arises, copy the file "default_settings.txt" to "settings.txt".  The
 
 ## Setup & Running Adaventure:
 
-The application's main directory [./avent/] contains files for deployment on 3 platforms:  1)windows, 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
+The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows, 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
 
-(Windows users see also:  windows-setup.txt)
+
+Mac users see "osx-setup.txt".
+Windows users see "windows-setup.txt".
+
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
@@ -190,17 +181,12 @@ Three [pre-compiled] binary executables are delivered, one for Windows, one for 
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it probably will not run, and you will need to recompile.
 
-Build scripts for GNAT2015 or newer are provided.
-
-You may find as many as three scripts for each OS with the form Xd.sh, Xs.sh, Xss.sh, where the "d" represents "dynamic", and produces the smallest executable.  The "ss" represents the "most static" choice, using more static libraries making its executable larger.  I believe that all of them should work.
-
-Note that a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT from AdaCore is required.
+Build scripts for GNAT2015 or newer are provided;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT-GPL from AdaLibre is required (GNAT has its own g++).
 
 -------------------------------------------------------
+**msWin32** => wcmp32a.bat, wcmp32b.bat
 
-**msWin32** =>  wcmp32a.bat, wcmp32b.bat
-
-**msWin64** =>  wcmp64a.bat, wcmp64b.bat
+**msWin64** => wcmp64a.bat, wcmp64b.bat
 
 Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for 32bit AdaCore 2017 or 64bit AdaCore 2018 compilers.
 
@@ -208,12 +194,12 @@ Note that the above windows built scripts might need to be adjusted to reference
 -------------------------------------------------------
 **MacOSX** => ocmpss.sh:
 
-build scripts for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have GNAT GPL installed, as well as g++ from Xcode.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
 **GNU/Linux** => lcmpd.sh:
 
-utilize increasingly static linking, especially for the non-standard libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
+uses mostly dynamic linking, especially for the non-standard libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
 
 If the delivered linux binary does not run...
@@ -267,13 +253,13 @@ There is an alternative build system included for those who prefer, and know how
 
 
 
-## what is special about this project?
+## What is special about this project?
 
 For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
 
-Uses the Ada programming language and fully modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding, a thin OpenGL binding from "Lumen", a PNG reader by Stephen Sanguine, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, and string and table utilities by Dmitry Kazakov.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine and Dimitry Anisimkov, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, and string and table utilities by Dmitry Kazakov.
 
 The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for any OpenGL Ada project.
 
@@ -292,7 +278,7 @@ If you make improvements, please send then to <fastrgv@gmail.com>
 AdaVenture itself is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2018  fastrgv@gmail.com
+ Copyright (C) 2019  fastrgv@gmail.com
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -367,6 +353,17 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 -------------------------------------------------------------------------
 
 ## Update History:
+
+**ver 1.3.9 -- 13dec18**
+
+* Added zoom keys z,n,f [default,Nearer,Further] to supplement mouse wheel.
+
+
+**ver 1.3.8 -- 7dec18**
+
+* Added exterior wind sound;
+* Improved portability of linux build;
+
 
 **ver 1.3.7 -- 23aug18**
 
@@ -480,4 +477,5 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 * Added new "darkmaze" to chapter 2 adventure on the far side of the labyrinth of the Minotaur that now hides the chalice (modeled after the classic "orange" maze #2);
 * Added a mapRoom directory to help lost souls;
 * Improved shaders to include full Phong light modeling, with ambient, diffuse, and specular attenuated lighting effects.  Added glowing chalice;
+
 
