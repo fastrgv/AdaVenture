@@ -34,23 +34,13 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
-**ver 1.5.1 -- 28mar19**
 
-* Doorways between labyrinth and adjacent mazes now see-through.
+**ver 1.5.2 -- 01jul19**
 
+* Updated SDL2 to version 2.0.9
+* Updated Ada binding to SDL2
+* Added two new levels with greater difficulty due to heavy dark fog and other variations;
 
-**ver 1.5.0 -- 25mar19**
-
-* Improved fog;
-* Maze doors are now see-through, whenever possible;
-* Various corrections;
-
-
-**ver 1.4.0 -- 28dec18**
-
-* Zoom key z (return to default) is now incremental, like n & f;
-* Revised game Controller settings;
-* Now deliver 7z archives for better compression and simplicity of extraction on all 3 platforms.
 
 ## More change-history at end of file
 
@@ -73,7 +63,7 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 * Laptop friendly controls;  supports Mac Retina displays in high DPI mode.
 * For developers, serves as a great example of modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and Freetype fonts.
 * The Ada bindings to OpenGL & SDL2 in this app are usable as a standalone library for most any modern Ada graphics project.
-* Currenly, the game has one fairly easy campaign in Sparta, and a more difficult one in Crete.  There is no reset capability...you must replay from the beginning if you die.  You select the desired campaign at the beginning of the game.
+* Currenly, the game has four levels.  One fairly easy campaign in Sparta, with a more difficult variant due to thick dark fog.  Similarly, there is a tricky campaign in Crete, and an even more difficult dark variant.  There is no reset capability...you must replay from the beginning if you die.  You select the desired campaign at the beginning of the game.
 * To change the appearance of the avatar, simply download your favorite MineCraft Skin, rename it to "skin.png" and put it into the ./data/ directory.  You should probably backup the current skin before you do this, in case of trouble.  See http://www.minecraftskins.net/.  See also ./data/avatars/ for a small selection.
 
 
@@ -132,7 +122,7 @@ If the need arises, copy the file "default_settings.txt" to "settings.txt".  The
 
 ## Setup & Running Adaventure:
 
-The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows, 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
+The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows (32+64bit), 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
 
 
 Mac users see "osx-setup.txt".
@@ -160,7 +150,7 @@ fastrgv@gmail.com
 
 
 
-## Open Source libraries included that allow rebuilding:
+## Included Open Source libraries that allow rebuilding:
 * SFML, SDL2, FLAC, ogg, vorbis, openal, freetype
 * glext.lib for Windows
 * the included "bindings" directory contains Ada interfaces:
@@ -182,7 +172,7 @@ Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.a
 
 ## Build instructions for AdaVenture:
 
-Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I believe the Windows executable is fairly portable.  It was built on Windows 10 in 32-bit mode.  The Mac binary, adaventure_osx, should run on most any standard Mac with a recent version of OSX.  The linux binary, adaventure_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, openal, crypto, freetype.
+Four [pre-compiled] binary executables are delivered, two for Windows, one for gnu/linux and one for OSX.  I believe the Windows executables are fairly portable.  They were built on Windows 10.  The Mac binary, adaventure_osx, should run on most any standard Mac with a recent version of OSX.  The linux binary, adaventure_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, openal, crypto, freetype.
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it probably will not run, and you will need to recompile.
 
@@ -193,7 +183,7 @@ Build scripts for GNAT2015 or newer are provided;  and due to a recent script ch
 
 **msWin64** => wcmp64a.bat, wcmp64b.bat
 
-Note that the above windows built scripts might need to be adjusted to reference your actual installation directory for 32bit AdaCore 2017 or 64bit AdaCore 2018 compilers.
+Note that the above windows build scripts might need to be editted to reference your actual installation directory for 32bit AdaCore 2017 or 64bit AdaCore 2018 compilers.
 
 
 -------------------------------------------------------
@@ -264,11 +254,11 @@ For developers, this project can serve as a testbed for learning modern OpenGL a
 
 It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine and Dimitry Anisimkov, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, and string and table utilities by Dmitry Kazakov.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine and Dimitry Anisimkov, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, plus string & table utilities by Dmitry Kazakov.
 
-The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for any OpenGL Ada project.
+The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for your own OpenGL Ada project.
 
-For the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many obvious improvements to be made.  
+For the C++ programmer the code should be easy to comprehend; and for the experienced Ada programmer there are many ada-specializations yet to be made.  
 
 This game is a work in progress, so please excuse any scaffolding and debugging code has not been removed.
 
@@ -358,6 +348,25 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 -------------------------------------------------------------------------
 
 ## Update History:
+
+**ver 1.5.1 -- 28mar19**
+
+* Doorways between labyrinth and adjacent mazes now see-through.
+
+
+**ver 1.5.0 -- 25mar19**
+
+* Improved fog;
+* Maze doors are now see-through, whenever possible;
+* Various corrections;
+
+
+**ver 1.4.0 -- 28dec18**
+
+* Zoom key z (return to default) is now incremental, like n & f;
+* Revised game Controller settings;
+* Now deliver 7z archives for better compression and simplicity of extraction on all 3 platforms.
+
 
 **ver 1.3.9 -- 13dec18**
 
@@ -482,5 +491,3 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 * Added new "darkmaze" to chapter 2 adventure on the far side of the labyrinth of the Minotaur that now hides the chalice (modeled after the classic "orange" maze #2);
 * Added a mapRoom directory to help lost souls;
 * Improved shaders to include full Phong light modeling, with ambient, diffuse, and specular attenuated lighting effects.  Added glowing chalice;
-
-
