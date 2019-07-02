@@ -35,11 +35,13 @@ https://youtu.be/8qbAJ-JvvXs
 ## Whats new:
 
 
-**ver 1.5.2 -- 01jul19**
+**ver 1.5.2 -- 02jul19**
 
+* Randomized black key location in chapters 3, 4;
 * Updated SDL2 to version 2.0.9
 * Updated Ada binding to SDL2
 * Added two new levels with greater difficulty due to heavy dark fog and other variations;
+
 
 
 ## More change-history at end of file
