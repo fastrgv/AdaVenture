@@ -8,7 +8,7 @@
 
 Click on the large 7z file under releases to download all source & binaries (both Mac & Linux), or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v1.5.2/av2jul19.7z
+https://github.com/fastrgv/AdaVenture/releases/download/v1.5.2/av4jul19.7z
 
 
 
@@ -37,6 +37,7 @@ https://youtu.be/8qbAJ-JvvXs
 
 **ver 1.5.2 -- 02jul19**
 
+* Minor corrections to mazes 5,7;
 * Randomized black key location in chapters 3, 4;
 * Updated SDL2 to version 2.0.9
 * Updated Ada binding to SDL2
