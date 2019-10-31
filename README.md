@@ -35,6 +35,11 @@ https://youtu.be/8qbAJ-JvvXs
 ## Whats new:
 
 
+**ver 1.5.3 -- 31oct19**
+
+* New feature allows v-key to save current game, for a restart later.
+
+
 **ver 1.5.2 -- 02jul19**
 
 * Minor corrections to mazes 5,7;
@@ -42,7 +47,6 @@ https://youtu.be/8qbAJ-JvvXs
 * Updated SDL2 to version 2.0.9
 * Updated Ada binding to SDL2
 * Added two new levels with greater difficulty due to heavy dark fog and other variations;
-
 
 
 ## More change-history at end of file
@@ -60,14 +64,22 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 
 ## AdaVenture Game Features
 * When looking closely at a pickable object, a hand will appear indicating that a click will pick up the object.  When holding an object, another click will drop it at the current location.  Only one object at a time may be carried.
+
 * Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered binaries.
+
 * Windows, GNU/Linux and OSX binaries provided, as well as full source. 
+
 * Note that both 32 and 64 bit builds for Windows are delivered.
+
 * Laptop friendly controls;  supports Mac Retina displays in high DPI mode.
-* For developers, serves as a great example of modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and Freetype fonts.
-* The Ada bindings to OpenGL & SDL2 in this app are usable as a standalone library for most any modern Ada graphics project.
-* Currenly, the game has four levels.  One fairly easy campaign in Sparta, with a more difficult variant due to thick dark fog.  Similarly, there is a tricky campaign in Crete, and an even more difficult dark variant.  There is no reset capability...you must replay from the beginning if you die.  You select the desired campaign at the beginning of the game.
+
+* The game has four levels.  One fairly easy campaign in Sparta, with a more difficult variant due to thick dark fog.  These are the top two.  Similarly, there is a tricky campaign in Crete, and an even more difficult dark variant.  These are the bottom two, showing Minotaurs.  You select the desired campaign at the beginning of the game.  You can save the current game by using the v-key.  This allows resumption later.  You must replay from the beginning if you die before saving.  Saving the game state is a relatively new feature, so bugs are possible.
+
 * To change the appearance of the avatar, simply download your favorite MineCraft Skin, rename it to "skin.png" and put it into the ./data/ directory.  You should probably backup the current skin before you do this, in case of trouble.  See http://www.minecraftskins.net/.  See also ./data/avatars/ for a small selection.
+
+* For developers, serves as a great example of modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and Freetype fonts.
+
+* The Ada bindings to OpenGL & SDL2 in this app are usable as a standalone library for most any modern Ada graphics project.
 
 
 
@@ -86,6 +98,7 @@ Movement is controlled by the WASD keys or the arrow keys:
 	(Lt)	(Dn)	(Rt)
 ---------------------------
 
+*	 (v)-key					=> save game state for later
 *   (esc)-key 				=> exit;
 *   (space)-key			=> pick or drop
 *   mouse-click			=> pick or drop
