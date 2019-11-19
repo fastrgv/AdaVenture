@@ -34,6 +34,12 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 1.5.4 -- 19nov19**
+
+* Added infestations of carnivorous beetles.
+* Added new music in labyrinth.
+* Mazes are now subterranian and claustrophobic.
+
 
 **ver 1.5.3 -- 31oct19**
 
