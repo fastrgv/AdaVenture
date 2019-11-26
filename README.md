@@ -34,6 +34,12 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 1.5.5 -- 26nov19**
+
+* Repaired a library problem with GNU/Linux build that limited portability.
+* Added skylight and improved lighting in ninth maze.
+* Added frame for castle skylight.
+
 **ver 1.5.4 -- 19nov19**
 
 * Added infestations of carnivorous beetles.
