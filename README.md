@@ -34,6 +34,12 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 1.5.6 -- 31nov19**
+
+* Carnivorous beetles are now deadly if you linger too long.
+* Added & improved death-scream sounds.
+* Now deliver two executables for Mac/OSX, defaulted to Low-Dpi.
+
 **ver 1.5.5 -- 26nov19**
 
 * Repaired a library problem with GNU/Linux build that limited portability.
