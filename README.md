@@ -34,6 +34,12 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 1.5.7 -- 19dec19**
+
+* Instead of delivering two distinct executables for each platform, a single commandline parameter of "0" now signals HighDpi is NOT desired.  Thus, no parameter will prefer HighDpi, if available.  Graphical overload is not usually a problem with AdaVenture.
+* Improved font code & anti-aliasing thru corrected OpenGL code parameters.
+* Updated to SDL2 v2.0.10, including libs & Ada binding.
+
 **ver 1.5.6 -- 31nov19**
 
 * Carnivorous beetles are now deadly if you linger too long.
