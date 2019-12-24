@@ -10,10 +10,12 @@ Click on the large 7z file under releases to download all source & binaries (bot
 
 
 This first link is the SDL2 version:
+
 https://github.com/fastrgv/AdaVenture/releases/download/v1.5.7/av19dec19.7z
 
 
 This next link is a newer GLFW3 version:
+
 https://github.com/fastrgv/AdaVenture/releases/download/v2.0.0/avglfw24dec19.7z
 
 
