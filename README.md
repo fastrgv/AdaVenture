@@ -16,7 +16,9 @@ https://github.com/fastrgv/AdaVenture/releases/download/v1.5.7/av19dec19.7z
 
 This next link is a newer GLFW3 version:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v2.0.0/avglfw24dec19.7z
+https://github.com/fastrgv/AdaVenture/releases/download/v2.0.0/avg25dec19.7z
+
+
 
 
 
