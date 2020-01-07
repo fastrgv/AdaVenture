@@ -6,17 +6,12 @@
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/nuAV.jpg)
 
 
-Click on the large 7z file under releases to download all source & binaries (both Mac & Linux)...there are now two versions, one uses SDL2, the other uses GLFW3.  The older SDL2 version currently has better support for joysticks.  The newer GLFW3 version has not been tested as much.
+Click on the large 7z file under releases to download all source & binaries (Windows,Mac & Linux) or try this link:
+
+https://github.com/fastrgv/AdaVenture/releases/download/v2.0.3/av7jan20.7z
 
 
-This first link is the SDL2 version:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v1.5.7/av19dec19.7z
-
-
-This next link is a newer GLFW3 version:
-
-https://github.com/fastrgv/AdaVenture/releases/download/v2.0.0/avg25dec19.7z
 
 
 
