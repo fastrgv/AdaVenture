@@ -40,47 +40,34 @@ Short Video:  Omar escapes mamba thru moveable bridge:
 https://youtu.be/8qbAJ-JvvXs
 
 
-# AdaVenture
+# AdaVenture GLFW version
 
 ## Whats new:
 
-**ver 1.5.7 -- 19dec19**
 
-* Instead of delivering two distinct executables for each platform, a single commandline parameter of "0" now signals HighDpi is NOT desired.  Thus, no parameter will prefer HighDpi, if available.  Graphical overload is not usually a problem with AdaVenture.
-* Improved font code & anti-aliasing thru corrected OpenGL code parameters.
-* Updated to SDL2 v2.0.10, including libs & Ada binding.
+**ver 2.0.3 -- 07jan20**
 
-**ver 1.5.6 -- 31nov19**
-
-* Carnivorous beetles are now deadly if you linger too long.
-* Added & improved death-scream sounds.
-* Now deliver two executables for Mac/OSX, defaulted to Low-Dpi.
-
-**ver 1.5.5 -- 26nov19**
-
-* Repaired a library problem with GNU/Linux build that limited portability.
-* Added skylight and improved lighting in ninth maze.
-* Added frame for castle skylight.
-
-**ver 1.5.4 -- 19nov19**
-
-* Added infestations of carnivorous beetles.
-* Added new music in labyrinth.
-* Mazes are now subterranian and claustrophobic.
+* Improved windows build method;
+* Now delivering this GLFW version as the mainstream version;
 
 
-**ver 1.5.3 -- 31oct19**
+**ver 2.0.2 -- 25dec19**
 
-* New feature allows v-key to save current game, for a restart later.
+* Restored proper fireball speed;
+* Finalized code for basic joystick/gamepad function.
 
 
-**ver 1.5.2 -- 02jul19**
+**ver 2.0.1 -- 24dec19**
 
-* Minor corrections to mazes 5,7;
-* Randomized black key location in chapters 3, 4;
-* Updated SDL2 to version 2.0.9
-* Updated Ada binding to SDL2
-* Added two new levels with greater difficulty due to heavy dark fog and other variations;
+* Fixed some coding errors & omissions that might cause trouble in HiDpi mode.
+
+
+**ver 2.0.0 -- 23dec19**
+
+* Converted Ada code to use GLFW, rather than SDL2;
+* Updated libraries, DLLs, Ada binding;
+* Limited gamepad functionality;
+
 
 
 ## More change-history at end of file
@@ -88,11 +75,11 @@ https://youtu.be/8qbAJ-JvvXs
 
 
 ## AdaVenture Game Description
-AdaVenture is a kid-friendly retro point & click game, intended to be a minimal extension to 3D of the original 2D Atari game named "Adventure".  Now runs on Windows, OSX, and GNU/Linux.
+AdaVenture is a kid-friendly retro point & click game, intended to be a minimal extension to 3D of the 2D Atari game named "Adventure", but with some artistic extrapolations.  Now runs on Windows, OSX, and GNU/Linux.
 
 Set in ancient Persia, it begins outside the castle of the young King Xerxes, who inherited a magical golden chalice from his father, Darius the Great.  Coveted by Greek foes King Leonidas of Sparta and King Minos of Crete, the chalice has been stolen.
 
-Your quest is to seek and return the royal chalice to its pedestal within the castle of Xerxes...a stealth mission to preclude open hostilities.  But, there will be obstacles to overcome.  You must find the keys to various realms, defend yourself against dragons and the Minotaur, avoid snakes and pesky bats who steal things only to drop them in random locations, and survive the maze of the green mamba.
+Your quest is to seek and return the royal chalice to its pedestal within the castle of Xerxes...a stealth mission to preclude open hostilities.  But, there will be obstacles to overcome.  You must find the keys to various realms, defend yourself against dragons and the Minotaur, avoid snakes and pesky bats who steal things only to drop them in random locations, and survive the maze of the green mamba and crazed scarabs.
 
 
 
@@ -128,7 +115,7 @@ The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates t
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-		(Up)
+			(Up)
 	(Lt)	(Dn)	(Rt)
 ---------------------------
 
@@ -144,20 +131,15 @@ In case of unexpected control problems with the game, or if you want to easily i
 
 ### joystick
 * joystick:  attitude
-* thumb btn:  forward
+* center thumb btn:  forward
 * trigger btn:  backward
-* other btns:  pick or drop items
+* side thumb btns:  pick or drop items
 
 ------------------------------------------------------------
 ### gamecontroller
-* Lpaddle/hat:  movement
+* Lpaddle/Lhat:  movement
 * Rpaddle :  attitude
-* Shoulder btns:  pick or drop items
-
-------------------------------------------------------------
-### controller settings
-If the need arises, copy the file "default_settings.txt" to "settings.txt".  Then you can manually edit the integers that define the controller-button-assignments or the floats that define the sensitivities.
-
+* L/R Shoulder btns:  pick or drop items
 
 ------------------------------------------------------------
 ------------------------------------------------------------
@@ -181,7 +163,7 @@ Windows users see "windows-setup.txt".
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
-Open a commandline terminal, and cd to the install directory.
+Open a commandline terminal, and cd to the install directory.  If your platform is High-Dpi-capable, type the executable-name followed by a "1", before hittting the (enter-key).  But if the game does not play smoothly, you should run in Low-Dpi mode.
 
 Linux users should type "adaventure_gnu" to start the game.  You may also double click its icon in file manager.
 
@@ -190,6 +172,9 @@ Similarly Mac users type "adaventure_osx",  or navigate to the installation dire
 Windows users type either a) binw32\adaventure32.exe or b) binw64\adaventure64.exe
 
 The install_directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data.
+
+Note that adjustable OpenGL settings should favor performance.  OTOH, this game runs fine on an Intel NUC with embedded Intel graphics, so the graphics demands are modest.
+
 
 --------------------------------------------------------------------------
 Open source Ada developers are welcome to help improve or extend this game.
@@ -206,7 +191,7 @@ fastrgv@gmail.com
 * the included "bindings" directory contains Ada interfaces:
 	* AdaPngLib
 	* gl
-	* sdlada
+	* glfwada
 	* FreeTypeAda
 	* Kazakov strings, tables
 	* SFML
@@ -304,7 +289,7 @@ For developers, this project can serve as a testbed for learning modern OpenGL a
 
 It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin SDL2 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine and Dimitry Anisimkov, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, plus string & table utilities by Dmitry Kazakov.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin glfw3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine and Dimitry Anisimkov, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, plus string & table utilities by Dmitry Kazakov.
 
 The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for your own OpenGL Ada project.
 
@@ -323,7 +308,7 @@ If you make improvements, please send then to <fastrgv@gmail.com>
 AdaVenture itself is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2019  fastrgv@gmail.com
+ Copyright (C) 2020  fastrgv@gmail.com
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -348,7 +333,7 @@ The particular choices of sound, image, and fragment shader files [x.fs] deliver
 ### SoundFiles
 Many sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file ccnc3_license.txt.  see also:  (http://creativecommons.org/licenses/by-nc/3.0/legalcode/)
 
-One track (for the labyrinth) from incompetech.com (also CC-by-3 license) thanks to Kevin MacLeod (Cephalopod).
+Two tracks (for the labyrinth) from incompetech.com (also CC-by-3 license) thanks to Kevin MacLeod (Cephalopod,Dama-May).
 
 Some original Atari sounds were also used.
 
@@ -399,145 +384,24 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 ## Update History:
 
-**ver 1.5.1 -- 28mar19**
 
-* Doorways between labyrinth and adjacent mazes now see-through.
+**ver 1.5.7 -- 19dec19**
 
-
-**ver 1.5.0 -- 25mar19**
-
-* Improved fog;
-* Maze doors are now see-through, whenever possible;
-* Various corrections;
+* Instead of delivering two distinct executables for each platform, a single commandline parameter of "0" now signals HighDpi is NOT desired.  Thus, no parameter will prefer HighDpi, if available.  Graphical overload is not usually a problem with AdaVenture.
+* Improved font code & anti-aliasing thru corrected OpenGL code parameters.
+* Updated to SDL2 v2.0.10, including libs & Ada binding.
 
 
-**ver 1.4.0 -- 28dec18**
+**ver 1.5.6 -- 31nov19**
 
-* Zoom key z (return to default) is now incremental, like n & f;
-* Revised game Controller settings;
-* Now deliver 7z archives for better compression and simplicity of extraction on all 3 platforms.
-
-
-**ver 1.3.9 -- 13dec18**
-
-* Added zoom keys z,n,f [default,Nearer,Further] to supplement mouse wheel.
+* Carnivorous beetles are now deadly if you linger too long.
+* Added & improved death-scream sounds.
+* Now deliver two executables for Mac/OSX, defaulted to Low-Dpi.
 
 
-**ver 1.3.8 -- 7dec18**
+**ver 1.5.5 -- 26nov19**
 
-* Added exterior wind sound;
-* Improved portability of linux build;
+* Repaired a library problem with the GNU/Linux build that limited portability.
+* Added skylight and improved lighting in ninth maze.
+* Added frame for castle skylight.
 
-
-**ver 1.3.7 -- 23aug18**
-
-* Completed update to SFML v2.5.0 for all platforms;
-* Adjusted texture load parameter for nicer snakes;
-* Improved coding of avatarobj.adb;
-* Now using new autogenerated thin ada binding for SDL208;
-* Updated to sdl208 libraries, all 4 platforms;
-
-
-**ver 1.3.6 -- 28jul18**
-
-* Corrected input handling in case of DOS-formatted configuration file.
-* Changed freetype library to assure linux portability.
-* Added music credits in closing scenes.
-* Added alternate build scripts for OSX.
-* Update to sfml 2.5.0.
-* Update to AdaCore2018 for linux, osx.
-* Simplified bindings.
-
-
-**ver 1.3.5 -- 01jul18**
-
-* Updated to Anisimkov's newest zlib for ada;
-* Added local libz, libm shared libs for improved linux portability;
-
-
-**ver 1.3.4 -- 29jun18**
-
-* Added steaming nostrils to the Minotaur;
-* Changed default linux build scripts to AdaCore 2018 or gnuAda v7.3.0;
-* Changed default linux SDL libs to shared to enhance portability;
-* Updated AdaPngLib, AdaZLib;
-* Added 64bit Windows executable & build files.  Still supports 32bit Windows, OSX and Linux.
-
-
-**ver 1.3.3 -- 02jun18**
-
-* Improved tree branch flutter;
-* Upgraded to a galloping Minotaur beast that uses a Minecraft skin;
-
-
-**ver 1.3.2 -- 03may18**
-
-* Great new trees:  new 3-plane w3tree package [Class] has improved drawing algorithm to render each of 6 wings from back to front.  Nicer looking trees are the result.  Easy to use for indie developers.
-* Added tree branch end flutter using only fragment shader.
-* Restructured & improved code robustness and comprehensibility;
-
-
-**ver 1.3.1 -- 16apr18**
-
-* Improved & simplified OSX builds using static non-standard libs;
-* Added GPR scripts for those who prefer using gprbuild;
-* Corrected fog errors;  improved skybox & exterior fog;
-* Better clarified use of perlin noise to benefit developers;
-
-
-**ver 1.3.0 -- 14mar18**
-
-* Scene transitions code significantly improved & simplified,  elliminating unintended transitions by accounting for velocity vector.  The multiply interconnected mazes are now better organized and documented using Dmitry Kazakov's Tables library.
-* Jupiter now appears at end of both levels.
-* Improved source code directory layout;  clarified utility names.
-* Simplified ftex interface.
-* Replaced a missing maze wall.
-
-
-**ver 1.2.9 -- 9mar18**
-
-* Improved code for texture handling;  clarified and exposed the inconsistent semantics of OpenGL textures versus cubemaps.  Now, all texture png images are un-inverted.
-* Added new fireball obstacle [cued by ominous music] in the Labyrinth that precludes a simple escape.
-
-
-**ver 1.2.8 -- 04mar18**
-
-* Now supports TTF fonts through Freetype library;
-* Using Felix Krause's FreeTypeAda [MIT];
-* Using Dmitry Kazakov's Strings-Edit [gnuGPL2];
-* Still using thin bindings to OpenGL, SDL2, SFML;
-* Still using fully modern graphics methods.
-* Corrections made to spider & dragon movements.
-
-
-**ver 1.2.7 -- 24feb18**
-
-* Added nicer hiRes skyboxes;  removed fog that obscures them;
-* Improved avatar code to display hats, etc.
-* Fixed error in tree shader darkness;
-* Added spinning Jupiter in the night sky @ end of chapter 2.
-* Added OSX link from ~/Resources/ to /data/.
-
-
-**ver 1.2.6 -- 29jan18**
-
-* Higher perspective in maze rooms;
-* Improved camera handling logic with two options toggled with the L-key:
-	* new lazy camera default for better theatrics, or
-	* classic tight camera for almost first-person control;
-	* first-person mode is still toggled with M-key.
-* Darker [as intended] maze9;
-
-
-**ver 1.2.5 -- 10jan18**
-
-* Found & fixed the numerics:argument-error causing occasional aborts;
-* Newest Blinn-Phong light shaders include gamma correction;
-* Adjusted sizes of avatar & chalice;
-
-
-**ver 1.2.4 -- 5jan18**
-
-* Added new "darkmaze" to chapter 2 adventure on the far side of the labyrinth of the Minotaur that now hides the chalice (modeled after the classic "orange" maze #2);
-* Added a mapRoom directory to help lost souls;
-* Improved shaders to include full Phong light modeling, with ambient, diffuse, and specular attenuated lighting effects.  Added glowing chalice;
