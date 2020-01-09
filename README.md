@@ -39,6 +39,18 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 2.0.4 -- 09jan20**
+
+* Now castle pool contains reflective water;
+* Improved controlability of mouse slew @ HiDpi.
+* Added ~/data/settings.txt file to allow users to adjust:
+	* Forward/Backward Speed
+	* Slew Speed using:
+		* keyboard
+		* mouse
+		* gamepad
+		* joystick
+
 
 **ver 2.0.3 -- 07jan20**
 
