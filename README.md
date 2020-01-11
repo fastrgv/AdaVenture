@@ -39,6 +39,13 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 2.0.5 -- 11jan20**
+
+* Improved code that reads settings file to allow Dos-Format.
+* Updated to GLFW v3.3.1 (released 1jan2020).
+* Added option @ center-screen to continue a saved game, if one exists.
+* Fixed the broken Apple OSX "bundle".
+
 **ver 2.0.4 -- 09jan20**
 
 * Now castle pool contains reflective water;
