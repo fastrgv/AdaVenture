@@ -40,6 +40,11 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 2.0.6 -- 15jan20**
+
+* Enhanced portability of linux version game.
+* Updated Ada binding to glfw.
+
 **ver 2.0.5 -- 11jan20**
 
 * Improved code that reads settings file to allow Dos-Format.
