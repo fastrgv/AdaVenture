@@ -39,6 +39,11 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 2.1.0 -- 20jan20**
+
+* Quantum improvement in linux portability by avoiding SFML libs.
+* Linux sound uses Ada tasking to implement music loops.
+
 **ver 2.0.6 -- 15jan20**
 
 * Enhanced portability of linux version game.
