@@ -39,67 +39,25 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+
+**ver 2.1.1 -- 22jan20**
+
+* Ada sound tasks now use unique identifier for robustness;
+* Improved certain sound params.
+* Trimmed a few excessively large sound files.
+
+
 **ver 2.1.0 -- 20jan20**
 
 * Quantum improvement in linux portability by avoiding SFML libs.
 * Linux sound uses Ada tasking to implement music loops.
-
-**ver 2.0.6 -- 15jan20**
-
-* Enhanced portability of linux version game.
-* Updated Ada binding to glfw.
-
-**ver 2.0.5 -- 11jan20**
-
-* Improved code that reads settings file to allow Dos-Format.
-* Updated to GLFW v3.3.1 (released 1jan2020).
-* Added option @ center-screen to continue a saved game, if one exists.
-* Fixed the broken Apple OSX "bundle".
-
-**ver 2.0.4 -- 09jan20**
-
-* Now castle pool contains reflective water;
-* Improved controlability of mouse slew @ HiDpi.
-* Added ~/data/settings.txt file to allow users to adjust:
-	* Forward/Backward Speed
-	* Slew Speed using:
-		* keyboard
-		* mouse
-		* gamepad
-		* joystick
-
-
-**ver 2.0.3 -- 07jan20**
-
-* Improved windows build method;
-* Now delivering this GLFW version as the mainstream version;
-
-
-**ver 2.0.2 -- 25dec19**
-
-* Restored proper fireball speed;
-* Finalized code for basic joystick/gamepad function.
-
-
-**ver 2.0.1 -- 24dec19**
-
-* Fixed some coding errors & omissions that might cause trouble in HiDpi mode.
-
-
-**ver 2.0.0 -- 23dec19**
-
-* Converted Ada code to use GLFW, rather than SDL2;
-* Updated libraries, DLLs, Ada binding;
-* Limited gamepad functionality;
-
-
 
 ## More change-history at end of file
 
 
 
 ## AdaVenture Game Description
-AdaVenture is a kid-friendly retro point & click game, intended to be a minimal extension to 3D of the 2D Atari game named "Adventure", but with some artistic extrapolations.  Now runs on Windows, OSX, and GNU/Linux.
+AdaVenture is a kid-friendly retro point & click game, intended to be a minimal extension to 3D of the 2D Atari game named "Adventure", but with various artistic extrapolations.  Now runs on Windows, OSX, and GNU/Linux.
 
 Set in ancient Persia, it begins outside the castle of the young King Xerxes, who inherited a magical golden chalice from his father, Darius the Great.  Coveted by Greek foes King Leonidas of Sparta and King Minos of Crete, the chalice has been stolen.
 
@@ -118,13 +76,13 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 
 * Laptop friendly controls;  supports Mac Retina displays in high DPI mode.
 
-* The game has four levels.  One fairly easy campaign in Sparta, with a more difficult variant due to thick dark fog.  These are the top two.  Similarly, there is a tricky campaign in Crete, and an even more difficult dark variant.  These are the bottom two, showing Minotaurs.  You select the desired campaign at the beginning of the game.  You can save the current game by using the v-key.  This allows resumption later.  You must replay from the beginning if you die before saving.  Saving the game state is a relatively new feature, so bugs are possible.
+* The game has four levels.  One fairly easy campaign in Sparta, with a more difficult variant due to thick dark fog.  These are the top two.  Similarly, there is a tricky campaign in Crete, and an even more difficult dark variant.  These are the bottom two, showing Minotaurs.  You select the desired campaign at the beginning of the game.  You can save the current game by using the v-key.  This allows resumption later.  You must replay from the beginning if you die before saving.  Saving the game state is a relatively new feature that only saves one game.  If a saved game exists, a fifth option appears at screen center to resume that game.
 
 * To change the appearance of the avatar, simply download your favorite MineCraft Skin, rename it to "skin.png" and put it into the ./data/ directory.  You should probably backup the current skin before you do this, in case of trouble.  See http://www.minecraftskins.net/.  See also ./data/avatars/ for a small selection.
 
 * For developers, serves as a great example of modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and Freetype fonts.
 
-* The Ada bindings to OpenGL & SDL2 in this app are usable as a standalone library for most any modern Ada graphics project.
+* The Ada bindings to OpenGL & GLFW3 in this app are usable as a standalone library for most any modern Ada graphics project.
 
 
 
@@ -143,7 +101,7 @@ Movement is controlled by the WASD keys or the arrow keys:
 	(Lt)	(Dn)	(Rt)
 ---------------------------
 
-*	 (v)-key					=> save game state for later
+*	 (v)-key					=> save game state to resume later
 *   (esc)-key 				=> exit;
 *   (space)-key			=> pick or drop
 *   mouse-click			=> pick or drop
@@ -164,6 +122,11 @@ In case of unexpected control problems with the game, or if you want to easily i
 * Lpaddle/Lhat:  movement
 * Rpaddle :  attitude
 * L/R Shoulder btns:  pick or drop items
+
+------------------------------------------------------------
+### controller settings
+If the need arises, copy the file "default_settings.txt" to "./data/settings.txt".  Then you can manually edit the floats that define the sensitivity for mouse, keyboard, gamepad & joystick, as well as forward speed of the avatar.
+
 
 ------------------------------------------------------------
 ------------------------------------------------------------
@@ -189,9 +152,9 @@ Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 Open a commandline terminal, and cd to the install directory.  If your platform is High-Dpi-capable, type the executable-name followed by a "1", before hittting the (enter-key).  But if the game does not play smoothly, you should run in Low-Dpi mode.
 
-Linux users should type "adaventure_gnu" to start the game.  You may also double click its icon in file manager.
+Linux users should type "adaventure_gnu" to start the game.  You may also double click its icon in file manager.  Note that my new sound technique [Linux-only] sometimes aborts with a tasking error if a new sound occurs at precisely the time when a sound-loop is restarting itself.  So, save often, until I perfect my algorithm.  This executable was built on Linux Mint, and tested on RedHat (Scientific-Linux) to not only run well, but to rebuild easily.
 
-Similarly Mac users type "adaventure_osx",  or navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".
+Similarly Mac users type "adaventure_osx",  or navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".  Note that any jerkiness experienced while running at HiDpi can be elliminated by editting the bundle-controls to force LowDpi.
 
 Windows users type either a) binw32\adaventure32.exe or b) binw64\adaventure64.exe
 
@@ -210,7 +173,7 @@ fastrgv@gmail.com
 
 
 ## Included Open Source libraries that allow rebuilding:
-* SFML, SDL2, FLAC, ogg, vorbis, openal, freetype
+* SFML, GLFW, FLAC, ogg, vorbis, openal, freetype
 * glext.lib for Windows
 * the included "bindings" directory contains Ada interfaces:
 	* AdaPngLib
@@ -231,7 +194,7 @@ Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.a
 
 ## Build instructions for AdaVenture:
 
-Four [pre-compiled] binary executables are delivered, two for Windows, one for gnu/linux and one for OSX.  I believe the Windows executables are fairly portable.  They were built on Windows 10.  The Mac binary, adaventure_osx, should run on most any standard Mac with a recent version of OSX.  The linux binary, adaventure_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  SDL2, SFML, FLAC, ogg, vorbis, openal, crypto, freetype.
+Four [pre-compiled] binary executables are delivered, two for Windows, one for gnu/linux and one for OSX.  I believe the Windows executables are fairly portable.  They were built on Windows 10.  The Mac binary, adaventure_osx, should run on most any standard Mac with a recent version of OSX.  The linux binary, adaventure_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  GLFW, SFML, FLAC, ogg, vorbis, openal, crypto, freetype.
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it probably will not run, and you will need to recompile.
 
@@ -248,12 +211,12 @@ Note that the above windows build scripts might need to be editted to reference 
 -------------------------------------------------------
 **MacOSX** => ocmpss.sh:
 
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries SDL2 or SFML installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have GNAT GPL installed, as well as g++ from Xcode.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries GLFW or SFML installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
 **GNU/Linux** => lcmpd.sh:
 
-uses mostly dynamic linking, especially for the non-standard libraries SDL2 & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
+uses mostly dynamic linking, especially for the non-standard libraries GLFW & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
 
 If the delivered linux binary does not run...
@@ -408,12 +371,62 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 ## Update History:
 
+**ver 2.0.6 -- 15jan20**
+
+* Updated Ada binding to glfw.
+
+
+**ver 2.0.5 -- 11jan20**
+
+* Improved code that reads settings file to allow Dos-Format.
+* Updated to GLFW v3.3.1 (released 1jan2020).
+* Added option @ center-screen to continue a saved game, if one exists.
+* Fixed the broken Apple OSX "bundle".
+
+
+**ver 2.0.4 -- 09jan20**
+
+* Now castle pool contains reflective water;
+* Improved controlability of mouse slew @ HiDpi.
+* Added ~/data/settings.txt file to allow users to adjust:
+	* Forward/Backward Speed
+	* Slew Speed using:
+		* keyboard
+		* mouse
+		* gamepad
+		* joystick
+
+
+**ver 2.0.3 -- 07jan20**
+
+* Improved windows build method;
+* Now delivering this GLFW version as the mainstream version;
+
+
+**ver 2.0.2 -- 25dec19**
+
+* Restored proper fireball speed;
+* Finalized code for basic joystick/gamepad function.
+
+
+**ver 2.0.1 -- 24dec19**
+
+* Fixed some coding errors & omissions that might cause trouble in HiDpi mode.
+
+
+**ver 2.0.0 -- 23dec19**
+
+* Converted Ada code to use GLFW, rather than SDL2;
+* Updated libraries, DLLs, Ada binding;
+* Limited gamepad functionality;
+
+
+
 
 **ver 1.5.7 -- 19dec19**
 
 * Instead of delivering two distinct executables for each platform, a single commandline parameter of "0" now signals HighDpi is NOT desired.  Thus, no parameter will prefer HighDpi, if available.  Graphical overload is not usually a problem with AdaVenture.
 * Improved font code & anti-aliasing thru corrected OpenGL code parameters.
-* Updated to SDL2 v2.0.10, including libs & Ada binding.
 
 
 **ver 1.5.6 -- 31nov19**
@@ -428,4 +441,5 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 * Repaired a library problem with the GNU/Linux build that limited portability.
 * Added skylight and improved lighting in ninth maze.
 * Added frame for castle skylight.
+
 
