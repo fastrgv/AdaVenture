@@ -8,7 +8,7 @@
 
 Click on the large 7z file under releases to download all source & binaries (Windows,Mac & Linux) or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v2.1.0/av27jan20.7z
+https://github.com/fastrgv/AdaVenture/releases/download/v2.1.3/av27jan20.7z
 
 
 
@@ -39,6 +39,10 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 2.1.3 -- 27jan20**
+
+* Fixed occasional sound-task related aborts (linux version).
+* OSX & Windows sound still uses proven & reliable SFML libs.
 
 **ver 2.1.1 -- 22jan20**
 
