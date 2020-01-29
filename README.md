@@ -156,7 +156,7 @@ Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
 Open a commandline terminal, and cd to the install directory.  If your platform is High-Dpi-capable, type the executable-name followed by a "1", before hittting the (enter-key).  But if the game does not play smoothly, you should run in Low-Dpi mode.
 
-Linux users should type "adaventure_gnu" to start the game.  You may also double click its icon in file manager.  Note that my new sound technique [Linux-only] sometimes aborts with a tasking error if a new sound occurs at precisely the time when a sound-loop is restarting itself.  So, save often, until I perfect my algorithm.  This executable was built on Linux Mint, and tested on RedHat (Scientific-Linux) to not only run well, but to rebuild easily.
+Linux users should type "adaventure_gnu" to start the game.  You may also double click its icon in file manager.  This executable was built on Linux Mint, and tested on RedHat (Scientific-Linux) to not only run well, but to rebuild easily.
 
 Similarly Mac users type "adaventure_osx",  or navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".  Note that any jerkiness experienced while running at HiDpi can be elliminated by editting the bundle-controls to force LowDpi.
 
