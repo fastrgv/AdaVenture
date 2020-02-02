@@ -220,7 +220,7 @@ build script for generating a portable executable that will run on most OSX plat
 ------------------------------------------------------
 **GNU/Linux** => lcmpd.sh:
 
-uses mostly dynamic linking, especially for the non-standard libraries GLFW & SFML, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
+uses mostly dynamic linking, especially for the non-standard libraries GLFW, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
 
 If the delivered linux binary does not run...
