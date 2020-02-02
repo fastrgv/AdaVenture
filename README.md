@@ -101,7 +101,7 @@ The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates t
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-			(Up)
+		(Up)
 	(Lt)	(Dn)	(Rt)
 ---------------------------
 
