@@ -61,7 +61,7 @@ https://youtu.be/8qbAJ-JvvXs
 
 
 ## AdaVenture Game Description
-AdaVenture is a kid-friendly retro point & click game, intended to be a minimal extension to 3D of the 2D Atari game named "Adventure", but with various artistic extrapolations.  Now runs on Windows, OSX, and GNU/Linux.
+AdaVenture is a kid-friendly retro point & click game, intended to be a minimal extension to 3D of the 2D Atari game named "Adventure", but with various artistic extrapolations.  Now runs on Windows, OSX, and GNU/Linux.  And the new linux binary now runs on many linux distros!
 
 Set in ancient Persia, it begins outside the castle of the young King Xerxes, who inherited a magical golden chalice from his father, Darius the Great.  Coveted by Greek foes King Leonidas of Sparta and King Minos of Crete, the chalice has been stolen.
 
