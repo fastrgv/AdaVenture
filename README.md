@@ -88,6 +88,7 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 
 * The Ada bindings to OpenGL & GLFW3 in this app are usable as a standalone library for most any modern Ada graphics project.
 
+* The new sound system for linux enables a build with surprising portability across various linux distros.
 
 
 ## mouse/touchpad/keyboard controls
