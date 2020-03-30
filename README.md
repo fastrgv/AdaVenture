@@ -39,6 +39,11 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 2.1.4 -- 31mar20**
+
+* Fixed linux soundLoop overruns due to wrong PID.
+
+
 **ver 2.1.3 -- 27jan20**
 
 * Fixed occasional sound-task related aborts (linux version).
