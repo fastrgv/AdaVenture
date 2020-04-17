@@ -39,6 +39,12 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 2.1.5 -- 18apr20**
+
+* Changes in shaders now assure that OpenGL v3.3 is sufficient to run this app.  This is an issue for older graphics drivers.
+* Resolved glfw full-screen problem on RedHat-derived linux distros.
+* Updated to glfw v3.3.2.
+
 **ver 2.1.4 -- 31mar20**
 
 * Fixed linux soundLoop overruns due to wrong PID.
