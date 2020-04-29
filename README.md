@@ -36,6 +36,11 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 2.1.6 -- 29apr20**
+
+* Fixed/restored full-screen on all operating systems;
+
+
 **ver 2.1.5 -- 18apr20**
 
 * Changes in shaders now assure that OpenGL v3.3 is sufficient to run this app.  This is an issue for older graphics drivers.
