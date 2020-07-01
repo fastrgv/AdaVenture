@@ -35,6 +35,13 @@ https://youtu.be/8qbAJ-JvvXs
 
 ## Whats new:
 
+**ver 2.1.7 -- 02jul20**
+
+* Updated GLFW libs for OSX, Windows to v3.3.2.
+* Added extra drama if angered beetles decide to attack.
+* Added explicit safeguards to GLFW binding.
+
+
 **ver 2.1.6 -- 29apr20**
 
 * Fixed/restored full-screen on all operating systems;
