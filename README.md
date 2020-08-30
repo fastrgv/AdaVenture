@@ -30,6 +30,9 @@ https://youtu.be/iRj_SnqXbZc
 Short Video:  Omar escapes mamba thru moveable bridge:
 https://youtu.be/8qbAJ-JvvXs
 
+Carnivorous Beetles:
+https://youtu.be/428fRdu-fZs
+
 
 # AdaVenture GLFW version
 
