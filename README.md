@@ -8,7 +8,7 @@
 
 Click on the large 7z file under releases to download all source & binaries (Windows,Mac & Linux) or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v2.1.7/av2jul20.7z
+https://github.com/fastrgv/AdaVenture/releases/download/v2.1.8/av18sep20.7z
 
 
 
