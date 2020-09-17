@@ -38,43 +38,38 @@ https://youtu.be/428fRdu-fZs
 
 ## Whats new:
 
-**ver 2.1.7 -- 02jul20**
+**ver 2.1.8 -- 18sep20**
+* Added Windows launcher "adaventure.bat".
 
+**ver 2.1.7 -- 02jul20**
 * Updated GLFW libs for OSX, Windows to v3.3.2.
 * Added extra drama if angered beetles decide to attack.
 * Added explicit safeguards to GLFW binding.
 
 
 **ver 2.1.6 -- 29apr20**
-
 * Fixed/restored full-screen on all operating systems;
 
 
 **ver 2.1.5 -- 18apr20**
-
 * Changes in shaders now assure that OpenGL v3.3 is sufficient to run this app.  This is an issue for older graphics drivers.
 * Resolved glfw full-screen problem on RedHat-derived linux distros.
 * Updated to glfw v3.3.2.
 
 **ver 2.1.4 -- 31mar20**
-
 * Fixed linux soundLoop overruns due to wrong PID.
 
 
 **ver 2.1.3 -- 27jan20**
-
 * Fixed occasional sound-task related aborts (linux version).
 * OSX & Windows sound still uses proven & reliable SFML libs.
 
 **ver 2.1.1 -- 22jan20**
-
 * Ada sound tasks now use unique identifier for robustness;
 * Improved certain sound params.
 * Trimmed a few excessively large sound files.
 
-
 **ver 2.1.0 -- 20jan20**
-
 * Quantum improvement in linux portability by avoiding SFML libs.
 * Linux sound uses Ada tasking to implement music loops.
 
@@ -186,7 +181,7 @@ Linux users should type "adaventure_gnu" to start the game.  You may also double
 
 Similarly Mac users type "adaventure_osx",  or navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".  Note that any jerkiness experienced while running at HiDpi can be elliminated by editting the bundle-controls to force LowDpi.
 
-Windows users type either a) binw32\adaventure32.exe or b) binw64\adaventure64.exe
+Windows users type "adaventure.bat".
 
 The install_directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data.
 
