@@ -8,7 +8,7 @@
 
 Click on the large 7z file under releases to download all source & binaries (Windows,Mac & Linux) or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v2.1.8/av18sep20.7z
+https://github.com/fastrgv/AdaVenture/releases/download/v2.2.0/av8nov20.7z
 
 
 
@@ -41,6 +41,7 @@ https://youtu.be/428fRdu-fZs
 
 **ver 2.2.0 -- 08nov20**
 * Installed completely new cross-platform sound system usind OpenAL.
+* Now deliver only a single Windows build (64-bit).
 
 **ver 2.1.8 -- 18sep20**
 * Added Windows launcher "adaventure.bat".
