@@ -34,51 +34,23 @@ Carnivorous Beetles:
 https://youtu.be/428fRdu-fZs
 
 
-# AdaVenture GLFW version
+# AdaVenture GLFW/OpenAL version
 
 ## Whats new:
 
+
+**ver 2.2.0 -- 08nov20**
+* Installed completely new cross-platform sound system usind OpenAL.
+
 **ver 2.1.8 -- 18sep20**
 * Added Windows launcher "adaventure.bat".
-
-**ver 2.1.7 -- 02jul20**
-* Updated GLFW libs for OSX, Windows to v3.3.2.
-* Added extra drama if angered beetles decide to attack.
-* Added explicit safeguards to GLFW binding.
-
-
-**ver 2.1.6 -- 29apr20**
-* Fixed/restored full-screen on all operating systems;
-
-
-**ver 2.1.5 -- 18apr20**
-* Changes in shaders now assure that OpenGL v3.3 is sufficient to run this app.  This is an issue for older graphics drivers.
-* Resolved glfw full-screen problem on RedHat-derived linux distros.
-* Updated to glfw v3.3.2.
-
-**ver 2.1.4 -- 31mar20**
-* Fixed linux soundLoop overruns due to wrong PID.
-
-
-**ver 2.1.3 -- 27jan20**
-* Fixed occasional sound-task related aborts (linux version).
-* OSX & Windows sound still uses proven & reliable SFML libs.
-
-**ver 2.1.1 -- 22jan20**
-* Ada sound tasks now use unique identifier for robustness;
-* Improved certain sound params.
-* Trimmed a few excessively large sound files.
-
-**ver 2.1.0 -- 20jan20**
-* Quantum improvement in linux portability by avoiding SFML libs.
-* Linux sound uses Ada tasking to implement music loops.
 
 ## More change-history at end of file
 
 
 
 ## AdaVenture Game Description
-AdaVenture is a kid-friendly retro point & click game, intended to be a minimal extension to 3D of the 2D Atari game named "Adventure", but with various artistic extrapolations.  Now runs on Windows, OSX, and GNU/Linux.  And the new linux binary now runs on many linux distros!
+AdaVenture is a kid-friendly retro point & click game, intended to be a minimal extension to 3D of the 2D Atari game named "Adventure", but with various artistic extrapolations.  Same stories but a different perspective.  Now runs on Windows, OSX, and GNU/Linux.
 
 Set in ancient Persia, it begins outside the castle of the young King Xerxes, who inherited a magical golden chalice from his father, Darius the Great.  Coveted by Greek foes King Leonidas of Sparta and King Minos of Crete, the chalice has been stolen.
 
@@ -106,9 +78,8 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 
 * For developers, serves as a great example of modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and Freetype fonts.
 
-* The Ada bindings to OpenGL & GLFW3 in this app are usable as a standalone library for most any modern Ada graphics project.
+* The Ada bindings to OpenGL, OpenAL & GLFW3 in this app are usable as a standalone library for most any modern Ada graphics project.
 
-* The new sound system for linux enables a build with surprising portability across various linux distros.
 
 
 ## mouse/touchpad/keyboard controls
@@ -122,14 +93,14 @@ The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates t
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-		(Up)
+			(Up)
 	(Lt)	(Dn)	(Rt)
 ---------------------------
 
-*	 (v)-key					=> save game state to resume later
-*   (esc)-key 				=> exit;
-*   (space)-key			=> pick or drop
-*   mouse-click			=> pick or drop
+*	(v)-key			=> save game state to resume later
+*  (esc)-key 		=> exit;
+*  (space)-key		=> pick or drop
+*  mouse-click		=> pick or drop
 *  (m)-key		 	=> toggle Mouse-view (1st-person) or avatar(3rd-person)
 *  (l)-key			=> toggle camera type:  1)Lazy, 2)Tight
 
@@ -166,7 +137,7 @@ If the need arises, copy the file "default_settings.txt" to "./data/settings.txt
 
 ## Setup & Running Adaventure:
 
-The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows (32+64bit), 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
+The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows (64bit), 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
 
 
 Mac users see "osx-setup.txt".
@@ -175,13 +146,18 @@ Windows users see "windows-setup.txt".
 
 Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
 
-Open a commandline terminal, and cd to the install directory.  If your platform is High-Dpi-capable, type the executable-name followed by a "1", before hittting the (enter-key).  But if the game does not play smoothly, you should run in Low-Dpi mode.
+Open a commandline terminal, and cd to the install directory, and type: 
 
-Linux users should type "adaventure_gnu" to start the game.  You may also double click its icon in file manager.  This executable was built on Linux Mint, and tested on RedHat (Scientific-Linux) to not only run well, but to rebuild easily.
+adaventure.bat (Windows)
+adaventure_osx (Mac)
+adaventure_gnu (Linux)
 
-Similarly Mac users type "adaventure_osx",  or navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".  Note that any jerkiness experienced while running at HiDpi can be elliminated by editting the bundle-controls to force LowDpi.
 
-Windows users type "adaventure.bat".
+This linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint.
+
+Mac users can also navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".  Note that any jerkiness experienced while running at HiDpi can be elliminated by editting the bundle-controls to force LowDpi.
+
+Save the game [ v-key ] prior to risky behavior or quitting, in order to resume later.
 
 The install_directory should contain a subdirectory named "data".  It contains shaders, skyboxes, sound and texture data.
 
@@ -198,73 +174,58 @@ fastrgv@gmail.com
 
 
 ## Included Open Source libraries that allow rebuilding:
-* SFML, GLFW, FLAC, ogg, vorbis, openal, freetype
+* GLFW, openal, freetype
 * glext.lib for Windows
 * the included "bindings" directory contains Ada interfaces:
 	* AdaPngLib
 	* gl
 	* glfwada
+	* OpenAL
 	* FreeTypeAda
 	* Kazakov strings, tables
-	* SFML
 
 ## Rebuild Requirements:
 * systems:  Windows, OSX or GNU/Linux
 * a recent gnat Ada compiler;  eg. AdaCore
 * Xcode g++ compiler, if using OSX
 
-Note that the module that defines the Ada interface to SFML-AUDIO, snd4ada_hpp.ads, was created with the command: "g++ -c -fdump-ada-spec -C snd4ada.hpp" which references a minimalistic C++ utility snd4ada.  Thus, if you redefine the interface snd4ada.hpp, you will need to recreate the interface spec snd4ada_hpp.ads by this method.
 
 
 
 ## Build instructions for AdaVenture:
 
-Four [pre-compiled] binary executables are delivered, two for Windows, one for gnu/linux and one for OSX.  I believe the Windows executables are fairly portable.  They were built on Windows 10.  The Mac binary, adaventure_osx, should run on most any standard Mac with a recent version of OSX.  The linux binary, adaventure_gnu, is intended to run in the presence of the directory "./libs/gnu", which contains some dynamically loaded libraries that can be, but need not be present on a target system:  GLFW, SFML, FLAC, ogg, vorbis, openal, crypto, freetype.
+Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I believe the Windows executables are fairly portable.  They were built on Windows 10.  The Mac binary, adaventure_osx, should run on most any standard Mac with a recent version of OSX.  
 
-The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it probably will not run, and you will need to recompile.
+The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
 Build scripts for GNAT2015 or newer are provided;  and due to a recent script change, a Windows or linux build machine need not have a C++ compiler installed.  Only GNAT-GPL from AdaLibre is required (GNAT has its own g++).
 
 -------------------------------------------------------
-**msWin32** => wcmp32a.bat, wcmp32b.bat
 
-**msWin64** => wcmp64a.bat, wcmp64b.bat
+**msWin64** => wcmp.bat
 
-Note that the above windows build scripts might need to be editted to reference your actual installation directory for 32bit AdaCore 2017 or 64bit AdaCore 2018 compilers.
+Note that the above windows build scripts might need to be editted to reference your actual installation directory for 64bit AdaCore 2018/2020 compilers. 
 
 
 -------------------------------------------------------
-**MacOSX** => ocmpss.sh:
+**MacOSX** => ocmp.sh:
 
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard libraries GLFW or SFML installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have GNAT GPL installed, as well as g++ from Xcode.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard library GLFW installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have GNAT GPL installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
-**GNU/Linux** => lcmpd.sh:
+**GNU/Linux** => lcmp.sh:
 
-uses mostly dynamic linking, especially for the non-standard libraries GLFW, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
-
+uses mostly dynamic linking, especially for the non-standard library GLFW, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
 If the delivered linux binary does not run...
 
 * Manually install GNAT GPL from libre.adacore.com/download/.
-* Rerun the compile script lcmpd.sh.
+* Rerun the compile script lcmp.sh.
 
 
 ### Link Problems during linux build:
 
-On a linux build machine, you might have repairable link errors, depending on its configuration.  If you are missing "libz", you can simply copy "libz.so" from /usr/gnat/lib/gps/ into /usr/local/lib/.  If "libGL" cannot be found, this literally means "libGL.so" was absent.  But you might have "libGL.so.1" present.  In this case, simply create a softlink by changing to the libGL directory, then type the line:
-
-sudo ln -s libGL.so.1 libGL.so  (and enter the admin password)
-
-whence the linker should now be able to find what it wants.  But if there is more than one file libGL.so present on your system, make sure you use the best one;  i.e. the one that uses your accelerated-graphic-driver.
-
-
----------------------------------------------------------
-**GPR note:**
-There is an alternative build system included for those who prefer, and know how to use GPR:  under ./buildScriptsGpr/ .  There are 3 high level shell scripts to drive each:  gnugpr.sh, osxgpr.sh, wingpr.bat.  (They must all be moved up 1 directory to work.)
-
-
-
+On a linux build machine, you might get fixable link errors, depending on its configuration.  If you are missing "libxxx.so", you might need to create a proper softlink so it can be found.
 
 ----------------------------------------------------------------------
 ## For Developers Only:  Portable Avatar Using Shaders
@@ -279,31 +240,47 @@ There is an alternative build system included for those who prefer, and know how
 
 * But a huge selection of available MineCraft skins lead to the present avatar object design.
 
-* In this example, the texture object is a cube with radius one that is defined as 6 disjoint cubelets.  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs.  The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
+* In this application, the texture object is a cube with radius one that is defined as 6 disjoint cubelets (the precise name is rectangular cuboid or parallelpiped).  The 2 upper quarters map to the head and torso.  The lower half is divided into 4 cubelets that are mapped to arms and legs. See "cuboid.txt". The Minecraft images used for the texture also have 6 parts that map to the limbs, head and torso.
 
 * The result is an utterly portable avatar defined by an image and 4 text files:
 	* texture object body, avatarobj.adb
-	* texture object spec, avatarobj.ads
+	* texture object specification, avatarobj.ads
 	* vertex shader, avatarobj.vs
 	* fragment shader, avatarobj.fs
 	* any MineCraft Skin png file
 
-* Interfacing game code with such an avatar is simple.  Essentially you need only pass the current uniform values prior to drawing.
+* Interfacing game code with such an avatar is simple.  Essentially you need only pass the current uniform values prior to drawing, including time, position, attitude, motion-type.
 
-* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar.
-
-
+* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar. The details are beyond the scope of this brief introduction, but generally the current policy is a damped and delayed move toward some fixed ideal camera position above and behind the avatar. 
 
 
+
+----------------------------------------------------------------------
+## For Developers Only:  Fancy Shaders
+
+This app demonstrates how to use fancy fragment shaders from glslsandbox.com to make starry maze skies. See below (Media Files). It also demonstrates the use of coherent noise to create the rolling fireball in the labyrinth.
+
+----------------------------------------------------------------------
+## For Developers Only:  OpenAL portable sound package
+
+This app uses a cross-platform sound-playing package for Ada apps that can asynchronously start and stop music loops, as well as initiate transient sounds.
+
+It plays WAV files, via OpenAL, on Windows, OSX, and linux platforms.
+
+It is suitable for any Ada application that needs music, sound loops or transient sound effects; eg. games.
+
+
+
+-----------------------------------------------------------------------
 ## What is special about this project?
 
-The linux-build of AdaVenture is among very few modern OpenGL games where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons!  There is only one proviso:  "aplay" must be present.
+The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without 3rd party add-ons! It has been tested on OpenSuse, ScientificLinux, Mint and CentOS.
 
 For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
 
 It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
 
-Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin glfw3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine and Dimitry Anisimkov, SFML-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, plus string & table utilities by Dmitry Kazakov.
+Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin glfw3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine and Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, plus string & table utilities by Dmitry Kazakov.
 
 The Ada bindings are thin, so the relationship to C++ methodology is transparent.  Developers should note that these Ada bindings can be used for your own OpenGL Ada project.
 
@@ -316,7 +293,7 @@ If you make improvements, please send then to <fastrgv@gmail.com>
 
 
 --------------------------
-## Legal Mumbo Jumbo:
+## License:
 
 
 AdaVenture itself is covered by the GNU GPL v3 as indicated in the sources:
@@ -398,75 +375,25 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 ## Update History:
 
-**ver 2.0.6 -- 15jan20**
+**ver 2.1.7 -- 02jul20**
+* Updated all GLFW libs to v3.3.2.
+* Added extra drama if angered beetles decide to attack.
+* Added explicit safeguards to GLFW binding.
 
-* Updated Ada binding to glfw.
-
-
-**ver 2.0.5 -- 11jan20**
-
-* Improved code that reads settings file to allow Dos-Format.
-* Updated to GLFW v3.3.1 (released 1jan2020).
-* Added option @ center-screen to continue a saved game, if one exists.
-* Fixed the broken Apple OSX "bundle".
+**ver 2.1.6 -- 30apr20**
+* Fixed/restored full-screen on all operating systems;
 
 
-**ver 2.0.4 -- 09jan20**
-
-* Now castle pool contains reflective water;
-* Improved controlability of mouse slew @ HiDpi.
-* Added ~/data/settings.txt file to allow users to adjust:
-	* Forward/Backward Speed
-	* Slew Speed using:
-		* keyboard
-		* mouse
-		* gamepad
-		* joystick
+**ver 2.1.5 -- 18apr20**
+* Changes in shaders now assure that OpenGL v3.3 is sufficient to run this app.  This is an issue for older graphics drivers.
+* Resolved glfw full-screen problem on RedHat-derived linux distros by running "windowed full screen" within desktop border.
+* Updated to glfw v3.3.2.
 
 
-**ver 2.0.3 -- 07jan20**
-
-* Improved windows build method;
-* Now delivering this GLFW version as the mainstream version;
+**ver 2.1.4 -- 31mar20**
+* Fixed rare linux soundLoop overruns due to wrong PID.
 
 
-**ver 2.0.2 -- 25dec19**
-
-* Restored proper fireball speed;
-* Finalized code for basic joystick/gamepad function.
-
-
-**ver 2.0.1 -- 24dec19**
-
-* Fixed some coding errors & omissions that might cause trouble in HiDpi mode.
-
-
-**ver 2.0.0 -- 23dec19**
-
-* Converted Ada code to use GLFW, rather than SDL2;
-* Updated libraries, DLLs, Ada binding;
-* Limited gamepad functionality;
-
-
-
-
-**ver 1.5.7 -- 19dec19**
-
-* Instead of delivering two distinct executables for each platform, a single commandline parameter of "0" now signals HighDpi is NOT desired.  Thus, no parameter will prefer HighDpi, if available.  Graphical overload is not usually a problem with AdaVenture.
-* Improved font code & anti-aliasing thru corrected OpenGL code parameters.
-
-
-**ver 1.5.6 -- 31nov19**
-
-* Carnivorous beetles are now deadly if you linger too long.
-* Added & improved death-scream sounds.
-* Now deliver two executables for Mac/OSX, defaulted to Low-Dpi.
-
-
-**ver 1.5.5 -- 26nov19**
-
-* Repaired a library problem with the GNU/Linux build that limited portability.
-* Added skylight and improved lighting in ninth maze.
-* Added frame for castle skylight.
-
+**ver 2.1.3 -- 27jan20**
+* Fixed occasional task-related aborts (linux version).
 
