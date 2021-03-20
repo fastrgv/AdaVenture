@@ -157,7 +157,11 @@ adaventure_osx (Mac)
 adaventure_gnu (Linux)
 
 
-This linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint.
+This linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint. Or try running the Windows executable on linux using wine thusly:
+
+	* wine binw64/adaventure64.exe
+
+
 
 Mac users can also navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".  Note that any jerkiness experienced while running at HiDpi can be elliminated by editting the bundle-controls to force LowDpi.
 
