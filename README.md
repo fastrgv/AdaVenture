@@ -157,7 +157,7 @@ Open a commandline terminal, and cd to the install directory, and type:
 	* adaventure_gnu (Linux)
 
 
-This linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint. Or try running the Windows executable on linux using wine thusly:
+This linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint. Alternatively, you can run the Windows executable on linux using wine thusly:
 
 	* wine binw64/adaventure64.exe
 
