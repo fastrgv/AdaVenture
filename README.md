@@ -5,6 +5,8 @@
 
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/nuAV.jpg)
 
+![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/copper.png)
+
 
 Click on the large 7z file under releases to download all source & binaries (Windows,Mac & Linux) or try this link:
 
