@@ -46,6 +46,11 @@ https://youtu.be/428fRdu-fZs
 
 ## Whats new:
 
+**ver 2.2.3 -- 18apr21**
+* Improved movement, playability & random key locations [ch3,ch4].
+* Improved maps to show beetles' domain as well as possible key locations.
+* Maze entrance now has Arabic warning, & Zoroastrian symbol.
+* Trees now impenetrable.
 
 **ver 2.2.2 -- 10apr21**
 * Improved castle exterior & lighting on interior alcove.
