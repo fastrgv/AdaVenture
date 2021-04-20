@@ -87,7 +87,7 @@ Be sure to look to the sky as you return to the castle with the chalice.
 
 * The mazes have interconnections that are impossible in 3 dimensions, but as such, they are painstakingly exact reproductions of those in the original "Adventure" game from Atari.  In fact, the "./mapRoom" subdirectory contains the original maps to help guide you.
 
-* When looking closely at a pickable object, a hand will appear indicating that a click will pick up the object.  When holding an object, a click will drop it at the current location.  Only one object at a time may be carried.
+* When looking closely at a pickable object, a hand will appear indicating that a [mouse or pad]-click will pick up the object.  When holding an object, a click will drop it at the current location.  Only one object at a time may be carried.
 
 * Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered binaries.
 
