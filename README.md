@@ -87,7 +87,7 @@ Be sure to look to the sky as you return to the castle with the chalice.
 
 * The mazes have interconnections that are impossible in 3 dimensions, but as such, they are painstakingly exact reproductions of those in the original "Adventure" game from Atari.  In fact, the "./mapRoom" subdirectory contains the original maps to help guide you.
 
-* When looking closely at a pickable object, a hand will appear indicating that a click will pick up the object.  When holding an object, another click will drop it at the current location.  Only one object at a time may be carried.
+* When looking closely at a pickable object, a hand will appear indicating that a click will pick up the object.  When holding an object, a click will drop it at the current location.  Only one object at a time may be carried.
 
 * Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered binaries.
 
@@ -184,10 +184,7 @@ Note that the Windows executable can be run on linux using wine thusly:
 
 
 
-The linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint. Also should run under wine thusly:
-
-	* wine binw64/adaventure64.exe
-
+The linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint.
 
 Mac users can also navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".  Note that any jerkiness experienced while running at HiDpi can be elliminated by editting the bundle-controls to force LowDpi.
 
