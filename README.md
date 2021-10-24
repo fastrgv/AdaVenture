@@ -45,8 +45,14 @@ https://youtu.be/428fRdu-fZs
 
 
 
-
 ## Whats new:
+
+
+
+**ver x.x.x -- 25oct2021**
+* Improved adaOpenAL binding code...AdaVenture is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
+* Updated glext.lib (Win64).
+* In addition to the Win64 build, now added a Win32 build.
 
 **ver 2.2.3 -- 18apr21**
 * Improved movement, playability & random key locations [ch3,ch4].
@@ -89,7 +95,7 @@ Be sure to look to the sky as you return to the castle with the chalice.
 
 * The mazes have interconnections that are impossible in 3 dimensions, but as such, they are painstakingly exact reproductions of those in the original "Adventure" game from Atari.  In fact, the "./mapRoom" subdirectory contains the original maps to help guide you.
 
-* When looking closely at a pickable object, a hand will appear indicating that a [mouse or pad]-click will pick up the object.  When holding an object, a click will drop it at the current location.  Only one object at a time may be carried.
+* When looking closely at a pickable object, a hand will appear indicating that a click will pick up the object.  When holding an object, another click will drop it at the current location.  Only one object at a time may be carried.
 
 * Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered binaries.
 
@@ -120,7 +126,7 @@ The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates t
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-		(Up)
+			(Up)
 	(Lt)	(Dn)	(Rt)
 ---------------------------
 
@@ -176,17 +182,21 @@ The proper command to extract the archive and maintain the directory structure i
 
 Open a commandline terminal, and cd to the install directory, and type: 
 
-adaventure.bat (Windows)
+adaventure.bat (Windows 64-bit)
+adaventure32.bat (Windows 32-bit)
 adaventure_osx (Mac)
 adaventure_gnu (Linux)
 
-Note that the Windows executable can be run on linux using wine thusly:
 
+The linux executable was built on [RedHat-based] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint.
+
+Note that the Windows executable can be run on linux using wine thusly:
 	* wine binw64/adaventure64.exe
 
 
+Windows users note: I suggest that you DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
 
-The linux executable was built on [RedHat] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint.
+
 
 Mac users can also navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".  Note that any jerkiness experienced while running at HiDpi can be elliminated by editting the bundle-controls to force LowDpi.
 
@@ -219,7 +229,7 @@ fastrgv@gmail.com
 
 ## Rebuild Requirements:
 * systems:  Windows, OSX or GNU/Linux
-* a recent gnat Ada compiler;  eg. AdaCore
+* a recent Ada compiler;  eg. AdaCore, GNU/GNAT
 * Xcode g++ compiler, if using OSX
 
 
@@ -231,13 +241,19 @@ Three [pre-compiled] binary executables are delivered, one for Windows, one for 
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
-Build scripts for GNAT are provided;  a Windows or linux build machine need not have a C++ compiler installed.  Only free GNAT-GPL from AdaCore is required (GNAT has its own g++).
+Build scripts for AdaCore Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes.
 
 -------------------------------------------------------
 
+**msWin32** => w32cmp.bat
+
+or
+
 **msWin64** => wcmp.bat
 
-Note that the above windows build script assume the 64bit AdaCore compiler is on your path.
+Note that wcmp.bat assumes the 64bit AdaCore compiler is on your path. Slight modifications might be needed to use [the GNU Compiler Collection ] GNAT compiler.
+
+Note also that the [hard-to-find] 64-bit library file glext64.lib was built using the AdaCore g++ compiler versus glext-src code obtained from Source Forge. You can use it as-is; you need not recreate it. See glext64.7z.
 
 
 -------------------------------------------------------
@@ -413,20 +429,4 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 * Added extra drama if angered beetles decide to attack.
 * Added explicit safeguards to GLFW binding.
 
-**ver 2.1.6 -- 30apr20**
-* Fixed/restored full-screen on all operating systems;
-
-
-**ver 2.1.5 -- 18apr20**
-* Changes in shaders now assure that OpenGL v3.3 is sufficient to run this app.  This is an issue for older graphics drivers.
-* Resolved glfw full-screen problem on RedHat-derived linux distros by running "windowed full screen" within desktop border.
-* Updated to glfw v3.3.2.
-
-
-**ver 2.1.4 -- 31mar20**
-* Fixed rare linux soundLoop overruns due to wrong PID.
-
-
-**ver 2.1.3 -- 27jan20**
-* Fixed occasional task-related aborts (linux version).
 
