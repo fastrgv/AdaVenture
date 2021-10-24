@@ -49,7 +49,7 @@ https://youtu.be/428fRdu-fZs
 
 
 
-**ver x.x.x -- 25oct2021**
+**ver 2.2.4 -- 25oct2021**
 * Improved adaOpenAL binding code...AdaVenture is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
 * Updated glext.lib (Win64).
 * In addition to the Win64 build, now added a Win32 build.
