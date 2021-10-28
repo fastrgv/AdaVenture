@@ -265,6 +265,7 @@ build script for generating a portable executable that will run on most OSX plat
 **GNU/Linux** => lcmp.sh:
 
 uses mostly dynamic linking, especially for the non-standard library GLFW, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
+See also the file "gnatUserNote.txt".
 
 If the delivered linux binary does not run...
 
