@@ -47,7 +47,10 @@ https://youtu.be/428fRdu-fZs
 
 ## Whats new:
 
-
+**ver 2.2.5 -- 17nov2021**
+* Updated all GLFW libs to newest [static] version(v3.3.5), & scripts.
+* Elliminated OpenGL-mipmap error on nvidia nouveau drivers.
+* Now include library fix & build scripts for GNU-Ada, as well as AdaCore.
 
 **ver 2.2.4 -- 25oct2021**
 * Improved adaOpenAL binding code...AdaVenture is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
