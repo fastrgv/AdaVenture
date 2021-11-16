@@ -47,6 +47,8 @@ https://youtu.be/428fRdu-fZs
 
 ## Whats new:
 
+
+
 **ver 2.2.5 -- 17nov2021**
 * Updated all GLFW libs to newest [static] version(v3.3.5), & scripts.
 * Elliminated OpenGL-mipmap error on nvidia nouveau drivers.
@@ -54,31 +56,8 @@ https://youtu.be/428fRdu-fZs
 
 **ver 2.2.4 -- 25oct2021**
 * Improved adaOpenAL binding code...AdaVenture is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
-* Updated glext.lib (Win64).
+* Updated glext64.lib (Win64).
 * In addition to the Win64 build, now added a Win32 build.
-
-**ver 2.2.3 -- 18apr21**
-* Improved movement, playability & random key locations [ch3,ch4].
-* Improved maps to show beetles' domain as well as possible key locations.
-* Maze entrance now has Arabic warning, & Zoroastrian symbol.
-* Trees now impenetrable.
-
-**ver 2.2.2 -- 10apr21**
-* Improved castle exterior & lighting on interior alcove.
-* Upgraded to glfw v3.3.4.
-* Fixed bad logic that forced a death by beetles.
-* Enhanced maze maps.
-
-**ver 2.2.1 -- 28mar21**
-* Added beetle warning so gamers don't dawdle among them.
-* Added decorative metallic copper brackets to castle pool as a demonstration of multi-texturing and reflective lighting.
-
-**ver 2.2.0 -- 07nov20**
-* Installed completely new cross-platform sound system using OpenAL.
-* Now deliver only a single Windows build (64-bit).
-
-**ver 2.1.8 -- 18sep20**
-* Added Windows launcher "adaventure.bat".
 
 ## More change-history at end of file
 
@@ -87,11 +66,21 @@ https://youtu.be/428fRdu-fZs
 ## AdaVenture Game Description
 AdaVenture is a kid-friendly retro point & click game, intended to be a minimal extension to 3D of the 2D Atari game named "Adventure", but with various artistic extrapolations.  Same stories but a different perspective.  Runs on Windows, OSX, and GNU/Linux.
 
+-----------------------------------------------------------
+Featuring
+
+	* no installation
+	* no dependencies
+	* simply unzip in your Downloads directory, and run.
+-----------------------------------------------------------
+
+## AdaVenture Introduction
 Set in ancient Persia, it begins outside the castle of the young King Xerxes, who inherited a magical golden chalice from his father, Darius the Great.  Coveted by Greek foes King Leonidas of Sparta and King Minos of Crete, the chalice has been stolen.
 
 Your quest is to seek and return the royal chalice to its pedestal within the castle of Xerxes...a stealth mission to preclude open hostilities.  But, there will be obstacles to overcome.  You must find the keys to various realms, defend yourself against dragons and the Minotaur, avoid snakes and pesky bats who steal things only to drop them in random locations, and survive the maze of the green mamba and crazed, flesh-eating scarabs.
 
 Be sure to look to the sky as you return to the castle with the chalice.
+
 
 
 ## AdaVenture Game Features
@@ -100,7 +89,7 @@ Be sure to look to the sky as you return to the castle with the chalice.
 
 * When looking closely at a pickable object, a hand will appear indicating that a click will pick up the object.  When holding an object, another click will drop it at the current location.  Only one object at a time may be carried.
 
-* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if GNAT is installed you can build it yourself!  But first try the delivered binaries.
+* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if Ada is installed you can build it yourself!  But first try the delivered binaries.
 
 * Windows, GNU/Linux and OSX binaries provided, as well as full source. 
 
@@ -129,7 +118,7 @@ The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates t
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-			(Up)
+		(Up)
 	(Lt)	(Dn)	(Rt)
 ---------------------------
 
@@ -188,12 +177,12 @@ Open a commandline terminal, and cd to the install directory, and type:
 adaventure.bat (Windows 64-bit)
 adaventure32.bat (Windows 32-bit)
 adaventure_osx (Mac)
-adaventure_gnu (Linux)
+adaventure_gnu (Linux, AdaCore build)
 
 
-The linux executable was built on [RedHat-based] Scientific-Linux to not only run well, but to rebuild easily. I believe this single linux executable will run on most recent distributions of linux. It has been tested on OpenSuse and Mint.
+The linux executable has been recently tested on Trisquel, ScientificLinux, and Mint.
 
-Note that the Windows executable can be run on linux using wine thusly:
+Also, the Windows executable can be run on linux using wine thusly:
 	* wine binw64/adaventure64.exe
 
 
@@ -244,7 +233,7 @@ Three [pre-compiled] binary executables are delivered, one for Windows, one for 
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
-Build scripts for AdaCore Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes.
+Build scripts for AdaCore Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes. See avgcmp.sh.
 
 -------------------------------------------------------
 
@@ -262,17 +251,16 @@ Note also that the [hard-to-find] 64-bit library file glext64.lib was built usin
 -------------------------------------------------------
 **MacOSX** => ocmp.sh:
 
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard library GLFW installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have GNAT GPL installed, as well as g++ from Xcode.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard library GLFW installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have Ada installed, as well as g++ from Xcode.
 
 ------------------------------------------------------
 **GNU/Linux** => lcmp.sh:
 
 uses mostly dynamic linking, especially for the non-standard library GLFW, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
-See also the file "gnatUserNote.txt".
 
 If the delivered linux binary does not run...
 
-* Manually install GNAT GPL from libre.adacore.com/download/.
+* Manually install [community] Ada from adacore.com/download/.
 * Rerun the compile script lcmp.sh.
 
 
@@ -428,9 +416,52 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 ## Update History:
 
+**ver 2.2.3 -- 18apr21**
+* Improved movement, playability & random key locations [ch3,ch4].
+* Improved maps to show beetles' domain as well as possible key locations.
+* Maze entrance now has Arabic warning, & Zoroastrian symbol.
+* Trees now impenetrable.
+
+**ver 2.2.2 -- 10apr21**
+* Improved castle exterior & lighting on interior alcove.
+* Upgraded to glfw v3.3.4.
+* Fixed bad logic that forced a death by beetles.
+* Enhanced maze maps.
+
+**ver 2.2.1 -- 28mar21**
+* Added beetle warning so gamers don't dawdle among them.
+* Added decorative metallic copper brackets to castle pool as a demonstration of multi-texturing and reflective lighting.
+
+**ver 2.2.0 -- 07nov20**
+* Installed completely new cross-platform sound system using OpenAL.
+* Now deliver only a single Windows build (64-bit).
+
+**ver 2.1.8 -- 18sep20**
+* Added Windows launcher "adaventure.bat".
+
+
 **ver 2.1.7 -- 02jul20**
 * Updated all GLFW libs to v3.3.2.
 * Added extra drama if angered beetles decide to attack.
 * Added explicit safeguards to GLFW binding.
+
+**ver 2.1.6 -- 30apr20**
+* Fixed/restored full-screen on all operating systems;
+
+
+**ver 2.1.5 -- 18apr20**
+* Changes in shaders now assure that OpenGL v3.3 is sufficient to run this app.  This is an issue for older graphics drivers.
+* Resolved glfw full-screen problem on RedHat-derived linux distros by running "windowed full screen" within desktop border.
+* Updated to glfw v3.3.2.
+
+
+**ver 2.1.4 -- 31mar20**
+* Fixed rare linux soundLoop overruns due to wrong PID.
+
+
+**ver 2.1.3 -- 27jan20**
+* Fixed occasional task-related aborts (linux version).
+
+
 
 
