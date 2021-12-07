@@ -363,7 +363,7 @@ The particular choices of sound, image, and fragment shader files [x.fs] deliver
 
 
 ### SoundFiles
-Many sounds are from freesound.org and are covered by the Creative Commons Attribution noncommercial license documented in the accompanying file ccnc3_license.txt.  see also:  (http://creativecommons.org/licenses/by-nc/3.0/legalcode/)
+Many sounds are from freesound.org and are covered by the Creative Commons CC0 license.
 
 Two tracks (for the labyrinth) from incompetech.com (also CC-by-3 license) thanks to Kevin MacLeod (Cephalopod,Dama-May).
 
