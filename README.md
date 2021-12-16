@@ -41,13 +41,19 @@ Carnivorous Beetles:
 https://youtu.be/428fRdu-fZs
 
 
+
+
 # AdaVenture GLFW/OpenAL version
 
 
 
 ## Whats new:
 
-
+**ver 2.2.6 -- 17dec2021**
+* The (h)-key now, also, toggles Intro/Help screen;
+* Added more example build scripts, including one for OSX that does not require Xcode.
+* Replaced all cc-by-nc-licensed sound files due to incompatibility with GPLv3.
+* Improved sound-tracks in Labyrinth.
 
 **ver 2.2.5 -- 17nov2021**
 * Updated all GLFW libs to newest [static] version(v3.3.5), & scripts.
@@ -64,7 +70,9 @@ https://youtu.be/428fRdu-fZs
 
 
 ## AdaVenture Game Description
-AdaVenture is a kid-friendly retro point & click game, intended to be a minimal extension to 3D of the 2D Atari game named "Adventure", but with various artistic extrapolations.  Same stories but a different perspective.  Runs on Windows, OSX, and GNU/Linux.
+AdaVenture is a kid-friendly retro point & click game, intended as a reincarnation in 3D of the original Atari game named "Adventure", with various artistic extrapolations.  The mazes have interconnections that are impossible in 3 dimensions, but are painstakingly exact reproductions of those in the original game.  In fact, the "./mapRoom" subdirectory contains the original maps to help guide you.  
+
+Runs on Windows, OSX, and GNU/Linux.
 
 -----------------------------------------------------------
 Featuring
@@ -84,8 +92,6 @@ Be sure to look to the sky as you return to the castle with the chalice.
 
 
 ## AdaVenture Game Features
-
-* The mazes have interconnections that are impossible in 3 dimensions, but as such, they are painstakingly exact reproductions of those in the original "Adventure" game from Atari.  In fact, the "./mapRoom" subdirectory contains the original maps to help guide you.
 
 * When looking closely at a pickable object, a hand will appear indicating that a click will pick up the object.  When holding an object, another click will drop it at the current location.  Only one object at a time may be carried.
 
@@ -118,12 +124,15 @@ The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates t
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-		(Up)
-	(Lt)	(Dn)	(Rt)
+       (Up)
+(Lt)   (Dn)   (Rt)
+
 ---------------------------
 
 *	(v)-key			=> save game state to resume later
 *  (esc)-key 		=> exit;
+*  (i)-key			=> toggle Intro/Help screen
+*  (h)-key			=> toggle Intro/Help screen
 *  (space)-key		=> pick or drop
 *  mouse-click		=> pick or drop
 *  (m)-key		 	=> toggle Mouse-view (1st-person) or avatar(3rd-person)
@@ -211,7 +220,7 @@ fastrgv@gmail.com
 ## Included Open Source libraries that allow rebuilding:
 * GLFW, openal, freetype
 * glext.lib for Windows
-* the included "bindings" directory contains Ada interfaces:
+* the included "bindings" directory contains Ada interfaces for:
 	* AdaPngLib
 	* gl
 	* glfwada
@@ -221,8 +230,7 @@ fastrgv@gmail.com
 
 ## Rebuild Requirements:
 * systems:  Windows, OSX or GNU/Linux
-* a recent Ada compiler;  eg. AdaCore, GNU/GNAT
-* Xcode g++ compiler, if using OSX
+* a recent Ada compiler;  eg. AdaCore-Ada, GNU-Ada
 
 
 
@@ -252,6 +260,8 @@ Note also that the [hard-to-find] 64-bit library file glext64.lib was built usin
 **MacOSX** => ocmp.sh:
 
 build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard library GLFW installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have Ada installed, as well as g++ from Xcode.
+
+Note: ./alternateBuildScripts/GNocmp.sh shows how to build on OSX without Xcode.
 
 ------------------------------------------------------
 **GNU/Linux** => lcmp.sh:
@@ -359,28 +369,30 @@ AdaVenture itself is covered by the GNU GPL v3 as indicated in the sources:
 ## Media Files:
 
 ### General Note
-The particular choices of sound, image, and fragment shader files [x.fs] delivered are not essential to the function of the game and are easily replaced.
+The particular choices of shaders, sounds & images are not essential to the function of the game and are easily replaced. 
+
+It is my intention to use media with copyrights or licenses that are compatible with GPLv3. Please notify me if you believe there is an incompatibility, and it will be removed ASAP, eg a CC-by-NC license is NOT GPL compatible.
 
 
 ### SoundFiles
-Many sounds are from freesound.org and are covered by the Creative Commons CC0 license.
+Most sounds are from freesound.org and are covered by the Creative Commons CC0 license documented in the accompanying file ./docs/otherLicenses/creativeCommonsCC0.txt. A few others with CC-by-3.0 license have accompanying text files with attributions.
 
-Two tracks (for the labyrinth) from incompetech.com (also CC-by-3 license) thanks to Kevin MacLeod (Cephalopod,Dama-May).
+Others [eg. shriek] are from http://www.freesfx.co.uk, which have an attribution requirement, but no legal restrictions otherwise.
 
-Some original Atari sounds were also used.
+Some original Atari sounds [public domain] were also used.
 
 Credit and thanks to the Godfather of Exotica, Korla Pandit, for the excellent renditions of Turkish Dance and Miserlou...a song so old that its origins are vague, yet was known to have been popular in ancient Persia and the middle-east, as well as to all us fans of Dick Dale!
 
 
 ### ImageFiles 
 * the GPL2.0/GPL3.0-only section of OpenGameArt.Org.  
-* http://www.mayang.com/textures.  See mayang_license.txt.  
+* http://www.mayang.com/textures.  See ./docs/mayang_license.txt.  
 * pixabay.com with a CC0 license.
-* http://all-free-download.com/free-photos/.
+* http://all-free-download.com/free-photos/ (public domain).
 
 
 ### ShaderFiles 
-Several fragment shader files used were downloaded from http://glslsandbox.com/ and put under ./data/.  All frag. shaders from glslsandbox are under the MIT license (see mit_license.txt).  Existing comments or any identifying information was retained.
+Several fragment shader files used were downloaded from http://glslsandbox.com/ and put under ./data/.  All frag. shaders from glslsandbox are under the MIT license (see ./docs/mit_license.txt).  Existing comments or any identifying information was retained.
 
 In order to make these usable, I had to modernize them to glsl version 330 specifications, and adapt them to utilize some programatic uniforms for input.
 
@@ -389,21 +401,22 @@ In order to make these usable, I had to modernize them to glsl version 330 speci
 
 * www.custommapmakers.org/skyboxes.php
 * www.OpenGameArt.org;  thanks to Pieter Spiney Verhoeven (cloudy)
-* Some beautiful hi-res skyboxes used [from OpenGameArt.org] are the work of Heiko Irrgang <hi@93-interactive.com> and licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.  To view a copy of this license, visit (http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.  See also the accompanying file ccsa3_license.txt.
+* Some beautiful hi-res skyboxes used [from OpenGameArt.org] are the work of Heiko Irrgang <hi@93-interactive.com> and licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.  To view a copy of this license, visit (http://creativecommons.org/licenses/by-sa/3.0/) or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.  See also the accompanying file ./docs/ccsa3_license.txt.
 
 
 ### Bindings & Utilities
 
-Thanks to Kazakov, Anisimkov, Sanguine and Krause.
+Thanks to Dmitry Kazakov, Dimitry Anisimkov, Stephen Sanguine and Felix Krause, for their software tools, as mentioned above.
 
 
-## Best Download Sites for my games:
+## Download Sites for my games:
 
 https://github.com/fastrgv?tab=repositories
+https://www.indiedb.com/members/fastrgv/games
+https://fastrgv.itch.io
+https://sourceforge.net/u/fastrgv/profile/
+https://gamejolt.com/@fastrgv/games
 
-http://www.indiedb.com/members/fastrgv/games
-
-https://fastrgv.itch.io/
 
 ## Video Level 1:
 https://youtu.be/Pr0IhvHXvFQ
@@ -461,7 +474,5 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 **ver 2.1.3 -- 27jan20**
 * Fixed occasional task-related aborts (linux version).
-
-
 
 
