@@ -49,6 +49,12 @@ https://youtu.be/428fRdu-fZs
 
 ## Whats new:
 
+**ver 2.2.7 -- 18jan2022**
+
+* Elliminated unused Frameworks directory
+* Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
+* Updated linux libs to use static libfreetype.a & libpng16.a
+* 
 **ver 2.2.6 -- 17dec2021**
 * The (h)-key now, also, toggles Intro/Help screen;
 * Added more example build scripts, including one for OSX that does not require Xcode.
