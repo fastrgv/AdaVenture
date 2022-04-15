@@ -49,6 +49,13 @@ https://youtu.be/428fRdu-fZs
 
 ## Whats new:
 
+**ver 2.2.8 -- 16apr2022**
+
+* Improved zoom function.
+* Converted linux libraries to exclusively shared format for portability.
+* Alternate script for GNU-Ada also works, now.
+
+
 **ver 2.2.7 -- 18jan2022**
 
 * Elliminated unused Frameworks directory
