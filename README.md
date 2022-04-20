@@ -353,8 +353,9 @@ For the C++ programmer the code should be easy to comprehend; and for the experi
 
 This game is a work in progress, so please excuse any scaffolding and debugging code has not been removed.
 
-If you make improvements, please send then to <fastrgv@gmail.com>
-
+Open source Ada developers are welcome to help improve or extend this app.
+Developer or not, send comments, suggestions or questions to:
+fastrgv@gmail.com
 
 
 --------------------------
