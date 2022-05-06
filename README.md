@@ -94,6 +94,8 @@ Featuring
 	* no installation
 	* no dependencies
 	* simply unzip in your Downloads directory, and run.
+	* or unzip onto a USB flash drive [w/same file format] and run.
+
 -----------------------------------------------------------
 
 ## AdaVenture Introduction
