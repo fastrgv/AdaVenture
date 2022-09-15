@@ -50,6 +50,12 @@ https://youtu.be/428fRdu-fZs
 
 ## Whats new:
 
+**ver 2.2.9 -- 16sep2022**
+
+* Removed Win64 build.
+* Now using GNU Ada rather than defunct AdaCore compiler.
+
+
 **ver 2.2.8 -- 16apr2022**
 
 * Improved zoom function.
