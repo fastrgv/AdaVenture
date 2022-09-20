@@ -12,7 +12,7 @@
 
 Click on the large 7z file under releases to download all source & binaries (Windows,Mac & Linux) or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v2.2.9/av16sep22.7z
+https://github.com/fastrgv/AdaVenture/releases/download/v2.3.0/av20sep22.7z
 
 
 Type "7z x filename" to extract the archive.
@@ -96,18 +96,17 @@ https://youtu.be/428fRdu-fZs
 
 
 ## AdaVenture Game Description
-AdaVenture is a kid-friendly retro point & click game, intended as a reincarnation in 3D of the original Atari game named "Adventure", with various artistic extrapolations.  The mazes have interconnections that are impossible in 3 dimensions, but are painstakingly exact reproductions of those in the original game.  In fact, the "./mapRoom" subdirectory contains the original maps to help guide you.  
+AdaVenture is a kid-friendly retro point & click game, a reincarnation in 3D of the original Atari game named "Adventure", with various artistic extrapolations.  The mazes have interconnections that are impossible in 3 dimensions, but are painstakingly exact reproductions of those in the original game.  In fact, the "./mapRoom" subdirectory contains the original maps to help guide you.  
 
-Runs on Windows, OSX, and GNU/Linux.
+Runs on Windows, OSX, and GNU/Linux. Includes all source code & build scripts.
 
 -----------------------------------------------------------
 Featuring
 
 	* no installation
 	* no dependencies
-	* simply unzip in your Downloads directory, and run.
-	* or unzip onto a USB flash drive formatted to match your system, and run.
-
+	* simply unzip in your Downloads directory, and run;
+	* or unzip onto a USB flash drive [w/same file format] and run.
 -----------------------------------------------------------
 
 ## AdaVenture Introduction
@@ -127,7 +126,7 @@ Be sure to look to the sky as you return to the castle with the chalice.
 
 * Windows, GNU/Linux and OSX binaries provided, as well as full source. 
 
-* Note that a 64 bit build for Windows is delivered.
+* Note that a 32 bit build for Windows is delivered.
 
 * Laptop friendly controls;  supports Mac Retina displays in high DPI mode.
 
@@ -147,7 +146,8 @@ Be sure to look to the sky as you return to the castle with the chalice.
 
 Look direction is controlled by touch pad or mouse;
 
-The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates the mouse wheel; Zoom can also be controlled with keys n, f, z [Nearer,Further,default];  Note that Zoom changes now show immediately, even when stopped, but Lazy Camera change does not show immediately.
+The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates the mouse wheel; 
+Zoom can also be controlled with keys n, f, z [Nearer,Further,default];  Note that Zoom changes now show immediately, even when stopped, but Lazy Camera change does not show immediately.
 
 
 Movement is controlled by the WASD keys or the arrow keys:
@@ -199,7 +199,7 @@ If the need arises, copy the file "default_settings.txt" to "./data/settings.txt
 
 ## Setup & Running Adaventure:
 
-The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows (64bit), 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
+The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows (32bit), 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
 
 
 Mac users see "osx-setup.txt".
@@ -211,16 +211,16 @@ The proper command to extract the archive and maintain the directory structure i
 
 Open a commandline terminal, and cd to the install directory, and type: 
 
-adaventure.bat (Windows 64-bit)
 adaventure32.bat (Windows 32-bit)
+adaventure64.bat (Windows 64-bit)
 adaventure_osx (Mac)
-adaventure_gnu (Linux, AdaCore build)
+adaventure_gnu (Linux, gnat build)
 
 
 The linux executable has been recently tested on Trisquel, ScientificLinux, and Mint.
 
 Also, the Windows executable can be run on linux using wine thusly:
-	* wine binw64/adaventure64.exe
+	* wine binw32/adaventure32.exe
 
 
 Windows users note: I suggest that you DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
@@ -258,7 +258,7 @@ fastrgv@gmail.com
 
 ## Rebuild Requirements:
 * systems:  Windows, OSX or GNU/Linux
-* a recent Ada compiler;  eg. AdaCore-Ada, GNU-Ada
+* a recent Ada compiler;  eg. GNU-Ada
 
 
 
@@ -269,19 +269,13 @@ Three [pre-compiled] binary executables are delivered, one for Windows, one for 
 
 The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
 
-Build scripts for AdaCore Ada [with its own g++] are provided. But should also work for GNAT from the GNU Compiler Collection, with minor changes. See avgcmp.sh.
+Build scripts for GNU Ada [with its own g++] are provided.
 
 -------------------------------------------------------
 
 **msWin32** => w32cmp.bat
+**msWin64** => w64cmp.bat (read ~docs\gnuAdaOnWindows.txt)
 
-or
-
-**msWin64** => wcmp.bat
-
-Note that wcmp.bat assumes the 64bit AdaCore compiler is on your path. Slight modifications might be needed to use [the GNU Compiler Collection ] GNAT compiler.
-
-Note also that the [hard-to-find] 64-bit library file glext64.lib was built using the AdaCore g++ compiler versus glext-src code obtained from Source Forge. You can use it as-is; you need not recreate it. See glext64.7z.
 
 
 -------------------------------------------------------
@@ -294,11 +288,11 @@ Note: ./alternateBuildScripts/GNocmp.sh shows how to build on OSX without Xcode.
 ------------------------------------------------------
 **GNU/Linux** => lcmp.sh:
 
-uses mostly dynamic linking, especially for the non-standard library GLFW, as well as other more common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
+uses dynamic linking for some common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
 If the delivered linux binary does not run...
 
-* Manually install [community] Ada from adacore.com/download/.
+* Manually install GNU Ada.
 * Rerun the compile script lcmp.sh.
 
 
@@ -335,18 +329,18 @@ On a linux build machine, you might get fixable link errors, depending on its co
 
 
 ----------------------------------------------------------------------
-## For Developers Only:  Fancy Shaders
+## For Developers Only:  Fancy Shaders, FX
 
 This app demonstrates how to use fancy fragment shaders from glslsandbox.com to make starry maze skies. See below (Media Files). It also demonstrates the use of coherent noise to create the rolling fireball in the labyrinth.
 
 ----------------------------------------------------------------------
 ## For Developers Only:  OpenAL portable sound package
 
-This app uses a cross-platform sound-playing package for Ada apps that can asynchronously start and stop music loops, as well as initiate transient sounds.
+This app uses a cross-platform sound-playing package for Ada apps that can asynchronously start and stop music loops, as well as initiate transient sounds, allowing unlimited concurrency.
 
 It plays WAV files, via OpenAL, on Windows, OSX, and linux platforms.
 
-It is suitable for any Ada application that needs music, sound loops or transient sound effects; eg. games.
+It is suitable for <u>any</u> Ada application that needs music, sound loops or transient sound effects; eg. games.
 
 
 
@@ -367,6 +361,7 @@ For the C++ programmer the code should be easy to comprehend; and for the experi
 
 This game is a work in progress, so please excuse any scaffolding and debugging code has not been removed.
 
+
 Open source Ada developers are welcome to help improve or extend this app.
 Developer or not, send comments, suggestions or questions to:
 fastrgv@gmail.com
@@ -379,7 +374,7 @@ fastrgv@gmail.com
 AdaVenture itself is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2021  fastrgv@gmail.com
+ Copyright (C) 2022  fastrgv@gmail.com
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -458,6 +453,33 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 ## Update History:
 
+**ver 2.2.8 -- 16apr2022**
+* Improved zoom function.
+* Reverted linux libraries to exclusively shared format for portability.
+* Alternate script for GNU-Ada also works, now.
+
+**ver 2.2.7 -- 18jan2022**
+* Eliminated unused Frameworks directory
+* Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
+* Updated linux libs to use static libfreetype.a & libpng16.a
+
+**ver 2.2.6 -- 17dec2021**
+* The (h)-key now, also, toggles Intro/Help screen;
+* Added more example build scripts, including one for OSX that does not require Xcode.
+* Replaced all cc-by-nc-licensed sound files due to incompatibility with GPLv3.
+* Improved sound-tracks in Labyrinth.
+
+**ver 2.2.5 -- 17nov2021**
+* Updated all GLFW libs to newest [static] version(v3.3.5), & scripts.
+* Elliminated OpenGL-mipmap error on nvidia nouveau drivers.
+* Now include library fix & build scripts for GNU-Ada, as well as AdaCore.
+
+**ver 2.2.4 -- 25oct2021**
+* Improved adaOpenAL binding code...AdaVenture is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
+* Updated glext64.lib (Win64).
+* In addition to the Win64 build, now added a Win32 build.
+
+
 **ver 2.2.3 -- 18apr21**
 * Improved movement, playability & random key locations [ch3,ch4].
 * Improved maps to show beetles' domain as well as possible key locations.
@@ -503,5 +525,7 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 **ver 2.1.3 -- 27jan20**
 * Fixed occasional task-related aborts (linux version).
+
+
 
 
