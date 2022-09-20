@@ -51,6 +51,11 @@ https://youtu.be/428fRdu-fZs
 
 ## Whats new:
 
+**ver 2.3.0 -- 20sep2022**
+
+* Restored Win64 build, now using MSYS2 & mingw64 on Windows.
+
+
 **ver 2.2.9 -- 16sep2022**
 
 * Removed Win64 build.
