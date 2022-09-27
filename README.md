@@ -45,11 +45,17 @@ https://youtu.be/428fRdu-fZs
 
 
 
-# AdaVenture GLFW/OpenAL version
+# AdaVenture using GLFW & OpenAL
 
 
 
 ## Whats new:
+
+
+**ver 2.3.1 -- 30sep2022**
+
+* Now using simpler-to-setup GNU Ada for Win64.
+
 
 **ver 2.3.0 -- 20sep2022**
 
@@ -61,35 +67,6 @@ https://youtu.be/428fRdu-fZs
 * Removed Win64 build.
 * Now using GNU Ada rather than defunct AdaCore compiler.
 
-
-**ver 2.2.8 -- 16apr2022**
-
-* Improved zoom function.
-* Converted linux libraries to exclusively shared format for portability.
-* Alternate script for GNU-Ada also works, now.
-
-
-**ver 2.2.7 -- 18jan2022**
-
-* Elliminated unused Frameworks directory
-* Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
-* Updated linux libs to use static libfreetype.a & libpng16.a
-* 
-**ver 2.2.6 -- 17dec2021**
-* The (h)-key now, also, toggles Intro/Help screen;
-* Added more example build scripts, including one for OSX that does not require Xcode.
-* Replaced all cc-by-nc-licensed sound files due to incompatibility with GPLv3.
-* Improved sound-tracks in Labyrinth.
-
-**ver 2.2.5 -- 17nov2021**
-* Updated all GLFW libs to newest [static] version(v3.3.5), & scripts.
-* Elliminated OpenGL-mipmap error on nvidia nouveau drivers.
-* Now include library fix & build scripts for GNU-Ada, as well as AdaCore.
-
-**ver 2.2.4 -- 25oct2021**
-* Improved adaOpenAL binding code...AdaVenture is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
-* Updated glext64.lib (Win64).
-* In addition to the Win64 build, now added a Win32 build.
 
 ## More change-history at end of file
 
@@ -126,7 +103,7 @@ Be sure to look to the sky as you return to the castle with the chalice.
 
 * Windows, GNU/Linux and OSX binaries provided, as well as full source. 
 
-* Note that a 32 bit build for Windows is delivered.
+* Note that both 32+64 bit builds for Windows are delivered.
 
 * Laptop friendly controls;  supports Mac Retina displays in high DPI mode.
 
@@ -273,17 +250,17 @@ Build scripts for GNU Ada [with its own g++] are provided.
 
 -------------------------------------------------------
 
-**msWin32** => w32cmp.bat
-**msWin64** => w64cmp.bat (read ~docs\gnuAdaOnWindows.txt)
+**msWin32** => setpath32.bat + w32cmp.bat
+**msWin64** => setpath64.bat + w64cmp.bat (read ~docs\gnuAdaOnWindows.txt)
 
+Note that the above windows build script might need to be adjusted to reference your actual installation directory for the GNU Ada compiler.
 
 
 -------------------------------------------------------
 **MacOSX** => ocmp.sh:
 
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard library GLFW installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have Ada installed, as well as g++ from Xcode.
+build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard library GLFW installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have GNU Ada installed.
 
-Note: ./alternateBuildScripts/GNocmp.sh shows how to build on OSX without Xcode.
 
 ------------------------------------------------------
 **GNU/Linux** => lcmp.sh:
@@ -296,7 +273,7 @@ If the delivered linux binary does not run...
 * Rerun the compile script lcmp.sh.
 
 
-### Link Problems during linux build:
+### Fixable link problems during linux build:
 
 On a linux build machine, you might get fixable link errors, depending on its configuration.  If you are missing "libxxx.so", you might need to create a proper softlink so it can be found.
 
@@ -361,7 +338,6 @@ For the C++ programmer the code should be easy to comprehend; and for the experi
 
 This game is a work in progress, so please excuse any scaffolding and debugging code has not been removed.
 
-
 Open source Ada developers are welcome to help improve or extend this app.
 Developer or not, send comments, suggestions or questions to:
 fastrgv@gmail.com
@@ -371,7 +347,7 @@ fastrgv@gmail.com
 ## License:
 
 
-AdaVenture itself is covered by the GNU GPL v3 as indicated in the sources:
+This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
  Copyright (C) 2022  fastrgv@gmail.com
