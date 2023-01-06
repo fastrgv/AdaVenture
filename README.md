@@ -45,27 +45,29 @@ https://youtu.be/428fRdu-fZs
 
 
 
-# AdaVenture using GLFW & OpenAL
+
+
+
+# AdaVenture 
+## using GLFW & OpenAL
 
 
 
 ## Whats new:
 
 
+**ver 2.3.2 -- 07jan2022**
+
+* Discontiued OSX development.
+* Added exterior stone fence; palms.
+* Improved scarab sound effects.
+* Improved documentation.
+
+
 **ver 2.3.1 -- 30sep2022**
 
 * Now using simpler-to-setup GNU Ada for Win64.
 
-
-**ver 2.3.0 -- 20sep2022**
-
-* Restored Win64 build, now using MSYS2 & mingw64 on Windows.
-
-
-**ver 2.2.9 -- 16sep2022**
-
-* Removed Win64 build.
-* Now using GNU Ada rather than defunct AdaCore compiler.
 
 
 ## More change-history at end of file
@@ -75,7 +77,7 @@ https://youtu.be/428fRdu-fZs
 ## AdaVenture Game Description
 AdaVenture is a kid-friendly retro point & click game, a reincarnation in 3D of the original Atari game named "Adventure", with various artistic extrapolations.  The mazes have interconnections that are impossible in 3 dimensions, but are painstakingly exact reproductions of those in the original game.  In fact, the "./mapRoom" subdirectory contains the original maps to help guide you.  
 
-Runs on Windows, OSX, and GNU/Linux. Includes all source code & build scripts.
+Runs on Windows, and GNU/Linux. Includes all source code & build scripts.
 
 -----------------------------------------------------------
 Featuring
@@ -99,21 +101,23 @@ Be sure to look to the sky as you return to the castle with the chalice.
 
 * When looking closely at a pickable object, a hand will appear indicating that a click will pick up the object.  When holding an object, another click will drop it at the current location.  Only one object at a time may be carried.
 
-* Works on PCs or laptops running Windows, OSX or GNU/Linux.  And if Ada is installed you can build it yourself!  But first try the delivered binaries.
+* Works on PCs or laptops running Windows, or GNU/Linux.  And if Ada is installed you can build it yourself!  But first try the delivered binaries.
 
-* Windows, GNU/Linux and OSX binaries provided, as well as full source. 
+* Windows & Linux binaries provided, as well as full source. 
 
-* Note that both 32+64 bit builds for Windows are delivered.
+* Note that both 32+64 bit builds for Windows are currently delivered.
 
-* Laptop friendly controls;  supports Mac Retina displays in high DPI mode.
+* Laptop friendly controls;  supports HiDpi displays.
 
-* The game has four levels.  One fairly easy campaign in Sparta, with a more difficult variant due to thick dark fog.  These are the top two.  Similarly, there is a tricky campaign in Crete, and an even more difficult dark variant.  These are the bottom two, showing Minotaurs.  You select the desired campaign at the beginning of the game.  You can save the current game by using the v-key.  This allows resumption later.  You must replay from the beginning if you die before saving.  Saving the game state is a relatively new feature that only saves one game.  If a saved game exists, a fifth option appears at screen center to resume that game.
+* The game has four levels.  Level 1 : fairly easy campaign in Sparta, with a more difficult variant [ level 3] due to thick dark fog & randomized key locations.  These are the top two.  Similarly, level 2 is a tricky campaign in Crete, and an even more difficult dark variant [level 4].  These are the bottom two, showing Minotaurs.  You select the desired campaign at the beginning of the game.  You can save the current game by using the v-key.  This allows resumption later.  You must replay from the beginning if you die before saving.  Saving the game state is a relatively new feature that only saves one game.  If a saved game exists, a fifth option appears at screen center to resume that game.
+
+* Maze/Labyrinth hint: For a younger generation that is not familiar with the original Atari Adventure game, note that there is a magenta colored moveable "bridge" that may be picked up and carried to another location where a shortcut is needed with the following shape: **][**  Its use is required to access the chalice, and to escape the labyrinth in levels 2 & 4.
 
 * To change the appearance of the avatar, simply download your favorite MineCraft Skin, rename it to "skin.png" and put it into the ./data/ directory.  You should probably backup the current skin before you do this, in case of trouble.  See http://www.minecraftskins.net/.  See also ./data/avatars/ for a small selection.
 
-* For developers, serves as a great example of modern OpenGL programming in Ada or C++ using GLSL 330, shaders, uniforms and Freetype fonts.
+* For developers, serves as a great example of modern OpenGL programming using GLSL 330, shaders, uniforms and Freetype fonts.
 
-* The Ada bindings to OpenGL, OpenAL & GLFW3 in this app are usable as a standalone library for most any modern Ada graphics project.
+* The thin Ada bindings to OpenGL & GLFW3, and the minimal binding to OpenAL in this app are usable as standalone libraries for most any modern Ada graphics project.
 
 
 
@@ -123,7 +127,7 @@ Be sure to look to the sky as you return to the castle with the chalice.
 
 Look direction is controlled by touch pad or mouse;
 
-The mouse wheel controls camera zoom.  On MacBooks, a 2-finger swipe simulates the mouse wheel; 
+The mouse wheel controls camera zoom.  On laptops, a 2-finger swipe simulates the mouse wheel; 
 Zoom can also be controlled with keys n, f, z [Nearer,Further,default];  Note that Zoom changes now show immediately, even when stopped, but Lazy Camera change does not show immediately.
 
 
@@ -144,7 +148,6 @@ Movement is controlled by the WASD keys or the arrow keys:
 *  (l)-key			=> toggle camera type:  1)Lazy, 2)Tight
 
 In case of unexpected control problems with the game, or if you want to easily inspect some curious feature (like Jupiter in the night sky), temporarily switch to 1st-person mode with the (m)-key.
-
 
 ### joystick
 * joystick:  attitude
@@ -170,16 +173,14 @@ If the need arises, copy the file "default_settings.txt" to "./data/settings.txt
 ## required for running:
 
 * graphics card with ample memory & driver that supports OpenGL version 3.3 or later;
-* Windows, GNU/Linux(glibc > v2.14) or OSX >= 10.13(sep2017);
+* Windows, GNU/Linux(glibc > v2.17)
 * optional game controller or joystick.
 
 
 ## Setup & Running Adaventure:
 
-The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows (32bit), 2)OS-X, 3)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  If you are NOT running OS-X, you do NOT need the subdirectory named ./adaventure.app/.
+The application's root directory [./avent/] contains files for deployment on 2 platforms:  1)windows (32 or 64 bit), 2)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  
 
-
-Mac users see "osx-setup.txt".
 Windows users see "windows-setup.txt".
 
 
@@ -190,23 +191,22 @@ Open a commandline terminal, and cd to the install directory, and type:
 
 adaventure32.bat (Windows 32-bit)
 adaventure64.bat (Windows 64-bit)
-adaventure_osx (Mac)
 adaventure_gnu (Linux, gnat build)
 
 
-The linux executable has been recently tested on Trisquel, ScientificLinux, and Mint.
+The linux executable has been recently tested, and runs well on Trisquel, ScientificLinux, OpenSuse, and Mint.
+
+**If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the "padsp" command:  "padsp <exe-name>".**
+
 
 Also, the Windows executable can be run on linux using wine thusly:
 	* wine binw32/adaventure32.exe
 
 
-Windows users note: I suggest that you DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
+Windows users note: DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
 
 
-
-Mac users can also navigate to the installation directory in Finder and click the "adaventure.app" icon named "AdaVenture".  Note that any jerkiness experienced while running at HiDpi can be elliminated by editting the bundle-controls to force LowDpi.
-
-Save the game [ v-key ] prior to risky behavior or quitting, in order to resume later.
+Remember to save the game [ v-key ] prior to risky behavior or quitting, in order to resume later.
 
 In case of trouble moving, switch to 1st person.
 
@@ -234,32 +234,27 @@ fastrgv@gmail.com
 	* Kazakov strings, tables
 
 ## Rebuild Requirements:
-* systems:  Windows, OSX or GNU/Linux
-* a recent Ada compiler;  eg. GNU-Ada
+* systems:  Windows, or GNU/Linux
+* a recent Ada compiler;  eg. GNU-Ada...try this link:
 
+https://github.com/alire-project/GNAT-FSF-builds/releases
 
 
 
 ## Build instructions for AdaVenture:
 
-Three [pre-compiled] binary executables are delivered, one for Windows, one for gnu/linux and one for OSX.  I believe the Windows executables are fairly portable.  They were built on Windows 10.  The Mac binary, adaventure_osx, should run on most any standard Mac with a recent version of OSX.  
+Three [pre-compiled] binary executables are delivered, two for Windows, & one for gnu/linux.  I believe the Windows executables are fairly portable.  They were built on Windows 10.  
 
-The distributed linux executable requires glibc v2.14 or newer.  That means if your distribution is older than june 2011, it may not run, and you will need to recompile.
+The distributed linux executable requires glibc v2.17 or newer.  That means if your distribution is older than 2012, it may not run, and you might need to recompile. But if you have wine, you can simply run the Windows executables.
 
-Build scripts for GNU Ada [with its own g++] are provided.
+Build scripts for GNU Ada, which comes with its own g++ compiler, are provided.
 
 -------------------------------------------------------
 
 **msWin32** => setpath32.bat + w32cmp.bat
 **msWin64** => setpath64.bat + w64cmp.bat (read ~docs\gnuAdaOnWindows.txt)
 
-Note that the above windows build script might need to be adjusted to reference your actual installation directory for the GNU Ada compiler.
-
-
--------------------------------------------------------
-**MacOSX** => ocmp.sh:
-
-build script for generating a portable executable that will run on most OSX platforms whether or not they have non-standard library GLFW installed.  This is used to build the executable named adaventure_osx.  Macs with a recent but standard configuration of OSX should be able to rebuild using these scripts, assuming you have GNU Ada installed.
+Note that the above windows build scripts might need to be adjusted to reference your actual installation directory for the GNU Ada compiler.
 
 
 ------------------------------------------------------
@@ -275,7 +270,7 @@ If the delivered linux binary does not run...
 
 ### Fixable link problems during linux build:
 
-On a linux build machine, you might get fixable link errors, depending on its configuration.  If you are missing "libxxx.so", you might need to create a proper softlink so it can be found.
+On a linux build machine, you might get a few fixable link errors, depending on its configuration.  If you are missing "libxxx.so", you might simply need to create a proper softlink so it can be found.
 
 ----------------------------------------------------------------------
 ## For Developers Only:  Portable Avatar Using Shaders
@@ -315,7 +310,7 @@ This app demonstrates how to use fancy fragment shaders from glslsandbox.com to 
 
 This app uses a cross-platform sound-playing package for Ada apps that can asynchronously start and stop music loops, as well as initiate transient sounds, allowing unlimited concurrency.
 
-It plays WAV files, via OpenAL, on Windows, OSX, and linux platforms.
+It plays WAV files, via OpenAL, on Windows, and linux platforms.
 
 It is suitable for <u>any</u> Ada application that needs music, sound loops or transient sound effects; eg. games.
 
@@ -324,11 +319,11 @@ It is suitable for <u>any</u> Ada application that needs music, sound loops or t
 -----------------------------------------------------------------------
 ## What is special about this project?
 
-The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without any 3rd party add-ons! It has been tested on OpenSuse, ScientificLinux, Mint and CentOS.
+The linux-build of this app is among very few modern OpenGL games with sound where a single pre-built executable can run on multiple Linux distros without any 3rd party add-ons! It is routinely tested on OpenSuse[2022], ScientificLinux[redhat derivative from 2012], & Mint.
 
 For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
 
-It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux and Mac OSX systems.
+It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux systems.
 
 Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin glfw3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine and Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, plus string & table utilities by Dmitry Kazakov.
 
@@ -350,7 +345,7 @@ fastrgv@gmail.com
 This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2022  fastrgv@gmail.com
+ Copyright (C) 2023  fastrgv@gmail.com
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -438,70 +433,6 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 * Eliminated unused Frameworks directory
 * Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
 * Updated linux libs to use static libfreetype.a & libpng16.a
-
-**ver 2.2.6 -- 17dec2021**
-* The (h)-key now, also, toggles Intro/Help screen;
-* Added more example build scripts, including one for OSX that does not require Xcode.
-* Replaced all cc-by-nc-licensed sound files due to incompatibility with GPLv3.
-* Improved sound-tracks in Labyrinth.
-
-**ver 2.2.5 -- 17nov2021**
-* Updated all GLFW libs to newest [static] version(v3.3.5), & scripts.
-* Elliminated OpenGL-mipmap error on nvidia nouveau drivers.
-* Now include library fix & build scripts for GNU-Ada, as well as AdaCore.
-
-**ver 2.2.4 -- 25oct2021**
-* Improved adaOpenAL binding code...AdaVenture is now buildable with [GNU Compiler Collection] GNAT, as well as all AdaCore versions.
-* Updated glext64.lib (Win64).
-* In addition to the Win64 build, now added a Win32 build.
-
-
-**ver 2.2.3 -- 18apr21**
-* Improved movement, playability & random key locations [ch3,ch4].
-* Improved maps to show beetles' domain as well as possible key locations.
-* Maze entrance now has Arabic warning, & Zoroastrian symbol.
-* Trees now impenetrable.
-
-**ver 2.2.2 -- 10apr21**
-* Improved castle exterior & lighting on interior alcove.
-* Upgraded to glfw v3.3.4.
-* Fixed bad logic that forced a death by beetles.
-* Enhanced maze maps.
-
-**ver 2.2.1 -- 28mar21**
-* Added beetle warning so gamers don't dawdle among them.
-* Added decorative metallic copper brackets to castle pool as a demonstration of multi-texturing and reflective lighting.
-
-**ver 2.2.0 -- 07nov20**
-* Installed completely new cross-platform sound system using OpenAL.
-* Now deliver only a single Windows build (64-bit).
-
-**ver 2.1.8 -- 18sep20**
-* Added Windows launcher "adaventure.bat".
-
-
-**ver 2.1.7 -- 02jul20**
-* Updated all GLFW libs to v3.3.2.
-* Added extra drama if angered beetles decide to attack.
-* Added explicit safeguards to GLFW binding.
-
-**ver 2.1.6 -- 30apr20**
-* Fixed/restored full-screen on all operating systems;
-
-
-**ver 2.1.5 -- 18apr20**
-* Changes in shaders now assure that OpenGL v3.3 is sufficient to run this app.  This is an issue for older graphics drivers.
-* Resolved glfw full-screen problem on RedHat-derived linux distros by running "windowed full screen" within desktop border.
-* Updated to glfw v3.3.2.
-
-
-**ver 2.1.4 -- 31mar20**
-* Fixed rare linux soundLoop overruns due to wrong PID.
-
-
-**ver 2.1.3 -- 27jan20**
-* Fixed occasional task-related aborts (linux version).
-
 
 
 
