@@ -48,15 +48,25 @@ https://youtu.be/428fRdu-fZs
 
 
 
+
+
+
 # AdaVenture 
 ## using GLFW & OpenAL
 
 
 
-## Whats new:
+## Recent Changes
 
 
-**ver 2.3.2 -- 07jan2022**
+**ver 2.3.3 -- 8feb2023**
+
+* Refined labyrinth actions & sounds.
+* Added theme music for intro-screen [from P.I.R.]
+* Added more Kevin Macleod music at finale.
+
+
+**ver 2.3.2 -- 07jan2023**
 
 * Discontiued OSX development.
 * Added exterior stone fence; palms.
@@ -75,9 +85,9 @@ https://youtu.be/428fRdu-fZs
 
 
 ## AdaVenture Game Description
-AdaVenture is a kid-friendly retro point & click game, a reincarnation in 3D of the original Atari game named "Adventure", with various artistic extrapolations.  The mazes have interconnections that are impossible in 3 dimensions, but are painstakingly exact reproductions of those in the original game.  In fact, the "./mapRoom" subdirectory contains the original maps to help guide you.  
+AdaVenture is a kid-friendly retro point & click game, a reincarnation in 3D of the original Atari game named "Adventure", with various artistic extrapolations.  The mazes have interconnections that are impossible in 3 dimensions, but are painstakingly exact reproductions of those in the original game.  In fact, the "mapRoom" subdirectory contains the original maps to help guide you.  
 
-Runs on Windows, and GNU/Linux. Includes all source code & build scripts.
+Runs on Windows, and GNU/Linux. Includes all source code, build scripts & resources.
 
 -----------------------------------------------------------
 Featuring
@@ -93,7 +103,6 @@ Set in ancient Persia, it begins outside the castle of the young King Xerxes, wh
 
 Your quest is to seek and return the royal chalice to its pedestal within the castle of Xerxes...a stealth mission to preclude open hostilities.  But, there will be obstacles to overcome.  You must find the keys to various realms, defend yourself against dragons and the Minotaur, avoid snakes and pesky bats who steal things only to drop them in random locations, and survive the maze of the green mamba and crazed, flesh-eating scarabs.
 
-Be sure to look to the sky as you return to the castle with the chalice.
 
 
 
@@ -118,6 +127,8 @@ Be sure to look to the sky as you return to the castle with the chalice.
 * For developers, serves as a great example of modern OpenGL programming using GLSL 330, shaders, uniforms and Freetype fonts.
 
 * The thin Ada bindings to OpenGL & GLFW3, and the minimal binding to OpenAL in this app are usable as standalone libraries for most any modern Ada graphics project.
+
+* The sound system enables a build with surprising portability across various linux distros, as well as across various platforms.
 
 
 
@@ -147,7 +158,9 @@ Movement is controlled by the WASD keys or the arrow keys:
 *  (m)-key		 	=> toggle Mouse-view (1st-person) or avatar(3rd-person)
 *  (l)-key			=> toggle camera type:  1)Lazy, 2)Tight
 
-In case of unexpected control problems with the game, or if you want to easily inspect some curious feature (like Jupiter in the night sky), temporarily switch to 1st-person mode with the (m)-key.
+Notes:
+* only one object may be carried. 
+* In case of unexpected control problems with the game, or if you want to easily inspect some curious feature (like Jupiter in the night sky), temporarily switch to 1st-person mode with the (m)-key.
 
 ### joystick
 * joystick:  attitude
@@ -226,12 +239,13 @@ fastrgv@gmail.com
 * GLFW, openal, freetype
 * glext.lib for Windows
 * the included "bindings" directory contains Ada interfaces for:
-	* AdaPngLib
 	* gl
 	* glfwada
 	* OpenAL
-	* FreeTypeAda
-	* Kazakov strings, tables
+	* Stephen Sanguine's AdaPngLib
+	* Dmitriy Anisimkov's Zlib for Ada
+	* Felix Krause's FreeTypeAda
+	* Dmitry Kazakov's strings, tables
 
 ## Rebuild Requirements:
 * systems:  Windows, or GNU/Linux
@@ -376,6 +390,8 @@ Others [eg. shriek] are from http://www.freesfx.co.uk, which have an attribution
 
 Some original Atari sounds [public domain] were also used.
 
+Credit and thanks to Kevin Macleod [CC-by-3.0] for his great compositions Cephalopod, AngevinB, & Ibn-Al-Noor.
+
 Credit and thanks to the Godfather of Exotica, Korla Pandit, for the excellent renditions of Turkish Dance and Miserlou...a song so old that its origins are vague, yet was known to have been popular in ancient Persia and the middle-east, as well as to all us fans of Dick Dale!
 
 
@@ -433,6 +449,4 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 * Eliminated unused Frameworks directory
 * Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
 * Updated linux libs to use static libfreetype.a & libpng16.a
-
-
 
