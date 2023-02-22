@@ -51,12 +51,22 @@ https://youtu.be/428fRdu-fZs
 
 
 
+
+
+
 # AdaVenture 
 ## using GLFW & OpenAL
 
 
 
 ## Recent Changes
+
+
+**ver 2.3.4 -- 23feb2023**
+
+* Fixed graphical anomaly in castle; & other code improvements.
+* Documented ghost-key.
+* Bat now grabs sword if it is dropped to pickup black key.
 
 
 **ver 2.3.3 -- 8feb2023**
@@ -158,9 +168,10 @@ Movement is controlled by the WASD keys or the arrow keys:
 *  (m)-key		 	=> toggle Mouse-view (1st-person) or avatar(3rd-person)
 *  (l)-key			=> toggle camera type:  1)Lazy, 2)Tight
 
-Notes:
+### Game Notes:
 * only one object may be carried. 
 * In case of unexpected control problems with the game, or if you want to easily inspect some curious feature (like Jupiter in the night sky), temporarily switch to 1st-person mode with the (m)-key.
+* When looking for the black key, it might help to try to find the "ghost" key, a white key image on the ceiling above the actual key location. In levels 3 & 4, the fog makes this difficult to see.
 
 ### joystick
 * joystick:  attitude
@@ -209,7 +220,7 @@ adaventure_gnu (Linux, gnat build)
 
 The linux executable has been recently tested, and runs well on Trisquel, ScientificLinux, OpenSuse, and Mint.
 
-**If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the "padsp" command:  "padsp <exe-name>".**
+**If an older Linux system complains that /dev/dsp/ cannot be opened, prepend the command with "padsp",EG:  "padsp (ExeName)".**
 
 
 Also, the Windows executable can be run on linux using wine thusly:
@@ -449,4 +460,6 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 * Eliminated unused Frameworks directory
 * Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
 * Updated linux libs to use static libfreetype.a & libpng16.a
+
+
 
