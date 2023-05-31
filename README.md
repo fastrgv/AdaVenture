@@ -10,7 +10,7 @@
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/av1.jpg)
 
 
-Click on the large 7z file under releases to download all source & binaries (Windows,Mac & Linux) or try this link:
+Click on the large 7z file under releases to download all source & binaries (Windows & Linux) or try this link:
 
 https://github.com/fastrgv/AdaVenture/releases/download/v2.3.4/av23feb23.7z
 
