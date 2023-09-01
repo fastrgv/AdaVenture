@@ -54,6 +54,8 @@ https://youtu.be/428fRdu-fZs
 
 
 
+
+
 # AdaVenture 
 ## using GLFW & OpenAL
 
@@ -62,31 +64,19 @@ https://youtu.be/428fRdu-fZs
 ## Recent Changes
 
 
+**ver 2.3.5 -- 2sep2023**
+
+* Added exception-handler to save state if a freeze or abort error occurs.
+* Made minotaur bipedal, because he is actually half-man.
+* Current game state can now be saved at any time to a time-stamped file, allowing restoration during startup from a select-list.
+* No longer delivering 32-bit Windows code.
+
+
 **ver 2.3.4 -- 23feb2023**
 
 * Fixed graphical anomaly in castle; & other code improvements.
 * Documented ghost-key.
 * Bat now grabs sword if it is dropped to pickup black key.
-
-
-**ver 2.3.3 -- 8feb2023**
-
-* Refined labyrinth actions & sounds.
-* Added theme music for intro-screen [from P.I.R.]
-* Added more Kevin Macleod music at finale.
-
-
-**ver 2.3.2 -- 07jan2023**
-
-* Discontiued OSX development.
-* Added exterior stone fence; palms.
-* Improved scarab sound effects.
-* Improved documentation.
-
-
-**ver 2.3.1 -- 30sep2022**
-
-* Now using simpler-to-setup GNU Ada for Win64.
 
 
 
@@ -124,11 +114,16 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 
 * Windows & Linux binaries provided, as well as full source. 
 
-* Note that both 32+64 bit builds for Windows are currently delivered.
-
 * Laptop friendly controls;  supports HiDpi displays.
 
-* The game has four levels.  Level 1 : fairly easy campaign in Sparta, with a more difficult variant [ level 3] due to thick dark fog & randomized key locations.  These are the top two.  Similarly, level 2 is a tricky campaign in Crete, and an even more difficult dark variant [level 4].  These are the bottom two, showing Minotaurs.  You select the desired campaign at the beginning of the game.  You can save the current game by using the v-key.  This allows resumption later.  You must replay from the beginning if you die before saving.  Saving the game state is a relatively new feature that only saves one game.  If a saved game exists, a fifth option appears at screen center to resume that game.
+* The game has four levels.  Level 1 : fairly easy campaign in Sparta, with a more difficult variant [ level 3] due to thick dark fog & randomized key locations.  These are the top two.  Similarly, level 2 is a tricky campaign in Crete, and an even more difficult dark variant [level 4].  These are the bottom two, showing Minotaurs.  You select the desired campaign at the beginning of the game.  
+
+* You can explicitly save the current game by using the v-key.  This allows resumption later.  You must replay from the beginning if you die before saving.
+
+* In the unlikely event a game aborts before you save a game, you might be able to recover as follows.
+Go to the "data" subdirectory and copy the file "gamestatex.txt" to the ./savedGames/ directory, 
+then choose resume at startup and pick gamestatex.txt.
+Note that this recover file is NOT created if you die, but only if the game malfunctions.
 
 * Maze/Labyrinth hint: For a younger generation that is not familiar with the original Atari Adventure game, note that there is a magenta colored moveable "bridge" that may be picked up and carried to another location where a shortcut is needed with the following shape: **][**  Its use is required to access the chalice, and to escape the labyrinth in levels 2 & 4.
 
@@ -159,14 +154,14 @@ Movement is controlled by the WASD keys or the arrow keys:
 
 ---------------------------
 
-*	(v)-key			=> save game state to resume later
+*	(v)-key			=> saVe game state to resume later
 *  (esc)-key 		=> exit;
 *  (i)-key			=> toggle Intro/Help screen
 *  (h)-key			=> toggle Intro/Help screen
 *  (space)-key		=> pick or drop
 *  mouse-click		=> pick or drop
 *  (m)-key		 	=> toggle Mouse-view (1st-person) or avatar(3rd-person)
-*  (l)-key			=> toggle camera type:  1)Lazy, 2)Tight
+*  (l)-key			=> toggle camera type:  1)Lazy(default), or 2)Tight
 
 ### Game Notes:
 * only one object may be carried. 
@@ -185,6 +180,9 @@ Movement is controlled by the WASD keys or the arrow keys:
 * Rpaddle :  attitude
 * L/R Shoulder btns:  pick or drop items
 
+Note that regression testing of these controllers has not been done for quite a while.
+Any volunteers?
+
 ------------------------------------------------------------
 ### controller settings
 If the need arises, copy the file "default_settings.txt" to "./data/settings.txt".  Then you can manually edit the floats that define the sensitivity for mouse, keyboard, gamepad & joystick, as well as forward speed of the avatar.
@@ -194,7 +192,7 @@ If the need arises, copy the file "default_settings.txt" to "./data/settings.txt
 ------------------------------------------------------------
 
 
-## required for running:
+## System Requirements:
 
 * graphics card with ample memory & driver that supports OpenGL version 3.3 or later;
 * Windows, GNU/Linux(glibc > v2.17)
@@ -203,7 +201,7 @@ If the need arises, copy the file "default_settings.txt" to "./data/settings.txt
 
 ## Setup & Running Adaventure:
 
-The application's root directory [./avent/] contains files for deployment on 2 platforms:  1)windows (32 or 64 bit), 2)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  
+The application's root directory [./avent/] contains files for deployment on 2 platforms:  1)windows (64 bit), 2)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  
 
 Windows users see "windows-setup.txt".
 
@@ -213,9 +211,8 @@ The proper command to extract the archive and maintain the directory structure i
 
 Open a commandline terminal, and cd to the install directory, and type: 
 
-adaventure32.bat (Windows 32-bit)
 adaventure64.bat (Windows 64-bit)
-adaventure_gnu (Linux, gnat build)
+adaventure (Linux, gnat build)
 
 
 The linux executable has been recently tested, and runs well on Trisquel, ScientificLinux, OpenSuse, and Mint.
@@ -224,13 +221,14 @@ The linux executable has been recently tested, and runs well on Trisquel, Scient
 
 
 Also, the Windows executable can be run on linux using wine thusly:
-	* wine binw32/adaventure32.exe
+	* wine binw64/adaventure64.exe
 
 
 Windows users note: DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
 
 
-Remember to save the game [ v-key ] prior to risky behavior or quitting, in order to resume later.
+Remember to save the game [ v-key ] prior to risky behavior or quitting, in order to easily resume later.
+This writes enough information into a file to be able to resume later.
 
 In case of trouble moving, switch to 1st person.
 
@@ -238,12 +236,6 @@ Note that adjustable OpenGL settings should favor performance.  OTOH, this game 
 
 
 --------------------------------------------------------------------------
-Open source Ada developers are welcome to help improve or extend this game.
-
-Please send improvements, comments, suggestions or questions to:
-
-fastrgv@gmail.com
-
 
 
 ## Included Open Source libraries that allow rebuilding:
@@ -261,8 +253,7 @@ fastrgv@gmail.com
 ## Rebuild Requirements:
 * systems:  Windows, or GNU/Linux
 * a recent Ada compiler;  eg. GNU-Ada...try this link:
-
-https://github.com/alire-project/GNAT-FSF-builds/releases
+	* https://github.com/alire-project/GNAT-FSF-builds/releases
 
 
 
@@ -276,21 +267,20 @@ Build scripts for GNU Ada, which comes with its own g++ compiler, are provided.
 
 -------------------------------------------------------
 
-**msWin32** => setpath32.bat + w32cmp.bat
 **msWin64** => setpath64.bat + w64cmp.bat (read ~docs\gnuAdaOnWindows.txt)
 
 Note that the above windows build scripts might need to be adjusted to reference your actual installation directory for the GNU Ada compiler.
 
 
 ------------------------------------------------------
-**GNU/Linux** => lcmp.sh:
+**GNU/Linux** => mcmp.sh:
 
 uses dynamic linking for some common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
 If the delivered linux binary does not run...
 
 * Manually install GNU Ada.
-* Rerun the compile script lcmp.sh.
+* Rerun the compile script mcmp.sh.
 
 
 ### Fixable link problems during linux build:
@@ -321,7 +311,7 @@ On a linux build machine, you might get a few fixable link errors, depending on 
 
 * Interfacing game code with such an avatar is simple.  Essentially you need only pass the current uniform values prior to drawing, including time, position, attitude, motion-type.
 
-* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar. The details are beyond the scope of this brief introduction, but generally the current policy is a damped and delayed move toward some fixed ideal camera position above and behind the avatar. 
+* Of course one still needs a decent camera positioning and pointing policy within the game code in order to fully appreciate and exhibit the avatar. The details are beyond the scope of this brief introduction, but generally the current policy is a damped and delayed move toward some fixed ideal camera angle and position above and behind the avatar. Two possible ideal camera angles are: a) pointing toward the look-direction of the avatar; b) pointing toward the avatar. The ideal camera angles would depend upon the immediate game environment and goals.
 
 
 
@@ -360,8 +350,10 @@ This game is a work in progress, so please excuse any scaffolding and debugging 
 
 Open source Ada developers are welcome to help improve or extend this app.
 Developer or not, send comments, suggestions or questions to:
-fastrgv@gmail.com
 
+* fastrgv@gmail.com
+
+and please include the file gamestatex.txt from the data directory if you are reporting a freeze or abort.
 
 --------------------------
 ## License:
@@ -433,11 +425,11 @@ Thanks to Dmitry Kazakov, Dimitry Anisimkov, Stephen Sanguine and Felix Krause, 
 
 ## Download Sites for my games:
 
-https://github.com/fastrgv?tab=repositories
-https://www.indiedb.com/members/fastrgv/games
-https://fastrgv.itch.io
-https://sourceforge.net/u/fastrgv/profile/
-https://gamejolt.com/@fastrgv/games
+* https://github.com/fastrgv?tab=repositories
+* https://www.indiedb.com/members/fastrgv/games
+* https://fastrgv.itch.io
+* https://sourceforge.net/u/fastrgv/profile/
+* https://gamejolt.com/@fastrgv/games
 
 
 ## Video Level 1:
@@ -451,6 +443,20 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 ## Update History:
 
+**ver 2.3.3 -- 8feb2023**
+* Refined labyrinth actions & sounds.
+* Added theme music for intro-screen [from P.I.R.]
+* Added more Kevin Macleod music at finale.
+
+**ver 2.3.2 -- 07jan2023**
+* Discontiued OSX development.
+* Added exterior stone fence; palms.
+* Improved scarab sound effects.
+* Improved documentation.
+
+**ver 2.3.1 -- 30sep2022**
+* Now using simpler-to-setup GNU Ada for Win64.
+
 **ver 2.2.8 -- 16apr2022**
 * Improved zoom function.
 * Reverted linux libraries to exclusively shared format for portability.
@@ -460,6 +466,9 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 * Eliminated unused Frameworks directory
 * Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
 * Updated linux libs to use static libfreetype.a & libpng16.a
+
+
+
 
 
 
