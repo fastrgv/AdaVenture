@@ -63,6 +63,10 @@ https://youtu.be/428fRdu-fZs
 
 ## Recent Changes
 
+**ver 2.3.6 -- 5sep2023**
+
+* Fixed problem where saved games could not be restored.
+
 
 **ver 2.3.5 -- 2sep2023**
 
