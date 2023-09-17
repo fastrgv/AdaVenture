@@ -63,6 +63,14 @@ https://youtu.be/428fRdu-fZs
 
 ## Recent Changes
 
+**ver 2.3.7 -- 17sep2023**
+
+* Fixed a problem with the h-key toggle of intro screen/music.
+* Implemented a ghost-sword on ceiling, similar to ghost-key.
+* Bat now grabs dropped sword as planned, ch 1 & ch 3.
+* In Ch1/Ch3 (as originally planned) if sword is dropped to pickup key, bat grabs sword instead.
+
+
 **ver 2.3.6 -- 5sep2023**
 
 * Fixed problem where saved games could not be restored.
