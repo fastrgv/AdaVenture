@@ -56,6 +56,9 @@ https://youtu.be/428fRdu-fZs
 
 
 
+
+
+
 # AdaVenture 
 ## using GLFW & OpenAL
 
@@ -63,33 +66,18 @@ https://youtu.be/428fRdu-fZs
 
 ## Recent Changes
 
+
+**ver 2.3.8 -- 06oct2023**
+
+* Restored OSX build...but without a bundle.
+
+
 **ver 2.3.7 -- 17sep2023**
 
 * Fixed a problem with the h-key toggle of intro screen/music.
 * Implemented a ghost-sword on ceiling, similar to ghost-key.
 * Bat now grabs dropped sword as planned, ch 1 & ch 3.
-* In Ch1/Ch3 (as originally planned) if sword is dropped to pickup key, bat grabs sword instead.
-
-
-**ver 2.3.6 -- 5sep2023**
-
-* Fixed problem where saved games could not be restored.
-
-
-**ver 2.3.5 -- 2sep2023**
-
-* Added exception-handler to save state if a freeze or abort error occurs.
-* Made minotaur bipedal, because he is actually half-man.
-* Current game state can now be saved at any time to a time-stamped file, allowing restoration during startup from a select-list.
-* No longer delivering 32-bit Windows code.
-
-
-**ver 2.3.4 -- 23feb2023**
-
-* Fixed graphical anomaly in castle; & other code improvements.
-* Documented ghost-key.
-* Bat now grabs sword if it is dropped to pickup black key.
-
+* In Ch1/Ch3 (as originally planned) if sword is dropped to pickup key, bat grabs sword instead. Otherwise it grabs the black key.
 
 
 ## More change-history at end of file
@@ -99,7 +87,7 @@ https://youtu.be/428fRdu-fZs
 ## AdaVenture Game Description
 AdaVenture is a kid-friendly retro point & click game, a reincarnation in 3D of the original Atari game named "Adventure", with various artistic extrapolations.  The mazes have interconnections that are impossible in 3 dimensions, but are painstakingly exact reproductions of those in the original game.  In fact, the "mapRoom" subdirectory contains the original maps to help guide you.  
 
-Runs on Windows, and GNU/Linux. Includes all source code, build scripts & resources.
+Runs on Windows, OSX, and GNU/Linux. Includes all source code, build scripts & resources.
 
 -----------------------------------------------------------
 Featuring
@@ -122,9 +110,9 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 
 * When looking closely at a pickable object, a hand will appear indicating that a click will pick up the object.  When holding an object, another click will drop it at the current location.  Only one object at a time may be carried.
 
-* Works on PCs or laptops running Windows, or GNU/Linux.  And if Ada is installed you can build it yourself!  But first try the delivered binaries.
+* Works on PCs or laptops running Windows, OSX, or GNU/Linux.  And if Ada is installed you can build it yourself!  But first try the delivered binaries.
 
-* Windows & Linux binaries provided, as well as full source. 
+* Windows, OSX & Linux binaries provided, as well as full source. 
 
 * Laptop friendly controls;  supports HiDpi displays.
 
@@ -207,24 +195,36 @@ If the need arises, copy the file "default_settings.txt" to "./data/settings.txt
 ## System Requirements:
 
 * graphics card with ample memory & driver that supports OpenGL version 3.3 or later;
-* Windows, GNU/Linux(glibc > v2.17)
+* Windows, OSX(>=10.13), GNU/Linux(glibc > v2.17)
 * optional game controller or joystick.
 
 
 ## Setup & Running Adaventure:
 
-The application's root directory [./avent/] contains files for deployment on 2 platforms:  1)windows (64 bit), 2)linux, in addition to source code.  If you are NOT running windows, you do not need .dll files.  
+The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows (64 bit), 2)linux, 3)OSX, in addition to source code.  
+* If you are NOT running windows, you do not need .dll files.  
 
+Mac users please read "osx-setup.txt".
 Windows users see "windows-setup.txt".
 
 
-Unzip the archive.  On Windows, 7z [www.7-zip.org] works well for this.
-The proper command to extract the archive and maintain the directory structure is "7z x filename".
+Unzip the archive.  
+
+* On Linux & Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
+
+* On OSX, the command-line for Keka works thusly:
+	* /Applications/Keka.app/Contents/MacOS/Keka --cli 7z x (filename.7z)
+
+After the archive is unzipped...
 
 Open a commandline terminal, and cd to the install directory, and type: 
 
 adaventure64.bat (Windows 64-bit)
-adaventure (Linux, gnat build)
+adaventure_gnu (Linux)
+
+adaventure_osx (Mac)
+
+**OSX note: When resuming a game, there seems to be a quirk with window focus that requires a deliberate cursor-click on the saved-games window prior to selection. Not a big problem if you're expecting it.**
 
 
 The linux executable has been recently tested, and runs well on Trisquel, ScientificLinux, OpenSuse, and Mint.
@@ -285,6 +285,9 @@ Note that the above windows build scripts might need to be adjusted to reference
 
 
 ------------------------------------------------------
+**MacOSX** => ocmp.sh
+
+------------------------------------------------------
 **GNU/Linux** => mcmp.sh:
 
 uses dynamic linking for some common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
@@ -337,7 +340,7 @@ This app demonstrates how to use fancy fragment shaders from glslsandbox.com to 
 
 This app uses a cross-platform sound-playing package for Ada apps that can asynchronously start and stop music loops, as well as initiate transient sounds, allowing unlimited concurrency.
 
-It plays WAV files, via OpenAL, on Windows, and linux platforms.
+It plays WAV files, via OpenAL, on Windows, OSX and linux platforms.
 
 It is suitable for <u>any</u> Ada application that needs music, sound loops or transient sound effects; eg. games.
 
@@ -350,7 +353,7 @@ The linux-build of this app is among very few modern OpenGL games with sound whe
 
 For developers, this project can serve as a testbed for learning modern OpenGL and GLSL.
 
-It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, GNU/Linux systems.
+It uses the Ada programming language and modern OpenGL methods, with textures, shaders and uniforms.  Compiles and runs on Windows, OSX, & GNU/Linux systems.
 
 Focusing on portability, transparency, and open source freedom, this project relies exclusively on F.O.S.S. tools:  a thin glfw3 binding, a thin OpenGL binding, a PNG reader by Stephen Sanguine and Dimitry Anisimkov, OpenAL-Audio with a homebrew binding, a FreeTypeAda binding by Felix Krause, plus string & table utilities by Dmitry Kazakov.
 
@@ -455,29 +458,28 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 ## Update History:
 
+
+**ver 2.3.6 -- 5sep2023**
+* Fixed problem where saved games could not be restored.
+
+**ver 2.3.5 -- 2sep2023**
+* Added exception-handler to save state if a freeze or abort error occurs.
+* Made minotaur bipedal, because he is actually half-man.
+* Current game state can now be saved at any time to a time-stamped file, allowing restoration during startup from a select-list.
+* No longer delivering 32-bit Windows code.
+
+**ver 2.3.4 -- 23feb2023**
+* Fixed graphical anomaly in castle; & other code improvements.
+* Documented ghost-key.
+* Bat now grabs sword if it is dropped to pickup black key.
+
+
 **ver 2.3.3 -- 8feb2023**
 * Refined labyrinth actions & sounds.
 * Added theme music for intro-screen [from P.I.R.]
 * Added more Kevin Macleod music at finale.
 
-**ver 2.3.2 -- 07jan2023**
-* Discontiued OSX development.
-* Added exterior stone fence; palms.
-* Improved scarab sound effects.
-* Improved documentation.
 
-**ver 2.3.1 -- 30sep2022**
-* Now using simpler-to-setup GNU Ada for Win64.
-
-**ver 2.2.8 -- 16apr2022**
-* Improved zoom function.
-* Reverted linux libraries to exclusively shared format for portability.
-* Alternate script for GNU-Ada also works, now.
-
-**ver 2.2.7 -- 18jan2022**
-* Eliminated unused Frameworks directory
-* Updated Windows builds to freetype v2.11.1 DLLs (w32,w64).
-* Updated linux libs to use static libfreetype.a & libpng16.a
 
 
 
