@@ -69,7 +69,7 @@ https://youtu.be/428fRdu-fZs
 
 **ver 2.3.8 -- 06oct2023**
 
-* Restored OSX build...but without a bundle.
+* Restored OSX build...but without a bundle. And built without using any Xcode.
 
 
 **ver 2.3.7 -- 17sep2023**
