@@ -64,6 +64,7 @@ https://youtu.be/428fRdu-fZs
 
 
 
+
 # AdaVenture 
 ## using GLFW & OpenAL
 
@@ -72,9 +73,15 @@ https://youtu.be/428fRdu-fZs
 ## Recent Changes
 
 
+**ver 2.3.9 -- 21oct2023**
+
+* Added check for adequate window size when displaying list of saved games.
+* Changed sort of saved games to show most recent first.
+
+
 **ver 2.3.8 -- 06oct2023**
 
-* Restored OSX build...but without a bundle. And built without using any Xcode.
+* Restored OSX build...but without a bundle.
 
 
 **ver 2.3.7 -- 17sep2023**
@@ -197,11 +204,20 @@ If the need arises, copy the file "default_settings.txt" to "./data/settings.txt
 ------------------------------------------------------------
 
 
-## System Requirements:
+## System Requirements for running delivered executables:
 
 * graphics card with ample memory & driver that supports OpenGL version 3.3 or later;
-* Windows, OSX(>=10.13), GNU/Linux(glibc > v2.17)
+* Windows, OSX(>=10.13), GNU/Linux(glibc > v2.17, ~2012)
 * optional game controller or joystick.
+
+
+## Notes on saved games:
+
+Saved games are "txt" files named with the date & time of the save, followed by the chapter number 1..4.
+When resuming, the most recently saved games are at the top of the displayed list. 
+If the list gets too long for the terminal window, then some older games are not shown. 
+So delete or move very old game files periodically under the "savedGames" directory, if needed.
+
 
 
 ## Setup & Running Adaventure:
@@ -217,7 +233,7 @@ Unzip the archive.
 
 * On Linux & Windows, 7z [www.7-zip.org] works well for this. The proper command to extract the archive and maintain the directory structure is "7z x filename".
 
-* On OSX, the command-line for Keka works thusly:
+* On OSX, Keka works well for 7Z files. The command-line for Keka is:
 	* /Applications/Keka.app/Contents/MacOS/Keka --cli 7z x (filename.7z)
 
 After the archive is unzipped...
@@ -230,7 +246,6 @@ adaventure_gnu (Linux)
 adaventure_osx (Mac)
 
 **OSX note: When resuming a game, there seems to be a quirk with window focus that requires a deliberate cursor-click on the saved-games window prior to selection. Not a big problem if you're expecting it.**
-
 
 The linux executable has been recently tested, and runs well on Trisquel, ScientificLinux, OpenSuse, and Mint.
 
@@ -268,7 +283,7 @@ Note that adjustable OpenGL settings should favor performance.  OTOH, this game 
 	* Dmitry Kazakov's strings, tables
 
 ## Rebuild Requirements:
-* systems:  Windows, or GNU/Linux
+* systems:  Windows, OSX, or GNU/Linux
 * a recent Ada compiler;  eg. GNU-Ada...try this link:
 	* https://github.com/alire-project/GNAT-FSF-builds/releases
 
@@ -483,11 +498,5 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 * Refined labyrinth actions & sounds.
 * Added theme music for intro-screen [from P.I.R.]
 * Added more Kevin Macleod music at finale.
-
-
-
-
-
-
 
 
