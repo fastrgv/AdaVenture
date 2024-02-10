@@ -61,16 +61,23 @@ https://youtu.be/428fRdu-fZs
 
 
 
-
-
-
-
 # AdaVenture 
 ## using GLFW & OpenAL
 
 
 
 ## Recent Changes
+
+
+
+**ver 2.4.0 -- 11feb2024**
+
+* Improved/generalized OSX build scripts.
+* Command line params clarified: 1=allowHiDpi(default); 0=forceLoDpi. 
+(Use low DPI to smooth out action graphics.)
+* Added waterfall from castle roof into cistern, using both particle & ribbon textures.
+* Added a wandering toxic cloud in labyrinth.
+* Embellished castle interior.
 
 
 **ver 2.3.9 -- 21oct2023**
@@ -130,7 +137,7 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 
 * The game has four levels.  Level 1 : fairly easy campaign in Sparta, with a more difficult variant [ level 3] due to thick dark fog & randomized key locations.  These are the top two.  Similarly, level 2 is a tricky campaign in Crete, and an even more difficult dark variant [level 4].  These are the bottom two, showing Minotaurs.  You select the desired campaign at the beginning of the game.  
 
-* You can explicitly save the current game by using the v-key.  This allows resumption later.  You must replay from the beginning if you die before saving.
+* You can explicitly save the current game by using the v-key.  This allows resumption later.  You must replay from the beginning if you die before saving. (Game state is saved to the directory ~/savedGames/).
 
 * In the unlikely event a game aborts before you save a game, you might be able to recover as follows.
 Go to the "data" subdirectory and copy the file "gamestatex.txt" to the ./savedGames/ directory, 
@@ -177,7 +184,7 @@ Movement is controlled by the WASD keys or the arrow keys:
 
 ### Game Notes:
 * only one object may be carried. 
-* In case of unexpected control problems with the game, or if you want to easily inspect some curious feature (like Jupiter in the night sky), temporarily switch to 1st-person mode with the (m)-key.
+* If you want to easily inspect some curious feature (like Jupiter in the night sky), temporarily switch to 1st-person mode with the (m)-key.
 * When looking for the black key, it might help to try to find the "ghost" key, a white key image on the ceiling above the actual key location. In levels 3 & 4, the fog makes this difficult to see.
 
 ### joystick
@@ -192,8 +199,7 @@ Movement is controlled by the WASD keys or the arrow keys:
 * Rpaddle :  attitude
 * L/R Shoulder btns:  pick or drop items
 
-Note that regression testing of these controllers has not been done for quite a while.
-Any volunteers?
+Note that regression testing of these controller functions has not been done for quite a while.  Any volunteers?
 
 ------------------------------------------------------------
 ### controller settings
@@ -243,7 +249,9 @@ Open a commandline terminal, and cd to the install directory, and type:
 adaventure64.bat (Windows 64-bit)
 adaventure_gnu (Linux)
 
-adaventure_osx (Mac)
+adaventure_osx (Mac) [ "adaventure_osx 0" indicates using Low-Dpi video mode; default=High-Dpi ]
+	note that Low-Dpi should be used if graphic response is poor.
+
 
 **OSX note: When resuming a game, there seems to be a quirk with window focus that requires a deliberate cursor-click on the saved-games window prior to selection. Not a big problem if you're expecting it.**
 
@@ -297,25 +305,24 @@ The distributed linux executable requires glibc v2.17 or newer.  That means if y
 
 Build scripts for GNU Ada, which comes with its own g++ compiler, are provided.
 
+Of course, the build scripts need to be adjusted to reference your actual installation directory for the Ada compiler.
+
 -------------------------------------------------------
 
 **msWin64** => setpath64.bat + w64cmp.bat (read ~docs\gnuAdaOnWindows.txt)
-
-Note that the above windows build scripts might need to be adjusted to reference your actual installation directory for the GNU Ada compiler.
-
 
 ------------------------------------------------------
 **MacOSX** => ocmp.sh
 
 ------------------------------------------------------
-**GNU/Linux** => mcmp.sh:
+**GNU/Linux** => lcmp.sh:
 
 uses dynamic linking for some common shared libraries that are delivered in this bundle under ./libs/gnu/.  These are used to build the [gnu/linux] executable, which should run in the presence of ./libs/gnu/, whether or not your system has those shared libraries installed.
 
 If the delivered linux binary does not run...
 
 * Manually install GNU Ada.
-* Rerun the compile script mcmp.sh.
+* Rerun the compile script lcmp.sh.
 
 
 ### Fixable link problems during linux build:
@@ -397,7 +404,7 @@ and please include the file gamestatex.txt from the data directory if you are re
 This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2023  fastrgv@gmail.com
+ Copyright (C) 2024  fastrgv@gmail.com
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -422,7 +429,7 @@ It is my intention to use media with copyrights or licenses that are compatible 
 
 
 ### SoundFiles
-Most sounds are from freesound.org and are covered by the Creative Commons CC0 license documented in the accompanying file ./docs/otherLicenses/creativeCommonsCC0.txt. A few others with CC-by-3.0 license have accompanying text files with attributions.
+Most sounds are from freesound.org and are covered by the Creative Commons CC0 license. A few others with CC-by-3.0 license have accompanying text files with attributions. See ./docs/otherLicenses/. The small waterfall sound (CC4 license) was created by Giovanni Provenzale.
 
 Others [eg. shriek] are from http://www.freesfx.co.uk, which have an attribution requirement, but no legal restrictions otherwise.
 
@@ -435,8 +442,9 @@ Credit and thanks to the Godfather of Exotica, Korla Pandit, for the excellent r
 
 ### ImageFiles 
 * the GPL2.0/GPL3.0-only section of OpenGameArt.Org.  
-* http://www.mayang.com/textures.  See ./docs/mayang_license.txt.  
-* pixabay.com with a CC0 license.
+* http://www.mayang.com/textures.
+* pixabay.com with a CC0 or CC3 license.
+* See ./docs/otherLicenses/.
 * http://all-free-download.com/free-photos/ (public domain).
 
 
