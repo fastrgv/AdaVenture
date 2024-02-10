@@ -12,7 +12,7 @@
 
 Click on the large 7z file under releases to download all source & binaries (Windows & Linux) or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v2.3.9/av21oct23.7z
+https://github.com/fastrgv/AdaVenture/releases/download/v2.4.0/av11feb24.7z
 
 
 Type "7z x filename" to extract the archive.
