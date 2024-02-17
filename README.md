@@ -72,6 +72,13 @@ https://youtu.be/428fRdu-fZs
 ## Recent Changes
 
 
+**ver 2.4.1 -- 18feb2024**
+
+* Fixed commandline parm so that "adaventure_osx 0" truly disables HiDpi, as advertised.
+* Added a small waterfall inside castle, fed by copper pipe.
+* Added awesome foam effects where the interior waterfall hits the pool surface.
+* Added simple volume control + other corrections to my OpenAL binding. Using it to adjust outside waterfall sounds.
+
 
 **ver 2.4.0 -- 11feb2024**
 
