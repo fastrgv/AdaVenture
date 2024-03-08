@@ -64,6 +64,9 @@ https://youtu.be/428fRdu-fZs
 
 
 
+
+
+
 # AdaVenture 
 ## using GLFW & OpenAL
 
@@ -72,41 +75,19 @@ https://youtu.be/428fRdu-fZs
 ## Recent Changes
 
 
+
+**ver 2.4.2 -- 9mar2024**
+
+* Added an invisible bridge that spans a chasm between maze7 and labyrinth8. Have faith, but tread carefully.
+* Improved camera handling thru doorways; now allow backing thru.
+
+
 **ver 2.4.1 -- 18feb2024**
 
 * Fixed commandline parm so that "adaventure_osx 0" truly disables HiDpi, as advertised.
 * Added a small waterfall inside castle, fed by copper pipe.
 * Added awesome foam effects where the interior waterfall hits the pool surface.
 * Added simple volume control + other corrections to my OpenAL binding. Using it to adjust outside waterfall sounds.
-
-
-**ver 2.4.0 -- 11feb2024**
-
-* Improved/generalized OSX build scripts.
-* Command line params clarified: 1=allowHiDpi(default); 0=forceLoDpi. 
-(Use low DPI to smooth out action graphics.)
-* Added waterfall from castle roof into cistern, using both particle & ribbon textures.
-* Added a wandering toxic cloud in labyrinth.
-* Embellished castle interior.
-
-
-**ver 2.3.9 -- 21oct2023**
-
-* Added check for adequate window size when displaying list of saved games.
-* Changed sort of saved games to show most recent first.
-
-
-**ver 2.3.8 -- 06oct2023**
-
-* Restored OSX build...but without a bundle.
-
-
-**ver 2.3.7 -- 17sep2023**
-
-* Fixed a problem with the h-key toggle of intro screen/music.
-* Implemented a ghost-sword on ceiling, similar to ghost-key.
-* Bat now grabs dropped sword as planned, ch 1 & ch 3.
-* In Ch1/Ch3 (as originally planned) if sword is dropped to pickup key, bat grabs sword instead. Otherwise it grabs the black key.
 
 
 ## More change-history at end of file
@@ -130,7 +111,7 @@ Featuring
 ## AdaVenture Introduction
 Set in ancient Persia, it begins outside the castle of the young King Xerxes, who inherited a magical golden chalice from his father, Darius the Great.  Coveted by Greek foes King Leonidas of Sparta and King Minos of Crete, the chalice has been stolen.
 
-Your quest is to seek and return the royal chalice to its pedestal within the castle of Xerxes...a stealth mission to preclude open hostilities.  But, there will be obstacles to overcome.  You must find the keys to various realms, defend yourself against dragons and the Minotaur, avoid snakes and pesky bats who steal things only to drop them in random locations, and survive the maze of the green mamba and crazed, flesh-eating scarabs.
+Your quest is to seek and return the royal chalice to its pedestal within the castle of Xerxes...a stealth mission to preclude open hostilities.  But, there will be obstacles to overcome.  You must find the keys to various realms, defend yourself against dragons and the Minotaur, avoid snakes and pesky bats who steal things only to drop them in random locations, and survive the maze of the green mamba and crazed, flesh-eating scarabs. Finally, you must cross the invisible bridge over a killer pungee pit (think Indiana Jones & the Last Crusade).
 
 
 
@@ -239,7 +220,7 @@ So delete or move very old game files periodically under the "savedGames" direct
 ## Setup & Running Adaventure:
 
 The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows (64 bit), 2)linux, 3)OSX, in addition to source code.  
-* If you are NOT running windows, you do not need .dll files.  
+* If you are NOT running windows, you do not need the [large] .dll files.  
 
 Mac users please read "osx-setup.txt".
 Windows users see "windows-setup.txt".
@@ -256,11 +237,12 @@ After the archive is unzipped...
 
 Open a commandline terminal, and cd to the install directory, and type: 
 
-adaventure64.bat (Windows 64-bit)
+adaventureW64.bat (Windows 64-bit)
+
 adaventure_gnu (Linux)
 
-adaventure_osx (Mac) [ "adaventure_osx 0" indicates using Low-Dpi video mode; default=High-Dpi ]
-	note that Low-Dpi should be used if graphic response is poor.
+adaventure_osx (Mac) [ "adaventure_osx 0" indicates forcing Low-Dpi video mode; default=High-Dpi ]
+	note that Low-Dpi should be used if graphics are jerky.
 
 
 **OSX note: When resuming a game, there seems to be a quirk with window focus that requires a deliberate cursor-click on the saved-games window prior to selection. Not a big problem if you're expecting it.**
@@ -319,7 +301,7 @@ Of course, the build scripts need to be adjusted to reference your actual instal
 
 -------------------------------------------------------
 
-**msWin64** => setpath64.bat + w64cmp.bat (read ~docs\gnuAdaOnWindows.txt)
+**msWin64** => setpathw64.bat + wcmp.bat (read ~docs\gnuAdaOnWindows.txt)
 
 ------------------------------------------------------
 **MacOSX** => ocmp.sh
@@ -496,6 +478,26 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 ## Update History:
 
+**ver 2.4.0 -- 11feb2024**
+* Improved/generalized OSX build scripts.
+* Command line params clarified: 1=allowHiDpi(default); 0=forceLoDpi. 
+(Use low DPI to smooth out action graphics.)
+* Added waterfall from castle roof into cistern, using both particle & ribbon textures.
+* Added a wandering toxic cloud in labyrinth.
+* Embellished castle interior.
+
+**ver 2.3.9 -- 21oct2023**
+* Added check for adequate window size when displaying list of saved games.
+* Changed sort of saved games to show most recent first.
+
+**ver 2.3.8 -- 06oct2023**
+* Restored OSX build...but without a bundle.
+
+**ver 2.3.7 -- 17sep2023**
+* Fixed a problem with the h-key toggle of intro screen/music.
+* Implemented a ghost-sword on ceiling, similar to ghost-key.
+* Bat now grabs dropped sword as planned, ch 1 & ch 3.
+* In Ch1/Ch3 (as originally planned) if sword is dropped to pickup key, bat grabs sword instead. Otherwise it grabs the black key.
 
 **ver 2.3.6 -- 5sep2023**
 * Fixed problem where saved games could not be restored.
