@@ -75,6 +75,13 @@ https://youtu.be/428fRdu-fZs
 ## Recent Changes
 
 
+**ver 2.4.3 -- 14mar2024**
+
+* Corrected Keepout function that allowed slipping past the granite door without unlocking it.
+* Modified maze 7 to use a skybox and taller maze hedges.
+* Added details to Labyrinth edifice, & castle.
+* Added torches & lighting effects in the Greek Temple.
+
 
 **ver 2.4.2 -- 9mar2024**
 
