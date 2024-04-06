@@ -74,6 +74,11 @@ https://youtu.be/428fRdu-fZs
 
 ## Recent Changes
 
+**ver 2.4.4 -- 6apr2024**
+
+* Added more dynamic sky frag.shader in maze9.
+* Added Minoan horns, Greek sign to Labyrinth exterior, etc.
+* Improved visuals in temple.
 
 **ver 2.4.3 -- 14mar2024**
 
