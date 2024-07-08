@@ -1,3 +1,9 @@
+
+![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/dynCubemap3.png)
+
+Dynamic Cubemapped Environment
+
+
 ![screenshot](https://github.com/fastrgv/AdaVenture/blob/master/trim_smallMinotaur.gif)
 
 
