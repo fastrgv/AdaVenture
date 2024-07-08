@@ -80,6 +80,11 @@ https://youtu.be/428fRdu-fZs
 
 ## Recent Changes
 
+**ver 2.4.5 -- 8jul2024**
+
+* Added dynamic cubemap generation to reflect environment of castle pool.
+
+
 **ver 2.4.4 -- 6apr2024**
 
 * Added more dynamic sky frag.shader in maze9.
