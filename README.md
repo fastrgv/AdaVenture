@@ -35,6 +35,9 @@ Type "7z x filename" to extract the archive.
 
 ==============================================================
 
+Video: Dynamic Cubemapped Reflections
+https://youtu.be/Op-x-58LiW8
+
 Video: Wandering Toxic Swamp Gas: Minoan Labyrinth (please use earphones):
 https://youtu.be/C6AL2F2wrpQ
 
