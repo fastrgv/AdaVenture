@@ -83,6 +83,12 @@ https://youtu.be/428fRdu-fZs
 
 ## Recent Changes
 
+**ver 2.4.6 -- 15jul2024**
+
+* Fixed background sound-loop to resume when continuing a saved game.
+* Added a 3rd dimension to castle waterfall.
+* Saved games now preserve look angle, too. (see ~/docs/status.txt).
+
 **ver 2.4.5 -- 8jul2024**
 
 * Added dynamic cubemap generation to reflect environment of castle pool.
