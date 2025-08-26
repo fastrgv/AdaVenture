@@ -74,8 +74,6 @@ https://youtu.be/428fRdu-fZs
 
 
 
-
-
 # AdaVenture 
 ## using GLFW & OpenAL
 
@@ -83,44 +81,18 @@ https://youtu.be/428fRdu-fZs
 
 ## Recent Changes
 
+**ver 2.4.7 -- 27aug2025**
+
+* Added more chasm horror.
+* Main window now properly restores itself on OSX & Trisquel.
+* Improved Windows-Setup document.
+
+
 **ver 2.4.6 -- 15jul2024**
 
 * Fixed background sound-loop to resume when continuing a saved game.
 * Added a 3rd dimension to castle waterfall.
 * Saved games now preserve look angle, too. (see ~/docs/status.txt).
-
-**ver 2.4.5 -- 8jul2024**
-
-* Added dynamic cubemap generation to reflect environment of castle pool.
-
-
-**ver 2.4.4 -- 6apr2024**
-
-* Added more dynamic sky frag.shader in maze9.
-* Added Minoan horns, Greek sign to Labyrinth exterior, etc.
-* Improved visuals in temple.
-
-**ver 2.4.3 -- 14mar2024**
-
-* Corrected Keepout function that allowed slipping past the granite door without unlocking it.
-* Modified maze 7 to use a skybox and taller maze hedges.
-* Added details to Labyrinth edifice, & castle.
-* Added torches & lighting effects in the Greek Temple.
-
-
-**ver 2.4.2 -- 9mar2024**
-
-* Added an invisible bridge that spans a chasm between maze7 and labyrinth8. Have faith, but tread carefully.
-* Improved camera handling thru doorways; now allow backing thru.
-
-
-**ver 2.4.1 -- 18feb2024**
-
-* Fixed commandline parm so that "adaventure_osx 0" truly disables HiDpi, as advertised.
-* Added a small waterfall inside castle, fed by copper pipe.
-* Added awesome foam effects where the interior waterfall hits the pool surface.
-* Added simple volume control + other corrections to my OpenAL binding. Using it to adjust outside waterfall sounds.
-
 
 ## More change-history at end of file
 
@@ -298,6 +270,11 @@ In case of trouble moving, switch to 1st person.
 
 Note that adjustable OpenGL settings should favor performance.  OTOH, this game runs fine on an Intel NUC with embedded Intel graphics, so the graphics demands are modest.
 
+--------------------------------------------------------------------------
+If upgrading from a version older than v2.4.6, and you want to preserve your saved games files, then you must edit each of them as follows:
+
+* add one "F" to the end of the first line.
+* add two lines to the end of the file, each with "0.0".
 
 --------------------------------------------------------------------------
 
@@ -428,7 +405,7 @@ and please include the file gamestatex.txt from the data directory if you are re
 This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2024  fastrgv@gmail.com
+ Copyright (C) 2025  fastrgv@gmail.com
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -509,6 +486,30 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 -------------------------------------------------------------------------
 
 ## Update History:
+
+**ver 2.4.5 -- 8jul2024**
+* Added dynamic cubemap generation to reflect environment of castle pool.
+
+**ver 2.4.4 -- 6apr2024**
+* Added more dynamic sky frag.shader in maze9.
+* Added Minoan horns, Greek sign to Labyrinth exterior, etc.
+* Improved visuals in temple.
+
+**ver 2.4.3 -- 14mar2024**
+* Corrected Keepout function that allowed slipping past the granite door without unlocking it.
+* Modified maze 7 to use a skybox and taller maze hedges.
+* Added details to Labyrinth edifice, & castle.
+* Added torches & lighting effects in the Greek Temple.
+
+**ver 2.4.2 -- 9mar2024**
+* Added an invisible bridge that spans a chasm between maze7 and labyrinth8. Have faith, but tread carefully.
+* Improved camera handling thru doorways; now allow backing thru.
+
+**ver 2.4.1 -- 18feb2024**
+* Fixed commandline parm so that "adaventure_osx 0" truly disables HiDpi, as advertised.
+* Added a small waterfall inside castle, fed by copper pipe.
+* Added awesome foam effects where the interior waterfall hits the pool surface.
+* Added simple volume control + other corrections to my OpenAL binding. Using it to adjust outside waterfall sounds.
 
 **ver 2.4.0 -- 11feb2024**
 * Improved/generalized OSX build scripts.
