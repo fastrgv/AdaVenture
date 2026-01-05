@@ -18,7 +18,7 @@ Dynamic Cubemapped Environment
 
 Click on the large 7z file under releases to download all source & binaries (Windows & Linux) or try this link:
 
-https://github.com/fastrgv/AdaVenture/releases/download/v2.4.7/av27aug25.7z
+https://github.com/fastrgv/AdaVenture/releases/download/v2.4.8/av7jan26.7z
 
 
 Type "7z x filename" to extract the archive.
