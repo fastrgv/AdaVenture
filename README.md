@@ -74,12 +74,29 @@ https://youtu.be/428fRdu-fZs
 
 
 
+
+Permalink:
+
+https://sourceforge.net/projects/adaventure/files/latest/download
+
+
 # AdaVenture 
-## using GLFW & OpenAL
+## using OpenGL, GLFW & OpenAL
 
 
 
 ## Recent Changes
+
+
+**ver 2.4.8 -- 7jan2026**
+
+* Made important corrections to the tree-drawing package.
+* Added copper water spout in castle.
+* Improved fog in ch3, ch4.
+* Fixed some bad behaviors & sounds.
+* Improved, clarified Windows-Setup document.
+
+
 
 **ver 2.4.7 -- 27aug2025**
 
@@ -88,13 +105,7 @@ https://youtu.be/428fRdu-fZs
 * Improved Windows-Setup document.
 
 
-**ver 2.4.6 -- 15jul2024**
-
-* Fixed background sound-loop to resume when continuing a saved game.
-* Added a 3rd dimension to castle waterfall.
-* Saved games now preserve look angle, too. (see ~/docs/status.txt).
-
-## More change-history at end of file
+#### More change-history at end of file
 
 
 
@@ -115,7 +126,7 @@ Featuring
 ## AdaVenture Introduction
 Set in ancient Persia, it begins outside the castle of the young King Xerxes, who inherited a magical golden chalice from his father, Darius the Great.  Coveted by Greek foes King Leonidas of Sparta and King Minos of Crete, the chalice has been stolen.
 
-Your quest is to seek and return the royal chalice to its pedestal within the castle of Xerxes...a stealth mission to preclude open hostilities.  But, there will be obstacles to overcome.  You must find the keys to various realms, defend yourself against dragons and the Minotaur, avoid snakes and pesky bats who steal things only to drop them in random locations, and survive the maze of the green mamba and crazed, flesh-eating scarabs. Finally, you must cross the invisible bridge over a killer pungee pit (think Indiana Jones & the Last Crusade).
+Your quest is to seek and return the royal chalice to its pedestal within the castle of Xerxes...a stealth mission to preclude open hostilities.  But, there will be obstacles to overcome.  You must find the keys to various realms, defend yourself against dragons and the Minotaur, avoid snakes and pesky bats who steal things only to drop them in random locations, and survive the maze of the green mamba and crazed, flesh-eating scarabs. Finally, you must cross the invisible bridge over a killer pungee pit (think Indiana Jones & the Last Crusade) in the marble quarry connecting the maze to the labyrinth.
 
 
 
@@ -126,7 +137,7 @@ Your quest is to seek and return the royal chalice to its pedestal within the ca
 
 * Works on PCs or laptops running Windows, OSX, or GNU/Linux.  And if Ada is installed you can build it yourself!  But first try the delivered binaries.
 
-* Windows, OSX & Linux binaries provided, as well as full source. 
+* Windows, OSX & Linux prebuilt executables are provided, as well as full source. 
 
 * Laptop friendly controls;  supports HiDpi displays.
 
@@ -139,9 +150,7 @@ Go to the "data" subdirectory and copy the file "gamestatex.txt" to the ./savedG
 then choose resume at startup and pick gamestatex.txt.
 Note that this recover file is NOT created if you die, but only if the game malfunctions.
 
-* Maze/Labyrinth hint: For a younger generation that is not familiar with the original Atari Adventure game, note that there is a magenta colored moveable "bridge" that may be picked up and carried to another location where a shortcut is needed with the following shape: **][**  Its use is required to access the chalice, and to escape the labyrinth in levels 2 & 4.
-
-* To change the appearance of the avatar, simply download your favorite MineCraft Skin, rename it to "skin.png" and put it into the ./data/ directory.  You should probably backup the current skin before you do this, in case of trouble.  See http://www.minecraftskins.net/.  See also ./data/avatars/ for a small selection.
+* To change the appearance of the avatar, simply download your favorite MineCraft Skin, rename it to "skin.png" and put it into the ./data/ directory.  You should probably backup the current skin before you do this, in case of trouble.  See http://www.minecraftskins.net/.  See also ./data/avatars/instructions.txt.
 
 * For developers, serves as a great example of modern OpenGL programming using GLSL 330, shaders, uniforms and Freetype fonts.
 
@@ -151,7 +160,7 @@ Note that this recover file is NOT created if you die, but only if the game malf
 
 
 
-## mouse/touchpad/keyboard controls
+## Mouse/touchpad/keyboard controls
 
 [You might need to disconnect unused gamecontrollers to prevent spinning!]
 
@@ -176,20 +185,31 @@ Movement is controlled by the WASD keys or the arrow keys:
 *  mouse-click		=> pick or drop
 *  (m)-key		 	=> toggle Mouse-view (1st-person) or avatar(3rd-person)
 *  (l)-key			=> toggle camera type:  1)Lazy(default), or 2)Tight
+*  (n)-key        => bring avatar Nearer camera (& mousewheel)
+*  (f)-key        => push avatar Further from camera (& mousewheel)
+*  (z)-key        => reset avatar distance (reZero)
 
 ### Game Notes:
-* only one object may be carried. 
-* If you want to easily inspect some curious feature (like Jupiter in the night sky), temporarily switch to 1st-person mode with the (m)-key.
-* When looking for the black key, it might help to try to find the "ghost" key, a white key image on the ceiling above the actual key location. In levels 3 & 4, the fog makes this difficult to see.
 
-### joystick
+* only one object may be carried. 
+
+* If you want to easily inspect some curious feature (like Jupiter in the night sky), temporarily switch to 1st-person mode with the (m)-key.
+
+* When looking for the black key, it might help to try to find the "ghost" key, a white key image on the ceiling or sky above the actual key location. In levels 3 & 4, the fog makes this difficult to see. There is also a "ghost" sword, so if the bat grabs either one, the ghosts will help you.
+
+* Maze/Labyrinth hint: For a younger generation that is not familiar with the original Atari Adventure game, note that there is a magenta colored moveable "bridge" that may be picked up and carried to another location wherever a shortcut is needed with the following shape: **][**  Its use is required to access the chalice, and to escape the labyrinth in levels 2 & 4.
+
+* Another hint: The sword will protect you from many unexpected dangers but not from the scarabs that inhabit the mazes. Even with the sword you must still limit your exposure to them as well as the green mamba.
+
+
+### Joystick
 * joystick:  attitude
 * center thumb btn:  forward
 * trigger btn:  backward
 * side thumb btns:  pick or drop items
 
 ------------------------------------------------------------
-### gamecontroller
+### Gamecontroller
 * Lpaddle/Lhat:  movement
 * Rpaddle :  attitude
 * L/R Shoulder btns:  pick or drop items
@@ -197,8 +217,17 @@ Movement is controlled by the WASD keys or the arrow keys:
 Note that regression testing of these controller functions has not been done for quite a while.  Any volunteers?
 
 ------------------------------------------------------------
-### controller settings
-If the need arises, copy the file "default_settings.txt" to "./data/settings.txt".  Then you can manually edit the floats that define the sensitivity for mouse, keyboard, gamepad & joystick, as well as forward speed of the avatar.
+### Controller settings
+If the need arises, copy the file "default_settings.txt" to "./data/settings.txt".  Then you can manually edit the floats that define the sensitivity for mouse, keyboard, gamepad & joystick, as well as forward speed of the avatar. The file contains 5 numbers
+
+* ForwardSpeed
+* MouseSlewSpeed
+* KeyboardSlewSpeed
+* GamepadSlewSpeed
+* JoystickSlewSpeed
+
+whose values are defaulted to 1.0 but should most likely be between 0.5 and 2.0
+
 
 
 ------------------------------------------------------------
@@ -208,7 +237,7 @@ If the need arises, copy the file "default_settings.txt" to "./data/settings.txt
 ## System Requirements for running delivered executables:
 
 * graphics card with ample memory & driver that supports OpenGL version 3.3 or later;
-* Windows, OSX(>=10.13), GNU/Linux(glibc > v2.17, ~2012)
+* Windows 10 or 11, OSX(>=10.13), GNU/Linux(glibc > v2.17, ~2012)
 * optional game controller or joystick.
 
 
@@ -223,11 +252,11 @@ So delete or move very old game files periodically under the "savedGames" direct
 
 ## Setup & Running Adaventure:
 
-The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows (64 bit), 2)linux, 3)OSX, in addition to source code.  
-* If you are NOT running windows, you do not need the [large] .dll files.  
+The application's root directory [./avent/] contains files for deployment on 3 platforms:  1)windows (64 bit), 2)linux, 3)OSX, in addition to source code [./avent/src/].
 
-Mac users please read "osx-setup.txt".
-Windows users see "windows-setup.txt".
+* If you are NOT running windows, you do not need the [large] .dll files.  
+* Mac users please read "osx-setup.txt".
+* Windows users see "windows-setup.txt".
 
 
 Unzip the archive.  
@@ -241,12 +270,14 @@ After the archive is unzipped...
 
 Open a commandline terminal, and cd to the install directory, and type: 
 
-adaventureW64.bat (Windows 64-bit)
+* adaventureW64.bat (Windows 64-bit)
 
-adaventure_gnu (Linux)
+* adaventure_gnu (Linux)
 
-adaventure_osx (Mac) [ "adaventure_osx 0" indicates forcing Low-Dpi video mode; default=High-Dpi ]
-	note that Low-Dpi should be used if graphics are jerky.
+* adaventure_osx (Mac) 
+
+[ "adaventure_osx 0" indicates forcing Low-Dpi video mode; default=High-Dpi ]
+Note that Low-Dpi resolution is still beautiful but should be used if graphics are jerky.
 
 
 **OSX note: When resuming a game, there seems to be a quirk with window focus that requires a deliberate cursor-click on the saved-games window prior to selection. Not a big problem if you're expecting it.**
@@ -257,7 +288,8 @@ The linux executable has been recently tested, and runs well on Trisquel, Scient
 
 
 Also, the Windows executable can be run on linux using wine thusly:
-	* wine binw64/adaventure64.exe
+
+* wine binw64/adaventure64.exe
 
 
 Windows users note: DO NOT try running the linux executables under WSL [Windows Subsystem for Linux]; that mode is not supported. Simply use the windows version.
@@ -405,7 +437,7 @@ and please include the file gamestatex.txt from the data directory if you are re
 This app is covered by the GNU GPL v3 as indicated in the sources:
 
 
- Copyright (C) 2025  fastrgv@gmail.com
+ Copyright (C) 2026  fastrgv@gmail.com
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -487,6 +519,11 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 ## Update History:
 
+**ver 2.4.6 -- 15jul2024**
+* Fixed background sound-loop to resume when continuing a saved game.
+* Added a 3rd dimension to castle waterfall.
+* Saved games now preserve look angle, too. (see ~/docs/status.txt).
+
 **ver 2.4.5 -- 8jul2024**
 * Added dynamic cubemap generation to reflect environment of castle pool.
 
@@ -528,7 +565,7 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 
 **ver 2.3.7 -- 17sep2023**
 * Fixed a problem with the h-key toggle of intro screen/music.
-* Implemented a ghost-sword on ceiling, similar to ghost-key.
+* Implemented a ghost-sword on ceiling or sky, similar to ghost-key.
 * Bat now grabs dropped sword as planned, ch 1 & ch 3.
 * In Ch1/Ch3 (as originally planned) if sword is dropped to pickup key, bat grabs sword instead. Otherwise it grabs the black key.
 
