@@ -72,9 +72,6 @@ https://youtu.be/428fRdu-fZs
 
 
 
-
-
-
 Permalink:
 
 https://sourceforge.net/projects/adaventure/files/latest/download
@@ -88,22 +85,15 @@ https://sourceforge.net/projects/adaventure/files/latest/download
 ## Recent Changes
 
 
+**ver 2.4.9 -- 12jan2026**
+
+* Created awesome moving-cloud skyboxes using shaders only.
+* Improved exterior fog effects including skybox fog.
+* Eliminated need for MSVC-redistributables installation on M.S. Windows 10, 11.
+
+
 **ver 2.4.8 -- 7jan2026**
-
-* Made important corrections to the tree-drawing package.
-* Added copper water spout in castle.
-* Improved fog in ch3, ch4.
-* Fixed some bad behaviors & sounds.
-* Improved, clarified Windows-Setup document.
-
-
-
-**ver 2.4.7 -- 27aug2025**
-
-* Added more chasm horror.
-* Main window now properly restores itself on OSX & Trisquel.
-* Improved Windows-Setup document.
-
+...
 
 #### More change-history at end of file
 
@@ -396,6 +386,13 @@ On a linux build machine, you might get a few fixable link errors, depending on 
 This app demonstrates how to use fancy fragment shaders from glslsandbox.com to make starry maze skies. See below (Media Files). It also demonstrates the use of coherent noise to create the rolling fireball in the labyrinth.
 
 ----------------------------------------------------------------------
+## For Developers Only:  CubeMapped Skybox Shaders
+
+This app demonstrates how to slowly rotate a skybox about the vertical axis by simple shader modifications, with negligible changes to source code. This insight opens many further possibilities for handling skyboxes IF true 6 sided skyboxes are avaiable. For example if one has a 6 sided starry-sky skybox, then it is easily possible to enable arbitrary rotations within the shader. Or you might use a 6-sided skybox with day & night hemispheres.
+
+A tiny change is required to the source code to pass time as a uniform to the shader that will allow perturbing some pointing vectors in a time dependent way.
+
+----------------------------------------------------------------------
 ## For Developers Only:  OpenAL portable sound package
 
 This app uses a cross-platform sound-playing package for Ada apps that can asynchronously start and stop music loops, as well as initiate transient sounds, allowing unlimited concurrency.
@@ -518,6 +515,19 @@ kids,retro,adventure,dragon,castle,maze,labyrinth
 -------------------------------------------------------------------------
 
 ## Update History:
+
+
+**ver 2.4.8 -- 7jan2026**
+* Made important corrections to the tree-drawing package.
+* Added copper water spout in castle.
+* Improved fog in ch3, ch4.
+* Fixed some bad behaviors & sounds.
+* Improved, clarified Windows-Setup document.
+
+**ver 2.4.7 -- 27aug2025**
+* Added more chasm horror.
+* Main window now properly restores itself on OSX & Trisquel.
+* Improved Windows-Setup document.
 
 **ver 2.4.6 -- 15jul2024**
 * Fixed background sound-loop to resume when continuing a saved game.
