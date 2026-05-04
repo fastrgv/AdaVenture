@@ -72,24 +72,33 @@ https://youtu.be/428fRdu-fZs
 
 
 
+
 Permalink:
 
 https://sourceforge.net/projects/adaventure/files/latest/download
 
 
-# AdaVenture 
-## using OpenGL, GLFW & OpenAL
+# AdaVenture
+
+		Adventure Game
+		with mazes and beasts
+		using OpenGL, GLFW3 & OpenAL audio
 
 
 
 ## Recent Changes
 
 
+**ver 2.4.10 -- 5may2026**
+
+* Added two essential new parms to the settings file that can greatly improve 3rd person movement & camera angles. See "controller settings" section below.
+
+
 **ver 2.4.9 -- 12jan2026**
 
 * Created awesome moving-cloud skyboxes using shaders only.
 * Improved exterior fog effects including skybox fog.
-* Eliminated need for MSVC-redistributables installation on M.S. Windows 10, 11.
+* Eliminated need to install MSVC-redistributables on Windows 10, 11.
 
 
 **ver 2.4.8 -- 7jan2026**
@@ -162,8 +171,14 @@ Zoom can also be controlled with keys n, f, z [Nearer,Further,default];  Note th
 
 Movement is controlled by the WASD keys or the arrow keys:
 
-       (Up)
-(Lt)   (Dn)   (Rt)
+			(Up)
+	(Lt)	(Dn)	(Rt)
+
+* (leftAlt)		=> slide left
+* (rightAlt)	=> slide right
+
+* (kp4)			=> slide left
+* (kp6)			=> slide right
 
 ---------------------------
 
@@ -187,7 +202,7 @@ Movement is controlled by the WASD keys or the arrow keys:
 
 * When looking for the black key, it might help to try to find the "ghost" key, a white key image on the ceiling or sky above the actual key location. In levels 3 & 4, the fog makes this difficult to see. There is also a "ghost" sword, so if the bat grabs either one, the ghosts will help you.
 
-* Maze/Labyrinth hint: For a younger generation that is not familiar with the original Atari Adventure game, note that there is a magenta colored moveable "bridge" that may be picked up and carried to another location wherever a shortcut is needed with the following shape: **][**  Its use is required to access the chalice, and to escape the labyrinth in levels 2 & 4.
+* Maze/Labyrinth hint: For a younger generation that is not familiar with the original Atari Adventure game, note that there is a magenta colored moveable "bridge" that may be picked up and carried to another location wherever a shortcut is needed with the following shape: **][**  Its use is required to access the chalice, and to escape the labyrinth in levels 2 & 4. The bridge allows passing thru a maze or labyrinth wall.
 
 * Another hint: The sword will protect you from many unexpected dangers but not from the scarabs that inhabit the mazes. Even with the sword you must still limit your exposure to them as well as the green mamba.
 
@@ -208,15 +223,32 @@ Note that regression testing of these controller functions has not been done for
 
 ------------------------------------------------------------
 ### Controller settings
-If the need arises, copy the file "default_settings.txt" to "./data/settings.txt".  Then you can manually edit the floats that define the sensitivity for mouse, keyboard, gamepad & joystick, as well as forward speed of the avatar. The file contains 5 numbers
+If the need arises, copy the file "default_settings.txt" to "./data/settings.txt".  Then you can manually edit the floats that define the sensitivity for mouse, keyboard, gamepad & joystick, as well as forward speed of the avatar. The file now contains 7 numbers:
 
 * ForwardSpeed
+* CameraSlewSpeed
 * MouseSlewSpeed
 * KeyboardSlewSpeed
 * GamepadSlewSpeed
 * JoystickSlewSpeed
+* PreferredZoomDistance (between camera & avatar)
 
-whose values are defaulted to 1.0 but should most likely be between 0.5 and 2.0
+whose values are normally defaulted to 1.0 
+but might need to be adjusted between 0.1 and 10.0.
+
+I found that my new Windows 11 machine required the following 
+settings in order to get acceptable performance
+(due to differences in graphics drivers, operating system, or hardware):
+
+1.0 0.05 8.0 2.0 1.0 1.0 0.05 
+
+
+
+
+------------------------------------------------------------
+Note: in third person it is sometimes useful to move the camera directly behind the avatar.
+You can accomplish this by first pointing the avatar in the desired look-direction, 
+then switch to first-person, then switch back to third-person.
 
 
 
