@@ -73,9 +73,7 @@ https://youtu.be/428fRdu-fZs
 
 
 
-Permalink:
 
-https://sourceforge.net/projects/adaventure/files/latest/download
 
 
 # AdaVenture
