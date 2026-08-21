@@ -352,6 +352,22 @@ If upgrading from a version older than v2.4.6, and you want to preserve your sav
 
 ## Build instructions for AdaVenture:
 
+------------------------------------------------------
+#### linux users note
+
+Before attempting to build these apps on linux 
+you might need to update your libraries to include
+	xorg-dev, libx11-dev, & libopenal-dev
+so that the link-step succeeds.
+
+Use the following commands:
+
+* sudo apt-get update
+* sudo apt-get install xorg-dev
+* sudo apt-get install libx11-dev
+* sudo apt-get install libopenal-dev
+------------------------------------------------------
+
 Three [pre-compiled] binary executables are delivered, two for Windows, & one for gnu/linux.  I believe the Windows executables are fairly portable.  They were built on Windows 10.  
 
 The distributed linux executable requires glibc v2.17 or newer.  That means if your distribution is older than 2012, it may not run, and you might need to recompile. But if you have wine, you can simply run the Windows executables.
